@@ -1,6 +1,6 @@
 ---
 name: Bitmessage Mail Gateway
-website: https://bitmessage.ch/
+website: bitmessage.ch
 credentials: emailPass
 needsPreperation: true
 status:

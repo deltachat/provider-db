@@ -35,9 +35,15 @@ status:
 Optional yaml font matter fields:
 ```
 limits:
-    maxRecipients: [number | NaN]
+    maxRecipients: number | "Unlimited"
+    messagesPerDay: number | "Unlimited"
+    maxFileSize: string | "Unlimited"
 
-?registration?: [  inviteOnly | noPersonalData | PhoneAuth | PersonalData]
+registration:
+ inviteOnly: boolean
+ PhoneAuthRequired: boolean
+ PersonalDataRequired: boolean
+ price: string
 
 ```
 ?idea?
@@ -63,5 +69,4 @@ This is an example provider
 
 ##Ideas:
 
-- optional registration type property
 - repurpose websites into email domains? or include email domains otherwise? (remove protocol and www subdomain again? and make an extra property for the website)

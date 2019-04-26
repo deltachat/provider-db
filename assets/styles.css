@@ -15,11 +15,11 @@
 }
 
 
-.property > .value.status-good {
+.status-good {
  background-color: green
 }
 
-.property > .value.status-bad {
+.status-broken {
  background-color: darkred
 }
 

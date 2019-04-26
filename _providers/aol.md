@@ -6,6 +6,12 @@ needsPreperation: true
 status:
  works: true
  date: 2017-12
+
+
+registration:
+ inviteOnly: false
+ PhoneAuthRequired: true
+ PersonalDataRequired: true
 ---
 
 ## Preperations

@@ -6,6 +6,9 @@ needsPreperation: true
 status:
  works: true
  date: 2017-06
+limits:
+ maxFileSize: "72 MB"
+
 ---
 
 ## Preperations

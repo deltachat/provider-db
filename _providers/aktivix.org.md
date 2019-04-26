@@ -1,11 +1,14 @@
 ---
 name: Aktivix
-website: http://aktivix.org
+website: aktivix.org
 credentials: emailPass
 needsPreperation: true
 status:
  works: true
  date: 2018-10
+
+registration:
+ inviteOnly: true
 ---
 
 ## Coments

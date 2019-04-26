@@ -1,6 +1,6 @@
 ---
 name: KONTENT
-website: https://www.kontent.com/
+website: kontent.com
 credentials: emailPass
 needsPreperation: false
 status:

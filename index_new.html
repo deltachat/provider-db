@@ -1,0 +1,209 @@
+---
+permalink: /
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <title>Provider Overview</title>
+</head>
+
+<body>
+    <h2>Provider Overview</h2>
+
+    <input type="search" id="search" hidden>
+    <noscript>
+        <input type="search" value="Enable scripts to Enable Searching" disabled>
+    </noscript>
+
+    <table border="1">
+        <tr>
+            <th></th>
+            <th colspan="4" scope="colgroup">Information</th>
+            <th colspan="3" scope="colgroup">Limits</th>
+            <th colspan="4" scope="colgroup">Registration</th>
+        </tr>
+        <tr>
+            <th>
+                Status
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Domain/s
+            </th>
+            <th title="Are additional Steps needed to get DeltaChat running?">
+                needs Preperation
+            </th>
+            <th title="Authentication Methode">
+                Auth
+            </th>
+            <th title="The max recipient count dictates the max group size">
+                max. 👥
+            </th>
+            <th title="How many messages you can sent per Day">
+                💬 per Day
+            </th>
+            <th title="The maximum size for a file / image / voice recording / message you can sent">
+                max. 📧 Size
+            </th>
+            <th>
+                inviteOnly
+            </th>
+            <th>
+                PersonalData
+            </th>
+            <th title="Phone Auth - If you need to give them your Phonenumber to register">
+                📞
+            </th>
+            <th title="How much it costs">
+                💰
+            </th>
+        </tr>
+
+        {% for provider in site.providers %}
+
+        <tr>
+            <td class="status-{% if provider.status.works %}good{% else %}broken{% endif %}">
+                <span>
+                    <span style="font-size:12pt">{% if provider.status.works %}OK{% else %}NOT WORKING{% endif %}</span>
+                    <br>
+                    on {{ provider.status.date }}
+                </span>
+            </td>
+            <td><a href="{{provider.url}}"> {{provider.name}}</a></td>
+            <td>
+                {% unless provider.website.first %}
+                {{provider.website}}
+                {% else %}
+                {% for domain in provider.website%}
+                - {{domain}}<br>
+                {% endfor %}
+                {% endunless %}
+            </td>
+            <td>
+                {% if provider.needsPreperation %}
+                <a href="{{provider.url}}#preperations">YES</a>
+                {% else %}
+                NO
+                {% endif %}
+            </td>
+            <td>
+                {% unless provider.credentials.first %}
+                {% include authentication.html auth=provider.credentials %}
+                {%else%}
+                {% for auth in provider.credentials %}
+                - {% include authentication.html auth=auth %}<br>
+                {% endfor%}
+                {% endunless%}
+            </td>
+            <td>
+                {%unless provider.limits.maxRecipients%}
+                <span style="color:lightgray"
+                    title="{{site.data.strings.NoData}}">
+                    ND
+                </span>
+                {%elsif provider.limits.maxRecipients == "Unlimited" %}
+                <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
+                    No Limit
+                </span>
+                {%else%}
+                {{provider.limits.maxRecipients}}
+                {%endunless%}
+            </td>
+            <td>
+                {%unless provider.limits.messagesPerDay%}
+                <span style="color:lightgray" title="{{site.data.strings.NoData}}">
+                    ND
+                </span>
+                {%elsif provider.limits.messagesPerDay == "Unlimited" %}
+                <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
+                    No Limit
+                </span>
+                {%else%}
+                {{provider.limits.messagesPerDay}}
+                {%endunless%}
+            </td>
+            <td>
+                {%unless provider.limits.maxFileSize%}
+                <span style="color:lightgray" title="{{site.data.strings.NoData}}">
+                    ND
+                </span>
+                {%elsif provider.limits.maxFileSize == "Unlimited" %}
+                <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
+                    No Limit
+                </span>
+                {%else%}
+                {{provider.limits.maxFileSize}}
+                {%endunless%}
+            </td>
+            <td>
+                {%unless provider.registration.inviteOnly != nill %}
+                <span style="color:lightgray" title="{{site.data.strings.NoData}}">
+                    ND
+                </span>
+                {%else%}
+                    {%if provider.registration.inviteOnly%}
+                    Yes
+                    {%else%}
+                    No
+                    {%endif%}
+                {%endunless%}
+            </td>
+            <td>
+                    {%unless provider.registration.PersonalDataRequired != nill %}
+                    <span style="color:lightgray" title="{{site.data.strings.NoData}}">
+                        ND
+                    </span>
+                    {%else%}
+                        {%if provider.registration.PersonalDataRequired%}
+                        Yes
+                        {%else%}
+                        No
+                        {%endif%}
+                    {%endunless%}
+            </td>
+            <td>
+                    {%unless provider.registration.PhoneAuthRequired != nill %}
+                    <span style="color:lightgray" title="{{site.data.strings.NoData}}">
+                        ND
+                    </span>
+                    {%else%}
+                        {%if provider.registration.PhoneAuthRequired%}
+                        Yes
+                        {%else%}
+                        No
+                        {%endif%}
+                    {%endunless%}
+            </td>
+            <td>
+                    {%unless provider.registration.price != nill %}
+                    <span style="color:lightgray" title="{{site.data.strings.NoData}}">
+                        ND
+                    </span>
+                    {%else%}
+                        {{provider.registration.price}}
+                    {%endunless%}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+        
+
+    <p>
+        <b>DISCLAIMER: </b>
+        We don't take responsibility for the information here provided.
+        If it is incorect please report it on the <a href="#" target="_blank">github issue page</a>.
+        If you are able to do it, we apreciate pull requests as well.
+    </p>
+
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 ---
 name: iCloud Mail
-website: https://www.icloud.com/
+website: icloud.com
 credentials: emailAppPass
 needsPreperation: true
 status:

@@ -6,6 +6,12 @@ needsPreperation: true
 status:
  works: false
  date: 2019-02
+
+registration:
+ inviteOnly: false
+ PhoneAuthRequired: false
+ PersonalDataRequired: false
+ price: "&ge;€5.00/mo" 
 ---
 
 ## Preparation

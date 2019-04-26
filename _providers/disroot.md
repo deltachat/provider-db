@@ -1,6 +1,6 @@
 ---
 name: Disroot
-website: https://disroot.org/
+website: disroot.org
 credentials: emailPass
 needsPreperation: false
 status:

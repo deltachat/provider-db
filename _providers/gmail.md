@@ -11,7 +11,19 @@ needsPreperation: true
 status:
  works: true
  date: 2018-05
+limits:
+ maxRecipients: 500
+ messagesPerDay: 500
+
+registration:
+ inviteOnly: false
+ PhoneAuthRequired: true
+ PersonalDataRequired: true
 ---
+
+## Comments
+
+- Additional information to the email sending/recieving limits can be found on https://support.google.com/mail/answer/22839?hl=en
 
 ## Preperations
 

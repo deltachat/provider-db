@@ -1,8 +1,8 @@
 ---
 name: GMX.net
 website:
- - https://www.gmx.net
- - https://gmx.de
+ - gmx.net
+ - gmx.de
 credentials: emailPass
 needsPreperation: true
 status:

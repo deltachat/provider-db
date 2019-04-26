@@ -1,6 +1,6 @@
 ---
 name: freenet.de
-website: https://www.freenet.de/index.html
+website: freenet.de
 credentials: emailPass
 needsPreperation: false
 status:

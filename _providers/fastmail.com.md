@@ -1,6 +1,6 @@
 ---
 name: FastMail
-website: https://www.fastmail.com/
+website: fastmail.com
 credentials: emailAppPass
 needsPreperation: true
 status:

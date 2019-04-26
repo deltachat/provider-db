@@ -1,7 +1,7 @@
 ---
 name: Comcast / xfinity
 website: 
- - https://www.xfinity.com/
+ - xfinity.com
  - comcast.net
 credentials: emailPass
 needsPreperation: false

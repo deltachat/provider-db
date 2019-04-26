@@ -6,6 +6,12 @@ needsPreperation: false
 status:
  works: true
  date: 2017-12
+
+registration:
+ inviteOnly: true
+ PhoneAuthRequired: false
+ PersonalDataRequired: false
+ price: "FREE"
 ---
 
 ## Comments

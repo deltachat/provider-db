@@ -1,6 +1,6 @@
 ---
 name: Bluewin
-website: https://www.bluewin.ch
+website: bluewin.ch
 credentials: emailPass
 needsPreperation: true
 status:
