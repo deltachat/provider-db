@@ -1,0 +1,94 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <title>Provider Overview</title>
+</head>
+
+<body>
+  <span id="content" hidden>
+    <input type="search" id="search" disabled>
+
+    <div id="provider_list">Loading..</div>
+  </span>
+
+  <noscript>
+    Enable scripts to Enable Searching or
+    <a href="/fallback.html">go to fallback List</a><br>
+  </noscript>
+  <script>
+    
+        document.getElementById("content").hidden = false
+        const searchbar = document.getElementById("search")
+        const list = document.getElementById("provider_list")
+    var is_running = false
+    var scheduled = false
+    async function run() {
+      console.log(is_running)
+      if (!is_running) {
+        is_running = true
+        await search(searchbar.value)
+        is_running = false
+        if (sceduled) {
+          scheduled = false
+          await run()
+        }
+      } else {
+        scheduled = true
+      }
+    }
+
+
+    searchbar.onkeyup = ()=>{run()}
+
+    async function search(query) {
+      //search (make a filtered version of the list) / also map them by weight?
+      if (query == "" | query == "*") {
+        await renderList(_applyFilters(searchIndex))
+      } else {
+        const results = searchIndex.map((provider) => {
+          var score = 0
+          if (provider.name.includes(query)) score++
+          const website = Array.isArray(provider.website) ? provider.website.join('') : provider.website
+          if (website.includes(query)) score++
+
+          return { ...provider, score }
+        }).filter((provider) => provider.score != 0).sort((a,b)=>a.score-b.score)
+        await renderList(_applyFilters(results))
+      }
+    }
+    function init() {
+      search("*")
+      searchbar.disabled = false
+    }
+    function _applyFilters(items) {
+      const results = items
+      return results
+    }
+    async function renderList(items) {
+      var newChilds = items.map((item) => {
+        const provider = document.createElement("div")
+        const title = document.createElement("a")
+        title.href = item.link
+        title.innerText = item.name
+        provider.appendChild(title)
+        return provider
+      })
+      while (list.firstChild) {
+        list.removeChild(list.firstChild);
+      }
+      list.append(...newChilds)
+    }
+  </script>
+  <script src="/searchIndex.js" onload="init()"></script>
+</body>
+
+</html>

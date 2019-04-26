@@ -1,0 +1,28 @@
+---
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fallback - Provider Overview</title>
+</head>
+<body>
+    <a href="/">go back to the normal Overview</a><br>
+        <ul>
+                {% for provider in site.providers %}
+                <li>
+                  <b>
+                    <a href="{{ provider.url }}">{{ provider.title }}</a> [ {{ provider.website | join: "; "  }} ]<br>
+                  </b>
+                  [ {% if provider.status.works %}OK{% else %}NOT WORKING{% endif %} on {{ provider.status.date }} ]<br>
+                  {% if provider.needsPreperation %}[ needs Preperation Steps ]<br>{% endif %}
+                  [ {{ provider.credentials | join: " or " }} ]
+                </li>
+                {% endfor %}
+              </ul>
+</body>
+</html>

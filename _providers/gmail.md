@@ -1,0 +1,29 @@
+---
+name: Google Mail
+website:
+ - gmail.com
+ - googlemail.com
+credentials: 
+ - emailPass
+ - emailAppPass
+ - Oauth
+needsPreperation: true
+status:
+ works: true
+ date: 2018-05
+---
+
+## Preperations
+
+### Use OAuth (recomended)
+
+When Deltachat asks you to use Oauth, accept and login in the google login that pops up.
+
+
+### Without 2FA
+
+Enable "less-secure-apps" to allow non google programms to connect to your email account. (It is recomended to use Outh instead)
+
+### With 2FA
+
+Create an "App Specific Passwort" for DeltaChat.

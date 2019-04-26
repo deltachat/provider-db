@@ -1,0 +1,45 @@
+---
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <title>{{ page.name }} - Provider Overview</title>
+</head>
+
+<body>
+    <a href="/">&lt;Back to Overview</a><br>
+
+    <h1>{{ page.name }}</h1>
+    {{ page.website }} <!-- Can be array -->
+    {{ page.credentials }}
+    <span class="property" title="Wether additional steps need to be taken to get it to work">    
+        <span class="key">needsPreperation</span>
+        <span class="value">{{ page.needsPreperation }}</span>
+    </span>
+    <span class="property">
+        <span class="key"></span>
+        <span class="value"></span>  
+    </span>
+    <span class="property" title="If it's working">
+        <span class="key">Status
+
+        </span>
+        <span class="value status-{% if page.status.works %}good{% else %}broken{% endif %}">
+            {% if page.status.works %}OK{% else %}NOT WORKING{% endif %}
+            on {{ page.status.date }}
+        </span>
+    </span>
+    Limits: {{ page.limits }}
+
+    {{ content }}
+</body>
+
+</html>

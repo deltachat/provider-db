@@ -1,0 +1,29 @@
+.property {
+    margin-right: 4pt;
+    background-color: rgb(160, 160, 160);
+    color: grey;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.property > .value, .property > .key {
+    padding: 2pt;
+}
+.property > .value {
+    color: white;
+    background-color: rgb(160, 160, 160);
+}
+
+
+.property > .value.status-good {
+ background-color: green
+}
+
+.property > .value.status-bad {
+ background-color: darkred
+}
+
+blockquote > p {
+    border-left: 10px solid #ccc;
+    background-color: beige
+}

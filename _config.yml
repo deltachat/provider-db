@@ -1,0 +1,20 @@
+include:
+
+exclude: 
+  - TODO
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+-
+  scope:
+    path: "_providers"
+  values:
+    layout: "provider"
+      
+
+collections:
+  providers:
+    output: true
+    permalink: /provider/:slug
