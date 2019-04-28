@@ -17,12 +17,17 @@ permalink: /
 <body>
     <h2>Provider Overview</h2>
 
-    <input type="search" id="search" hidden>
-    <noscript>
-        <input type="search" value="Enable scripts to Enable Searching" disabled>
-    </noscript>
+    <div>
+        <input type="search" id="search" value="Enable scripts to Enable Searching" disabled>
+        <script>document.getElementById("search").value = ""</script>
+        <input type="checkbox" name="noPreperation" id="noPreperation" disabled>
+        <label for="noPreperation"> no Preperation needed</label>
+        <input type="checkbox" name="noMessageLimit" id="noMessageLimit" disabled>
+        <label for="noMessageLimit"> no Message per Day Limit</label>
+    </div>
 
     <table border="1">
+        <thead>
         <tr>
             <th></th>
             <th colspan="4" scope="colgroup">Information</th>
@@ -67,10 +72,15 @@ permalink: /
                 💰
             </th>
         </tr>
-
+        </thead>
+        <tbody id="provider_list">
         {% for provider in site.providers %}
 
-        <tr>
+        <tr 
+            data-searchkey="{{provider.name}} {{provider.website | join: ' '}}" 
+            data-preparation="{{provider.needsPreperation}}"
+            data-messagelimit="{{provider.limits.messagesPerDay}}"
+            >
             <td class="status-{% if provider.status.works %}good{% else %}broken{% endif %}">
                 <span>
                     <span style="font-size:12pt">{% if provider.status.works %}OK{% else %}NOT WORKING{% endif %}</span>
@@ -194,6 +204,7 @@ permalink: /
             </td>
         </tr>
         {% endfor %}
+        </tbody>
     </table>
         
 
@@ -203,6 +214,8 @@ permalink: /
         If it is incorect please report it on the <a href="https://github.com/deltachat/provider-overview/issues" target="_blank">github issue page</a>.
         If you are able to do it, we apreciate pull requests as well.
     </p>
+
+    <script src="/assets/search.js"></script>
 
 </body>
 
