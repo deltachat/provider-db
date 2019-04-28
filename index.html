@@ -18,15 +18,17 @@ permalink: /
     <h2>Provider Overview</h2>
 
     <div>
-        <input type="search" id="search" value="Enable scripts to Enable Searching" disabled>
-        <script>document.getElementById("search").value = ""</script>
+        <div class="search-box-container">
+           <input type="search" id="search" value="Enable scripts to Enable Searching" disabled>
+           <script>document.getElementById("search").value = ""</script> 
+        </div>
         <input type="checkbox" name="noPreperation" id="noPreperation" disabled>
         <label for="noPreperation"> no Preperation needed</label>
         <input type="checkbox" name="noMessageLimit" id="noMessageLimit" disabled>
         <label for="noMessageLimit"> no Message per Day Limit</label>
     </div>
 
-    <table border="1">
+    <table>
         <thead>
         <tr>
             <th></th>
@@ -82,11 +84,9 @@ permalink: /
             data-messagelimit="{{provider.limits.messagesPerDay}}"
             >
             <td class="status-{% if provider.status.works %}good{% else %}broken{% endif %}">
-                <span>
-                    <span style="font-size:12pt">{% if provider.status.works %}OK{% else %}NOT WORKING{% endif %}</span>
+                    <span class="status">{% if provider.status.works %}OK{% else %}NOT WORKING{% endif %}</span>
                     <br>
                     on {{ provider.status.date }}
-                </span>
             </td>
             <td><a href="{{provider.url}}"> {{provider.name}}</a></td>
             <td>
@@ -141,7 +141,7 @@ permalink: /
                 {{provider.limits.messagesPerDay}}
                 {%endunless%}
             </td>
-            <td>
+            <td class="center">
                 {%unless provider.limits.maxFileSize%}
                 <span style="color:lightgray" title="{{site.data.strings.NoData}}">
                     ND
@@ -154,7 +154,7 @@ permalink: /
                 {{provider.limits.maxFileSize}}
                 {%endunless%}
             </td>
-            <td>
+            <td class="center">
                 {%unless provider.registration.inviteOnly != nill %}
                 <span style="color:lightgray" title="{{site.data.strings.NoData}}">
                     ND
@@ -167,7 +167,7 @@ permalink: /
                     {%endif%}
                 {%endunless%}
             </td>
-            <td>
+            <td class="center">
                     {%unless provider.registration.PersonalDataRequired != nill %}
                     <span style="color:lightgray" title="{{site.data.strings.NoData}}">
                         ND
@@ -180,7 +180,7 @@ permalink: /
                         {%endif%}
                     {%endunless%}
             </td>
-            <td>
+            <td  class="center">
                     {%unless provider.registration.PhoneAuthRequired != nill %}
                     <span style="color:lightgray" title="{{site.data.strings.NoData}}">
                         ND
@@ -193,7 +193,7 @@ permalink: /
                         {%endif%}
                     {%endunless%}
             </td>
-            <td>
+            <td class="center">
                     {%unless provider.registration.price != nill %}
                     <span style="color:lightgray" title="{{site.data.strings.NoData}}">
                         ND

@@ -17,13 +17,15 @@
 
 .status-good {
  color: green;
- border-left: 10pt solid green;
+ box-shadow: inset 10pt 0px 0px 0px green;
+ padding-left: 15pt;
 }
 
 .status-broken {
  color: darkred;
- border-left: 10pt solid red;
+ box-shadow: inset 10pt 0px 0px 0px red;
  box-sizing: border-box;
+ padding-left: 15pt;
 }
 
 blockquote > p {
@@ -33,7 +35,7 @@ blockquote > p {
 
 td {
     padding-left: 6pt;
-    padding-right: 5pt
+    padding-right: 5pt;
 }
 
 #search {
@@ -42,6 +44,8 @@ td {
 
 table{
     border-collapse: collapse;
+    min-width: calc(100% - 40pt);
+    margin: 20pt
 }
 
 th, td {
@@ -53,11 +57,37 @@ thead {
 }
 
 
-tr:nth-child(even) {
+thead > tr:last-child {
+    background-color: #f8f8f8
+}
+
+th {
+    padding: 1pt 5px;
+}
+
+tbody > tr:nth-child(even) {
     background-color: #f2f2f2;
     
 }
 
 td:last-child, th:last-child {
     border-right: none;
+}
+
+.search-box-container {
+    margin: auto;
+    width: 250pt;
+}
+
+#search {
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.status {
+    font-size:12pt;
+    font-weight: bold;
 }

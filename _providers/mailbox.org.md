@@ -15,7 +15,7 @@ registration:
  inviteOnly: false
  PhoneAuthRequired: false
  PersonalDataRequired: false
- price: "&ge;1€/mo"
+ price: "&ge; 1.00€/mo"
 ---
 
 ## Comments:
