@@ -16,14 +16,48 @@
 
 
 .status-good {
- background-color: green
+ color: green;
+ border-left: 10pt solid green;
 }
 
 .status-broken {
- background-color: darkred
+ color: darkred;
+ border-left: 10pt solid red;
+ box-sizing: border-box;
 }
 
 blockquote > p {
     border-left: 10px solid #ccc;
     background-color: beige
+}
+
+td {
+    padding-left: 6pt;
+    padding-right: 5pt
+}
+
+#search {
+    margin: 8pt
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td {
+    border-right: 1pt solid darkgray;
+}
+
+thead {
+    border-bottom: 2pt solid darkgray;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    
+}
+
+td:last-child, th:last-child {
+    border-right: none;
 }
