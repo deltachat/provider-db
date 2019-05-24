@@ -39,6 +39,20 @@ function update(mask) {
         if(index[i].elem.hidden === !mask[i]) continue;
         index[i].elem.hidden = !mask[i]
     }
+    updateStripes()
+}
+
+function updateStripes(){
+    let j = 0
+    for (let i = 0; i < index.length; i++) {
+        if(index[i].elem.hidden)continue;
+        j++;
+        if(j % 2){
+            index[i].elem.classList.add("strip")
+        } else {
+            index[i].elem.classList.remove("strip")
+        }
+    }
 }
 
 function search(searchword) {
@@ -100,6 +114,6 @@ const run = async () => { // this debounce is probably not nessesary
     populateIndex()
 
     enableInputs()
-
+    updateStripes()
     console.timeEnd('init')
 })()

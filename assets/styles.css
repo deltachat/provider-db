@@ -65,9 +65,8 @@ th {
     padding: 1pt 5px;
 }
 
-tbody > tr:nth-child(even) {
+tbody > .strip {
     background-color: #f2f2f2;
-    
 }
 
 td:last-child, th:last-child {
