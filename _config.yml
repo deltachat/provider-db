@@ -1,5 +1,4 @@
 include:
- - assets/
 
 exclude: 
   - TODO
