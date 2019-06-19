@@ -8,4 +8,6 @@ needsPreperation: false
 status:
  works: true
  date: 2018-08
+limits:
+ maxRecipients: 35
 ---
