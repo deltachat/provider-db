@@ -90,3 +90,15 @@ td:last-child, th:last-child {
     font-size:12pt;
     font-weight: bold;
 }
+
+.content{
+    max-width: 1000pt;
+    margin: auto
+}
+
+.highlight {
+    display: inline-block;
+    padding: 1pt;
+}
+
+body>div, body>p, body>h2 { margin: 1em; }
