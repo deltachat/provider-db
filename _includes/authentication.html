@@ -1,15 +1,15 @@
 {% case include.auth %}
     {% when 'emailPass' %}
     <span title="You'll use you email credentials for Login">
-            📧 & 🔐
+            email & password
     </span>
     {% when 'emailAppPass' %}
     <span title="You can login with your email address and an App specific password you need to create first.">
-        Token 🔐
+        Token
     </span>
     {% when 'Oauth' %}
-    <span title="This Provider can use Oauth for Authentication, which means upon login the Providers Page gets opened and you login to give your DeltaChat client access to the account">
-        Oauth
+    <span title="This Provider can use Oauth2 for Authentication, which means upon login the Providers Page gets opened and you login to give your DeltaChat client access to the account">
+        Oauth2
     </span>
     {% else %}
     {{auth}}
