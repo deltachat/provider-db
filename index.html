@@ -116,9 +116,8 @@ permalink: /
             </td>
             <td>
                 {%unless provider.limits.maxRecipients%}
-                <span style="color:lightgray"
-                    title="{{site.data.strings.NoData}}">
-                    ND
+                <span title="{{site.data.strings.NoData}}">
+                    ?
                 </span>
                 {%elsif provider.limits.maxRecipients == "Unlimited" %}
                 <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
@@ -130,8 +129,8 @@ permalink: /
             </td>
             <td>
                 {%unless provider.limits.messagesPerDay%}
-                <span style="color:lightgray" title="{{site.data.strings.NoData}}">
-                    ND
+                <span title="{{site.data.strings.NoData}}">
+                    ?
                 </span>
                 {%elsif provider.limits.messagesPerDay == "Unlimited" %}
                 <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
@@ -143,8 +142,8 @@ permalink: /
             </td>
             <td class="center">
                 {%unless provider.limits.maxFileSize%}
-                <span style="color:lightgray" title="{{site.data.strings.NoData}}">
-                    ND
+                <span title="{{site.data.strings.NoData}}">
+                    ?
                 </span>
                 {%elsif provider.limits.maxFileSize == "Unlimited" %}
                 <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
@@ -156,8 +155,8 @@ permalink: /
             </td>
             <td class="center">
                 {%unless provider.registration.inviteOnly != nill %}
-                <span style="color:lightgray" title="{{site.data.strings.NoData}}">
-                    ND
+                <span title="{{site.data.strings.NoData}}">
+                    ?
                 </span>
                 {%else%}
                     {%if provider.registration.inviteOnly%}
@@ -169,8 +168,8 @@ permalink: /
             </td>
             <td class="center">
                     {%unless provider.registration.PersonalDataRequired != nill %}
-                    <span style="color:lightgray" title="{{site.data.strings.NoData}}">
-                        ND
+                    <span title="{{site.data.strings.NoData}}">
+                        ?
                     </span>
                     {%else%}
                         {%if provider.registration.PersonalDataRequired%}
@@ -182,8 +181,8 @@ permalink: /
             </td>
             <td  class="center">
                     {%unless provider.registration.PhoneAuthRequired != nill %}
-                    <span style="color:lightgray" title="{{site.data.strings.NoData}}">
-                        ND
+                    <span title="{{site.data.strings.NoData}}">
+                        ?
                     </span>
                     {%else%}
                         {%if provider.registration.PhoneAuthRequired%}
@@ -195,8 +194,8 @@ permalink: /
             </td>
             <td class="center">
                     {%unless provider.registration.price != nill %}
-                    <span style="color:lightgray" title="{{site.data.strings.NoData}}">
-                        ND
+                    <span title="{{site.data.strings.NoData}}">
+                        ?
                     </span>
                     {%else%}
                         {{provider.registration.price}}
