@@ -11,5 +11,5 @@ status:
 ## Comments
 - **geo locked** to switzerland
 
-## Preperations to get account
+## Preparations to get account
 - activation code delivered to physical mailing address, or swisscom mobile number

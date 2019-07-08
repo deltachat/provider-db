@@ -25,7 +25,7 @@ registration:
 
 - Additional information to the email sending/recieving limits can be found on https://support.google.com/mail/answer/22839?hl=en
 
-## Preperations
+## Preparations
 
 ### Use OAuth (recomended)
 

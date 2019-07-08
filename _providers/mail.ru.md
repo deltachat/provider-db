@@ -12,7 +12,7 @@ status:
  date: 2019-01
 ---
 
-## Preperations
+## Preparations
 
 ### DeltaChat Account Settings
 should be detected automaticaly, but here there are if they don't get detected.

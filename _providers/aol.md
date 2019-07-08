@@ -14,6 +14,6 @@ registration:
  PersonalDataRequired: true
 ---
 
-## Preperations
+## Preparations
 
 send one mail via web and solve the captcha

@@ -8,5 +8,5 @@ status:
  date: 2017-12
 ---
 
-## Preperations
+## Preparations
 enable “less secure” apps

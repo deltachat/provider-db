@@ -11,7 +11,7 @@ status:
 ## Comments
 - Registration of new Accounts is closed (at time of writing 24. April 2019)
 
-## Preperations
+## Preparations
 
 DeltaChat Account Settings:
 ```

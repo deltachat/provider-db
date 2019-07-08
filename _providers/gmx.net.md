@@ -10,5 +10,5 @@ status:
  date: 2017-06
 ---
 
-## Preperations
+## Preparations
 activate access for external mail client at gmx side

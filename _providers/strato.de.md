@@ -7,7 +7,7 @@ status:
  works: true
  date: 2018-10
 ---
-## Preperations
+## Preparations
 DeltaChat Account Settings:
 ```
 IMAP imap.strato.de:993 SSL/TLS

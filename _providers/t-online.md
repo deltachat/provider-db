@@ -9,5 +9,5 @@ status:
 ---
 
 
-## Preperations
+## Preparations
 Enter additional password for external access in web interface and use that to login.

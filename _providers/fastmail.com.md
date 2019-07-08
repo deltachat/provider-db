@@ -8,6 +8,6 @@ status:
  date: 2018-09
 ---
 
-## Preperations
+## Preparations
 
 Create an app-specific Password
