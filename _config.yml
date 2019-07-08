@@ -5,6 +5,7 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - LICENSE
 
 defaults:
 -
@@ -17,4 +18,4 @@ defaults:
 collections:
   providers:
     output: true
-    permalink: /provider/:slug
+    permalink: /:slug
