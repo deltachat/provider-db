@@ -1,6 +1,34 @@
 ---
 name: web.de
-website: web.de
+website:
+- web.de
+- email.de (€)
+- flirt.ms (€)
+- hallo.ms (€)
+- kuss.ms (€)
+- love.ms (€)
+- magic.ms (€)
+- singles.ms (€)
+- cool.ms (€)
+- kanzler.ms (€)
+- okay.ms (€)
+- party.ms (€)
+- pop.ms (€)
+- stars.ms (€)
+- techno.ms (€)
+- clever.ms (€)
+- deutschland.ms (€)
+- genial.ms (€)
+- ich.ms (€)
+- online.ms (€)
+- smart.ms (€)
+- wichtig.ms (€)
+- action.ms (€)
+- fussball.ms (€)
+- joker.ms (€)
+- planet.ms (€)
+- power.ms (€)
+
 credentials: emailPass
 needsPreperation: true
 status:
@@ -8,7 +36,9 @@ status:
  date: 2017-06
 limits:
  maxFileSize: "72 MB"
-
+registration:
+ inviteOnly: false
+ price: freemium
 ---
 
 ## Preparations

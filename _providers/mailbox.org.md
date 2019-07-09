@@ -1,6 +1,9 @@
 ---
 name: Mailbox.org
-website: mailbox.org
+website: 
+- mailbox.org
+- secure.mailbox.org
+- (custom)
 credentials: emailPass
 needsPreperation: false
 status:

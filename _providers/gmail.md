@@ -19,6 +19,7 @@ registration:
  inviteOnly: false
  PhoneAuthRequired: true
  PersonalDataRequired: true
+ price: FREE
 ---
 
 ## Comments

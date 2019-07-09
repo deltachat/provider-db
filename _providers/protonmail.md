@@ -1,6 +1,8 @@
 ---
 name: ProtonMail
-website: protonmail.com
+website:
+- protonmail.com
+- protonmail.ch
 credentials: emailAppPass
 needsPreperation: true
 status:
