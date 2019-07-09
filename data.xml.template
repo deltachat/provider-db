@@ -1,0 +1,23 @@
+---
+permalink: /data.xml
+---
+<root>
+{% for provider in site.providers %}
+    <provider name="{{ provider.name }}" page="{{ provider.url}}" needsPreperation="{{ provider.needsPreperation }}">
+        <domains>{% for domain in provider.domains %}
+            <domain>{{ domain }}</domain>
+        {% endfor %}</domains>
+        <auth-methods>{% for auth in provider.credentials %} 
+            <auth>{{ auth }}</auth>
+        {% endfor %}</auth-methods>
+        <status
+            works="{{ provider.status.works }}"
+            date="{{ provider.status.date }}"
+        />
+        <content>
+            {{ provider.content }}
+        </content>
+
+    </provider>
+{% endfor %}
+</root>
