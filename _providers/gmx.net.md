@@ -1,6 +1,6 @@
 ---
 name: GMX.net
-website:
+domains:
  - gmx.net
  - gmx.de
  - gmx.at

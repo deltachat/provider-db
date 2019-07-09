@@ -1,6 +1,6 @@
 ---
 name: Aktivix
-website: aktivix.org
+domains: aktivix.org
 credentials: emailPass
 needsPreperation: true
 status:

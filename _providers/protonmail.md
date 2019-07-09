@@ -1,6 +1,6 @@
 ---
 name: ProtonMail
-website:
+domains:
 - protonmail.com
 - protonmail.ch
 credentials: emailAppPass

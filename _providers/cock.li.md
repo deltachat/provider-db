@@ -1,34 +1,8 @@
 ---
 name: cock.li
-website: 
+domains: 
  - cock.li
- - airmail.cc
- - 8chan.co
- - redchan.it
- - 420blaze.it
- - aaathats3as.com
- - cumallover.me
- - dicksinhisan.us
- - loves.dicksinhisan.us
- - wants.dicksinhisan.us
- - dicksinmyan.us
- - loves.dicksinmyan.us
- - wants.dicksinmyan.us
- - goat.si
- - horsefucker.org
- - national.shitposting.agency
- - nigge.rs
- - tfwno.gf
- - cock.lu
- - cock.email
- - firemail.cc
- - hitler.rocks
- - getbackinthe.kitchen
- - memeware.net 
- - cocaine.ninja
- - waifu.club
- - rape.lol
- - nuke.africa
+ - "(26 other provocative domains)"
 credentials: emailPass
 needsPreperation: true
 status:

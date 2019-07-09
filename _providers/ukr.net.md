@@ -1,6 +1,6 @@
 ---
 name: UKR.NET
-website: ukr.net
+domains: ukr.net
 credentials: emailPass 
 needsPreperation: false
 status:

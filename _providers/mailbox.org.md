@@ -1,6 +1,6 @@
 ---
 name: Mailbox.org
-website: 
+domains: 
 - mailbox.org
 - secure.mailbox.org
 - (custom)

@@ -1,6 +1,6 @@
 ---
 name: All-Inkl.com
-website: all-inkl.com
+domains: all-inkl.com
 credentials: emailPass
 needsPreperation: false
 status:

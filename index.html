@@ -79,7 +79,7 @@ permalink: /
         {% for provider in site.providers %}
 
         <tr 
-            data-searchkey="{{provider.name}} {{provider.website | join: ' '}}" 
+            data-searchkey="{{provider.name}} {{provider.domains | join: ' '}}" 
             data-preparation="{{provider.needsPreperation}}"
             data-messagelimit="{{provider.limits.messagesPerDay}}"
             >
@@ -90,12 +90,21 @@ permalink: /
             </td>
             <td><a href="{{provider.url}}"> {{provider.name}}</a></td>
             <td>
-                {% unless provider.website.first %}
-                {{provider.website}}
+                {% unless provider.domains.first %}
+                    {{provider.domains}}
                 {% else %}
-                {% for domain in provider.website%}
-                - {{domain}}<br>
-                {% endfor %}
+                    {% if provider.domains.size > 3 %}
+                        <details>
+                        <summary>show all ({{ provider.domains.size }}) </summary>
+                        {% for domain in provider.domains%}
+                        - {{domain}}<br>
+                        {% endfor %}
+                        </details>
+                    {% else %}
+                        {% for domain in provider.domains%}
+                        - {{domain}}<br>
+                        {% endfor %}
+                    {% endif %}
                 {% endunless %}
             </td>
             <td>

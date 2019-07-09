@@ -1,6 +1,6 @@
 ---
 name: yandex.ru
-website:
+domains:
  - yandex.ru
  - yandex.com
 credentials: emailPass

@@ -1,6 +1,6 @@
 ---
 name: Comcast / xfinity
-website: 
+domains: 
  - xfinity.com
  - comcast.net
 credentials: emailPass

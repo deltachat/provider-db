@@ -1,6 +1,6 @@
 ---
 name: riseup.net
-website: riseup.net
+domains: riseup.net
 credentials: emailPass
 needsPreperation: false
 status:

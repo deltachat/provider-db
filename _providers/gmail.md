@@ -1,6 +1,6 @@
 ---
 name: Google Mail
-website:
+domains:
  - gmail.com
  - googlemail.com
 credentials: 

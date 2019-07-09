@@ -1,6 +1,6 @@
 ---
 name: yahoo
-website: yahoo.com
+domains: yahoo.com
 credentials: emailPass
 needsPreperation: true
 status:

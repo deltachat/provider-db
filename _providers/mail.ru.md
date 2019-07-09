@@ -1,6 +1,6 @@
 ---
 name: Mail.ru
-website:
+domains:
  - mail.ru 
  - inbox.ru
  - bk.ru

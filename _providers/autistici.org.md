@@ -1,6 +1,6 @@
 ---
 name: Autistici/Inventati
-website: autistici.org
+domains: autistici.org
 credentials: emailPass
 needsPreperation: false
 status:

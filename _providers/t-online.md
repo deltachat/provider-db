@@ -1,6 +1,6 @@
 ---
 name: T-Online
-website: t-online.de
+domains: t-online.de
 credentials: emailAppPass
 needsPreperation: true
 status:

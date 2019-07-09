@@ -1,6 +1,6 @@
 ---
 name: freenet.de
-website: freenet.de
+domains: freenet.de
 credentials: emailPass
 needsPreperation: false
 status:

@@ -46,7 +46,6 @@ registration:
  price: string
 
 ```
-?idea?
 
 ## Example
 ```
@@ -65,8 +64,3 @@ This is an example provider
 
 ## Preperations
 ```
-
-
-##Ideas:
-
-- repurpose websites into email domains? or include email domains otherwise? (remove protocol and www subdomain again? and make an extra property for the website)

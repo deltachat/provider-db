@@ -1,6 +1,6 @@
 ---
 name: Aol. (America Online)
-website: aol.com
+domains: aol.com
 credentials: emailPass
 needsPreperation: true
 status:

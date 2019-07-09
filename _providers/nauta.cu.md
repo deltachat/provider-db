@@ -1,6 +1,6 @@
 ---
 name: nauta.cu
-website: nauta.cu
+domains: nauta.cu
 credentials: emailPass
 needsPreperation: false
 status:

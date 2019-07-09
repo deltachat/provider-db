@@ -1,6 +1,6 @@
 ---
 name: ZOHO
-website: zoho.com
+domains: zoho.com
 credentials: emailPass
 needsPreperation: false
 status:

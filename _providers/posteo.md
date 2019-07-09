@@ -1,6 +1,6 @@
 ---
 name: POSTEO
-website: posteo.de
+domains: posteo.de
 credentials: emailPass
 needsPreperation: false
 status:

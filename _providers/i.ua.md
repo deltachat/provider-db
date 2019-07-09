@@ -1,6 +1,6 @@
 ---
 name: I.ua
-website: i.ua
+domains: i.ua
 credentials: emailPass
 needsPreperation: false
 status:

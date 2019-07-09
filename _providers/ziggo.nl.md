@@ -1,6 +1,6 @@
 ---
 name: ziggo
-website: ziggo.nl
+domains: ziggo.nl
 credentials: emailPass
 needsPreperation: false
 status:

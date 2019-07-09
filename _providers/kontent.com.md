@@ -1,6 +1,6 @@
 ---
 name: KONTENT
-website: kontent.com
+domains: kontent.com
 credentials: emailPass
 needsPreperation: false
 status:

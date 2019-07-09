@@ -1,6 +1,6 @@
 ---
 name: VFEmail
-website: vfemail.net
+domains: vfemail.net
 credentials: emailPass 
 needsPreperation: false
 status:

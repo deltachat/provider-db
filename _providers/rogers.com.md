@@ -1,6 +1,6 @@
 ---
 name: rogers.com
-website: rogers.com
+domains: rogers.com
 credentials: emailPass
 needsPreperation: true
 status:

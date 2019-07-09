@@ -1,6 +1,6 @@
 ---
 name: web.de
-website:
+domains:
 - web.de
 - email.de (€)
 - flirt.ms (€)

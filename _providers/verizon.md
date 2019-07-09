@@ -1,6 +1,6 @@
 ---
 name: Verizon
-website: verizon.net
+domains: verizon.net
 credentials: emailPass 
 needsPreperation: false
 status:

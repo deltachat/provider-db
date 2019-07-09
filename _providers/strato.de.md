@@ -1,6 +1,6 @@
 ---
 name: strato.de (custom domain)
-website: (custom)
+domains: (custom)
 credentials: emailPass
 needsPreperation: true
 status:

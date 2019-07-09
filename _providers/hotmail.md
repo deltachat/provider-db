@@ -1,6 +1,6 @@
 ---
 name: hotmail / outlook / office365
-website:
+domains:
  - hotmail.com
  - outlook.com
  - office365.com
