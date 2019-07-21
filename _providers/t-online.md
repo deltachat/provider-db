@@ -2,9 +2,8 @@
 name: T-Online
 domains: t-online.de
 credentials: emailAppPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2019-03
 ---
 

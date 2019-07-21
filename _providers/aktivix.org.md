@@ -2,9 +2,8 @@
 name: Aktivix
 domains: aktivix.org
 credentials: emailPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2018-10
 
 registration:

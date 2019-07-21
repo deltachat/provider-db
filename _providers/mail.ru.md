@@ -6,9 +6,8 @@ domains:
  - bk.ru
  - list.ru
 credentials: emailPass
-needsPreperation: false
 status:
- works: true
+ state: OK
  date: 2019-01
 ---
 

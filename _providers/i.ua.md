@@ -2,8 +2,7 @@
 name: I.ua
 domains: i.ua
 credentials: emailPass
-needsPreperation: false
 status:
- works: true
+ state: OK
  date: 2017-12
 ---

@@ -2,9 +2,8 @@
 name: strato.de (custom domain)
 domains: (custom)
 credentials: emailPass
-needsPreperation: true
 status:
- works: true
+ state: OK
  date: 2018-10
 ---
 ## Preparations

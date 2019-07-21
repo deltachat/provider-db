@@ -5,9 +5,8 @@ domains:
 - secure.mailbox.org
 - (custom)
 credentials: emailPass
-needsPreperation: false
 status:
- works: true
+ state: OK
  date: 2019-03
 
 limits:

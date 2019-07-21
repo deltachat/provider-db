@@ -10,9 +10,8 @@ Add [provider name].md to the _providers folder in the following format:
 name: [provider name]
 website: [ website of the provider / can also be yaml array when there are multiple ones]
 credentials: [emailPass | emailAppPass | Oauth] - can also be an array, if multiple are supported availible
-needsPreperation: [boolean, wether a preparation step is needed - for example enabling imap/smtp on provider page]
 status:
-   works: [boolean]
+   state: [OK | PREP | BROKEN] - "PREP" stands for Preparation Steps needed
    date: [YYYY-MM]
 ---
 ## Comments
@@ -27,6 +26,14 @@ status:
 [has a table format? that we can color code the states]
 [just a link to github changelog/history of this file?]
 ```
+
+### Status options:
+
+State | Meaning
+---|---
+OK | works right out of the box, no additional steps needed (exception to this are custom domain email addresses where you might need to specify the smtp and imap server manualy)
+PREP | preparation step/s is/are needed - (a few steps are required then it works - for example enabling imap/smtp on provider page)
+BROKEN | not working - Does not work. (too unstable to use falls also in this category)
 
 ## Edit an Entry
 
@@ -53,9 +60,8 @@ registration:
 name: example
 website: example.com
 credentials: emailPass |  emailAppPass | Oauth
-needsPreperation: boolean
 status:
- works: boolean
+ state: OK | PREP | BROKEN
  date: YYYY-MM
 ---
 

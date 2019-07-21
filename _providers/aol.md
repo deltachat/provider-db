@@ -2,9 +2,8 @@
 name: Aol. (America Online)
 domains: aol.com
 credentials: emailPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2017-12
 
 

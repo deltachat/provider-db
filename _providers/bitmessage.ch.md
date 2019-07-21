@@ -2,9 +2,8 @@
 name: Bitmessage Mail Gateway
 domains: bitmessage.ch
 credentials: emailPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2018-10
 ---
 

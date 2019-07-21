@@ -4,9 +4,8 @@ domains:
 - protonmail.com
 - protonmail.ch
 credentials: emailAppPass
-needsPreperation: true
 status:
- works: false
+ state: BROKEN
  date: 2019-02
 
 registration:

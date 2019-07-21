@@ -25,7 +25,7 @@ function populateIndex() {
         newIndex.push({
             elem: elem,
             searchkey: elem.dataset.searchkey,
-            preparation: elem.dataset.preparation === "true",
+            no_preparation: elem.dataset.state === "OK",
             messagelimit: elem.dataset.messagelimit,
         })
     }
@@ -70,7 +70,7 @@ async function runSearch() {
     if (searchbar.value !== "")
         masks.push(search(searchbar.value))
     if (noPreperation.checked)
-        masks.push(filter('preparation', false))
+        masks.push(filter('no_preparation', true))
     if (noMessageLimit.checked)
         masks.push(filter('messagelimit', "Unlimited"))
 

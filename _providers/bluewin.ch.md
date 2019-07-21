@@ -2,10 +2,9 @@
 name: Bluewin
 domains: bluewin.ch
 credentials: emailPass
-needsPreperation: true
 status:
- works: boolean
- date: YYYY-MM
+ state: OK
+ date: 2017-12
 ---
 
 ## Comments

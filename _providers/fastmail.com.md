@@ -2,9 +2,8 @@
 name: FastMail
 domains: fastmail.com
 credentials: emailAppPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2018-09
 ---
 

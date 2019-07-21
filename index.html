@@ -46,9 +46,6 @@ permalink: /
             <th>
                 Domain/s
             </th>
-            <th title="Are additional Steps needed to get DeltaChat running?">
-                needs Preperation
-            </th>
             <th title="Authentication Methode">
                 Auth
             </th>
@@ -80,15 +77,24 @@ permalink: /
 
         <tr 
             data-searchkey="{{provider.name}} {{provider.domains | join: ' '}}" 
-            data-preparation="{{provider.needsPreperation}}"
+            data-state="{{ provider.status.state }}"
             data-messagelimit="{{provider.limits.messagesPerDay}}"
             >
-            <td class="status-{% if provider.status.works %}good{% else %}broken{% endif %}">
-                    <span class="status">{% if provider.status.works %}OK{% else %}NOT WORKING{% endif %}</span>
+            <td class="status-{{ provider.status.state | downcase }}">
+                    <span class="status">
+                        {% case provider.status.state %}
+                        {% when 'OK' %}
+                        OK
+                        {% when 'PREP' %}
+                        <a href="{{provider.url}}#preperations">PREPARATION</a> NEEDED
+                        {% when 'BROKEN' %}
+                        NOT WORKING
+                        {% endcase %}
+                    </span>
                     <br>
                     on {{ provider.status.date }}
             </td>
-            <td><a href="{{provider.url}}"> {{provider.name}}</a></td>
+            <td><a href="{{provider.url}}">{{provider.name}}</a></td>
             <td>
                 {% unless provider.domains.first %}
                     {{provider.domains}}
@@ -106,13 +112,6 @@ permalink: /
                         {% endfor %}
                     {% endif %}
                 {% endunless %}
-            </td>
-            <td>
-                {% if provider.needsPreperation %}
-                <a href="{{provider.url}}#preperations">YES</a>
-                {% else %}
-                NO
-                {% endif %}
             </td>
             <td>
                 {% unless provider.credentials.first %}
