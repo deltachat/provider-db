@@ -7,9 +7,8 @@ credentials:
  - emailPass
  - emailAppPass
  - Oauth
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2018-05
 limits:
  maxRecipients: 500

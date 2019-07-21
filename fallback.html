@@ -16,10 +16,9 @@
                 {% for provider in site.providers %}
                 <li>
                   <b>
-                    <a href="{{ provider.url }}">{{ provider.title }}</a> [ {{ provider.website | join: "; "  }} ]<br>
+                    <a href="{{ provider.url }}">{{ provider.title }}</a> [ {{ provider.domains | join: "; "  }} ]<br>
                   </b>
-                  [ {% if provider.status.works %}OK{% else %}NOT WORKING{% endif %} on {{ provider.status.date }} ]<br>
-                  {% if provider.needsPreperation %}[ needs Preperation Steps ]<br>{% endif %}
+                  [ {{ provider.status.state }} on {{ provider.status.date }} ]<br>
                   [ {{ provider.credentials | join: " or " }} ]
                 </li>
                 {% endfor %}

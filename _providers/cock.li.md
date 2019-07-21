@@ -4,9 +4,8 @@ domains:
  - cock.li
  - "(26 other provocative domains)"
 credentials: emailPass
-needsPreperation: true
 status:
-   works: true
+   state: PREP
    date: 2019/07
 ---
 ## Comments

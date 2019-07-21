@@ -2,8 +2,9 @@
 name: rogers.com
 domains: rogers.com
 credentials: emailPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2017-12
 ---
+
+// What Prepeeration steps??

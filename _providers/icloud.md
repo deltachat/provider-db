@@ -2,9 +2,8 @@
 name: iCloud Mail
 domains: icloud.com
 credentials: emailAppPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2017-05
 ---
 

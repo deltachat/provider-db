@@ -4,9 +4,8 @@ domains:
  - yandex.ru
  - yandex.com
 credentials: emailPass
-needsPreperation: false
 status:
- works: true
+ state: OK
  date: 2018-08
 limits:
  maxRecipients: 35

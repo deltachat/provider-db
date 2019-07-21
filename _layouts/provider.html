@@ -20,10 +20,6 @@
         <h1>{{ page.name }}</h1>
         {{ page.domains }} <!-- Can be array -->
         {{ page.credentials }}
-        <span class="property" title="Wether additional steps need to be taken to get it to work">    
-            <span class="key">needsPreperation</span>
-            <span class="value">{{ page.needsPreperation }}</span>
-        </span>
         <span class="property">
             <span class="key"></span>
             <span class="value"></span>  
@@ -32,8 +28,15 @@
             <span class="key">Status
     
             </span>
-            <span class="value status-{% if page.status.works %}good{% else %}broken{% endif %}">
-                {% if page.status.works %}OK{% else %}NOT WORKING{% endif %}
+            <span class="value status-{{ page.status.state }}">
+                {% case page.status.state %}
+                {% when 'OK' %}
+                OK
+                {% when 'PREP' %}
+                <a href="#preperations">PREPARATION</a> NEEDED
+                {% when 'BROKEN' %}
+                NOT WORKING
+                {% endcase %}
                 on {{ page.status.date }}
             </span>
         </span>

@@ -5,9 +5,8 @@ domains:
  - outlook.com
  - office365.com
 credentials: emailPass
-needsPreperation: false
 status:
- works: false
+ state: BROKEN
  date: 2019-02
 ---
 

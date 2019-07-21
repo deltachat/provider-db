@@ -2,8 +2,7 @@
 name: Autistici/Inventati
 domains: autistici.org
 credentials: emailPass
-needsPreperation: false
 status:
- works: true
+ state: OK
  date: 2018-01
 ---

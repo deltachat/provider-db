@@ -2,9 +2,8 @@
 name: yahoo
 domains: yahoo.com
 credentials: emailPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2017-12
 ---
 

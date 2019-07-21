@@ -2,9 +2,8 @@
 name: All-Inkl.com
 domains: all-inkl.com
 credentials: emailPass
-needsPreperation: false
 status:
- works: true
+ state: OK
  date: 2018-08
 ---
 

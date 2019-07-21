@@ -11,9 +11,8 @@ domains:
  - gmx.biz (€)
  - gmx.com (€)
 credentials: emailPass
-needsPreperation: true
 status:
- works: true
+ state: PREP
  date: 2017-06
 registration:
  inviteOnly: false
