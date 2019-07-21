@@ -10,7 +10,7 @@ use std::io::Read;
 extern crate regex;
 use regex::Regex;
 extern crate yaml_rust;
-use yaml_rust::{YamlLoader, YamlEmitter};
+use yaml_rust::{YamlLoader};
 
 fn main() {
     let out_dir = env::var("OUT_DIR").unwrap();
@@ -43,11 +43,33 @@ fn gather_data(){
         }
         let cap = RE.captures(&contents).unwrap();
         let yaml_part = &cap[1];
-        let md_part = &cap[2];
-        println!("{} -> {}", yaml_part, md_part);
+        let _md_part = &cap[2];
+        //println!("{} -> {}", yaml_part, md_part);
+        let yaml = &YamlLoader::load_from_str(yaml_part).unwrap()[0];
+
+        let p_name = yaml["name"].as_str().unwrap();
+        println!("{}", p_name);
+        let p_domains = parse_yml_string_array(yaml["domains"].clone());
+        // todo status.state -> merge the pr first (https://github.com/deltachat/provider-overview/pull/15)
+        let p_status_date = yaml["status"]["date"].as_str().unwrap();
+        println!("{}; {:?}", p_status_date, p_domains);
     }
 }
 
+
+fn parse_yml_string_array(array:yaml_rust::yaml::Yaml) -> Vec<String>{
+    //? could be one string or an array of strings -> eitherway please convert to vector?
+    if !array.is_array() {
+            return vec![array.as_str().unwrap().to_string()]
+    } else {
+        let a:Vec<String> = 
+        array
+            .into_vec().unwrap()
+            .into_iter()
+            .map(|x| x.as_str().unwrap().to_string()).collect::<Vec<String>>();
+        return a;
+    }
+}
 
 
 /*
@@ -60,5 +82,6 @@ Todo/plan/idea:
     https://crates.io/crates/yaml-rust
 - [ ] strip markdown? convert to only text?
 - [ ] save data in code to create struct
-
+idea:
+- [ ] Error on missing yml/invalid value? / ci test to run on pull requests?
 */
