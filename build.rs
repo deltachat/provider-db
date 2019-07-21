@@ -50,9 +50,9 @@ fn gather_data(){
         let p_name = yaml["name"].as_str().unwrap();
         println!("{}", p_name);
         let p_domains = parse_yml_string_array(yaml["domains"].clone());
-        // todo status.state -> merge the pr first (https://github.com/deltachat/provider-overview/pull/15)
+        let p_status_state = yaml["status"]["state"].as_str().unwrap(); //TODO convert to ENUM
         let p_status_date = yaml["status"]["date"].as_str().unwrap();
-        println!("{}; {:?}", p_status_date, p_domains);
+        println!("{} on {}; {:?}", p_status_state, p_status_date, p_domains);
     }
 }
 
@@ -78,7 +78,7 @@ Todo/plan/idea:
 - [X] get all file paths
 - [X] read file content
 - [X] seperate yaml fontmatter from the markdown content (with regex)
-- [ ] parse yaml
+- [X] parse yaml
     https://crates.io/crates/yaml-rust
 - [ ] strip markdown? convert to only text?
 - [ ] save data in code to create struct
