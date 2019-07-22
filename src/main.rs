@@ -32,31 +32,35 @@ include!(concat!(env!("OUT_DIR"), "/data.rs"));
 
 fn main() {
     println!("{:?}", get_provider_info("mailbox.org"));
-
+    println!(
+        "{:?}",
+        get_domain_from_email("testacc.test@secure.mailbox.org")
+    );
 }
 
+pub fn get_domain_from_email(valid_email_address: &str) -> String {
+    // idea/todo simplify this
+    let email_parts = valid_email_address.split("@").collect::<Vec<&str>>();
+    return email_parts.iter().rev().next().unwrap().to_string();
+}
 
-pub fn get_provider_info( domain:&str ) -> Option<(&Provider, Vec<&'static str>)> {
-    let domain_search_res:Option<&DomainDBEntry> = DOMAIN_DB.iter().find(|e| e.domain == domain);
+pub fn get_provider_info(domain: &str) -> Option<(&Provider, Vec<&'static str>)> {
+    let domain_search_res: Option<&DomainDBEntry> = DOMAIN_DB.iter().find(|e| e.domain == domain);
     if domain_search_res.is_some() {
-    let provider_id:u32 = domain_search_res.unwrap().list_index;
-      return Some(
-        (&DATABASE[provider_id as usize], get_domains_by_provider(provider_id))
-      )  
+        let provider_id: u32 = domain_search_res.unwrap().list_index;
+        return Some((
+            &DATABASE[provider_id as usize],
+            get_domains_by_provider(provider_id),
+        ));
     } else {
-        return None
+        return None;
     }
-       
 }
 
-fn get_domains_by_provider(provider_id:u32) -> Vec<&'static str> {
-    return DOMAIN_DB.iter()
+fn get_domains_by_provider(provider_id: u32) -> Vec<&'static str> {
+    return DOMAIN_DB
+        .iter()
         .filter(|entry| entry.list_index == provider_id)
-        .map(|e| e.domain).collect();
+        .map(|e| e.domain)
+        .collect();
 }
-
-/*
-[ ] (exported) get domain name from valid email address
-[X] (exported) get provider and its domains from domain name
-[X] find all domains with provider id
-*/
