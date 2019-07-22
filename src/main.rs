@@ -1,15 +1,15 @@
 #[allow(dead_code)]
 #[derive(Debug)]
 enum StatusState {
-   OK,
-   PREPARATION,
-   BROKEN
+    OK,
+    PREPARATION,
+    BROKEN,
 }
 #[allow(dead_code)]
 #[derive(Debug)]
 struct Status {
     state: StatusState,
-    date: &'static str
+    date: &'static str,
 }
 
 #[allow(dead_code)]
@@ -17,14 +17,14 @@ struct Status {
 struct Provider {
     name: &'static str,
     status: Status,
-    markdown: &'static str
+    markdown: &'static str,
 }
 
 #[allow(dead_code)]
 #[derive(Debug)]
 struct DomainDBEntry {
     domain: &'static str,
-    list_index: u32
+    list_index: u32,
 }
 
 include!(concat!(env!("OUT_DIR"), "/data.rs"));
@@ -32,4 +32,3 @@ include!(concat!(env!("OUT_DIR"), "/data.rs"));
 fn main() {
     println!("{:?}", DATABASE[0]);
 }
-
