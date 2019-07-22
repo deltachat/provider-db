@@ -15,6 +15,7 @@ struct Status {
 #[allow(dead_code)]
 #[derive(Debug)]
 struct Provider {
+    overview_page: &'static str, // for providers.delta.chat/{overview_page}
     name: &'static str,
     status: Status,
     markdown: &'static str,
@@ -30,5 +31,12 @@ struct DomainDBEntry {
 include!(concat!(env!("OUT_DIR"), "/data.rs"));
 
 fn main() {
-    println!("{:?}", DATABASE[0]);
+    println!("{:?}", DATABASE[29]);
 }
+
+/*
+[] (exported) get domain name from valid email address
+[] (exported) get provider and its domains from domain name
+[] ? (exported) search by name
+[] find all domains with provider id
+*/

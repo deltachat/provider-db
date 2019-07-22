@@ -38,6 +38,12 @@ fn gather_data() -> (u32, String, u32, String) {
         let pathbuf = e.unwrap();
         let path = pathbuf.as_path();
         //println!("{}", path.display());
+        let overview_page = path
+            .file_name()
+            .unwrap()
+            .to_str()
+            .unwrap()
+            .trim_end_matches(".md");
         let mut file = File::open(path).unwrap();
         let mut contents = String::new();
         file.read_to_string(&mut contents).unwrap();
@@ -60,9 +66,11 @@ fn gather_data() -> (u32, String, u32, String) {
 
         provider_data.push(format!(
             r###"Provider {{
+        overview_page: "{}",
         name: "{}",
         status: Status {{ state: {}, date: "{}" }},
         markdown: r##"{}"## }}"###,
+            overview_page,
             p_name,
             status_state_source(p_status_state),
             p_status_date,
@@ -70,9 +78,9 @@ fn gather_data() -> (u32, String, u32, String) {
         ));
         provider_data.push(",".to_string());
 
-        for domain in &p_domains {
+        for raw_domain_field in &p_domains {
             // remove (€) from domains
-            // and only let domains through (contains a dot, no spaces in between and no parentrethese)
+            let domain = raw_domain_field.replace("(€)", "").replace(" ", "");
             domain_data.push(format!(
                 "DomainDBEntry {{ domain: \"{}\", list_index: {} }}",
                 domain, provider_count
