@@ -8,7 +8,7 @@ Add [provider name].md to the _providers folder in the following format:
 ```
 ---
 name: [provider name]
-website: [ website of the provider / can also be yaml array when there are multiple ones]
+domains: [ email domains of the provider / can also be yaml array when there are multiple ones can contain (€) to mark a premium domain]
 credentials: [emailPass | emailAppPass | Oauth] - can also be an array, if multiple are supported availible
 status:
    state: [OK | PREP | BROKEN] - "PREP" stands for Preparation Steps needed
