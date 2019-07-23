@@ -30,6 +30,7 @@ struct DomainDBEntry {
 
 include!(concat!(env!("OUT_DIR"), "/data.rs"));
 
+#[test]
 fn main() {
     println!("{:?}", get_provider_info("mailbox.org"));
     println!(
