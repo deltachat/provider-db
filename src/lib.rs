@@ -1,5 +1,6 @@
 #[allow(dead_code)]
 #[derive(Debug)]
+#[derive(PartialEq)]
 pub enum StatusState {
     OK,
     PREPARATION,
@@ -7,6 +8,7 @@ pub enum StatusState {
 }
 #[allow(dead_code)]
 #[derive(Debug)]
+#[derive(PartialEq)]
 pub struct Status {
     state: StatusState,
     date: &'static str,
@@ -14,6 +16,7 @@ pub struct Status {
 
 #[allow(dead_code)]
 #[derive(Debug)]
+#[derive(PartialEq)]
 pub struct Provider {
     overview_page: &'static str, // for providers.delta.chat/{overview_page}
     name: &'static str,
@@ -23,21 +26,13 @@ pub struct Provider {
 
 #[allow(dead_code)]
 #[derive(Debug)]
+#[derive(PartialEq)]
 struct DomainDBEntry {
     domain: &'static str,
     list_index: u32,
 }
 
 include!(concat!(env!("OUT_DIR"), "/data.rs"));
-
-#[test]
-fn main() {
-    println!("{:?}", get_provider_info("mailbox.org"));
-    println!(
-        "{:?}",
-        get_domain_from_email("testacc.test@secure.mailbox.org")
-    );
-}
 
 pub fn get_domain_from_email(valid_email_address: &str) -> String {
     // idea/todo simplify this
@@ -65,3 +60,35 @@ fn get_domains_by_provider(provider_id: u32) -> Vec<&'static str> {
         .map(|e| e.domain)
         .collect();
 }
+
+
+#[test]
+fn main() {
+    println!("{:?}", get_provider_info("mailbox.org"));
+    println!(
+        "{:?}",
+        get_domain_from_email("testacc.test@secure.mailbox.org")
+    );
+}
+
+#[test]
+fn test_example_domain() {
+    assert_eq!(Some(
+    (
+        &Provider {
+            overview_page: "example.com",
+            name: "Example",
+            status: Status {
+                state: StatusState::PREPARATION,
+                date: "2018-09",
+            },
+            markdown: "\n\n## Comments\n\n...\n\n## Preparations\n\n...",
+        },
+        vec![
+            "example.com",
+            "example.org",
+        ],
+    ),
+), get_provider_info("example.org"))
+}
+
