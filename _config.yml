@@ -6,6 +6,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
+  - "_providers/example.com.md"
 
 defaults:
 -
