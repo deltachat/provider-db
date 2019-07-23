@@ -92,3 +92,7 @@ fn test_example_domain() {
 ), get_provider_info("example.org"))
 }
 
+#[test]
+fn test_get_domain_from_email() {
+    assert_eq!("secure.mailbox.org", get_domain_from_email("testacc.test@secure.mailbox.org"))
+}
