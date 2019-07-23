@@ -87,10 +87,10 @@ fn gather_data() -> (u32, String, u32, String) {
             ));
 
             domain_data.push(",\n".to_string());
-            domain_count = domain_count + 1;
+            domain_count += 1;
         }
 
-        provider_count = provider_count + 1;
+        provider_count += 1;
     }
 
     //remove last commas
@@ -108,8 +108,6 @@ fn parse_yml_string_array(array: yaml_rust::yaml::Yaml) -> Vec<String> {
         vec![array.as_str().unwrap().to_string()]
     } else {
         array
-            .into_vec()
-            .unwrap()
             .into_iter()
             .map(|x| x.as_str().unwrap().to_string())
             .collect()
