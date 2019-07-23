@@ -4,3 +4,5 @@ _site
 
 /target
 **/*.rs.bk
+.vscode
+.idea
