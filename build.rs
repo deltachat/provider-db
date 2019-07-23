@@ -119,7 +119,7 @@ fn status_state_source(state: &str) -> String {
         "OK" => "OK",
         "PREP" => "PREPARATION",
         "BROKEN" => "BROKEN",
-        _ => "UNKNOWN", // When you get an error regarding StatusState::UNKNOWN you have a problem with your data file
+        _ => panic!(format!("{} is not a valid state", state))
     };
     format!("StatusState::{}", status)
 }
