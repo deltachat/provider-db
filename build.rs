@@ -99,21 +99,20 @@ fn gather_data() -> (u32, String, u32, String) {
 
     let provider_string: String = provider_data.into_iter().collect();
     let domain_string: String = domain_data.into_iter().collect();
-    return (provider_count, provider_string, domain_count, domain_string);
+    (provider_count, provider_string, domain_count, domain_string)
 }
 
 fn parse_yml_string_array(array: yaml_rust::yaml::Yaml) -> Vec<String> {
     //? could be one string or an array of strings -> eitherway please convert to vector?
     if !array.is_array() {
-        return vec![array.as_str().unwrap().to_string()];
+        vec![array.as_str().unwrap().to_string()]
     } else {
-        let a: Vec<String> = array
+        array
             .into_vec()
             .unwrap()
             .into_iter()
             .map(|x| x.as_str().unwrap().to_string())
-            .collect::<Vec<String>>();
-        return a;
+            .collect()
     }
 }
 
@@ -124,7 +123,7 @@ fn status_state_source(state: &str) -> String {
         "BROKEN" => "BROKEN",
         _ => "UNKNOWN", // When you get an error regarding StatusState::UNKNOWN you have a problem with your data file
     };
-    return format!("StatusState::{}", status);
+    format!("StatusState::{}", status)
 }
 
 /*
