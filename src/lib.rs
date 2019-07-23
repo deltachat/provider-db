@@ -35,8 +35,7 @@ struct DomainDBEntry {
 include!(concat!(env!("OUT_DIR"), "/data.rs"));
 
 pub fn get_domain_from_email(valid_email_address: &str) -> &str {
-    let email_parts = valid_email_address.split("@").collect::<Vec<&str>>();
-    return email_parts[1];
+    valid_email_address.split("@").last().unwrap()
 }
 
 pub fn get_provider_info(domain: &str) -> Option<(&Provider, Vec<&'static str>)> {
