@@ -97,8 +97,8 @@ fn gather_data() -> (u32, String, u32, String) {
     provider_data.pop();
     domain_data.pop();
 
-    let provider_string: String = provider_data.into_iter().collect();
-    let domain_string: String = domain_data.into_iter().collect();
+    let provider_string: String = provider_data.join("");
+    let domain_string: String = domain_data.join("");
     (provider_count, provider_string, domain_count, domain_string)
 }
 
