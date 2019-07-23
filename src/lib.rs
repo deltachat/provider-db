@@ -64,11 +64,7 @@ fn get_domains_by_provider(provider_id: u32) -> Vec<&'static str> {
 
 #[test]
 fn main() {
-    println!("{:?}", get_provider_info("mailbox.org"));
-    println!(
-        "{:?}",
-        get_domain_from_email("testacc.test@secure.mailbox.org")
-    );
+    println!("{:#?}", get_provider_info("mailbox.org"));
 }
 
 #[test]
