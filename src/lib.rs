@@ -40,15 +40,12 @@ pub fn get_domain_from_email(valid_email_address: &str) -> &str {
 
 pub fn get_provider_info(domain: &str) -> Option<(&Provider, Vec<&'static str>)> {
     let domain_search_res: Option<&DomainDBEntry> = DOMAIN_DB.iter().find(|e| e.domain == domain);
-    if domain_search_res.is_some() {
-        let provider_id: u32 = domain_search_res.unwrap().list_index;
-        return Some((
-            &DATABASE[provider_id as usize],
-            get_domains_by_provider(provider_id),
-        ));
-    } else {
-        return None;
-    }
+    let provider_id: u32 = domain_search_res?.list_index;
+    
+    Some((
+        &DATABASE[provider_id as usize],
+        get_domains_by_provider(provider_id),
+    ))
 }
 
 fn get_domains_by_provider(provider_id: u32) -> Vec<&'static str> {
