@@ -81,7 +81,7 @@ mod tests {
                         state: StatusState::PREPARATION,
                         date: "2018-09",
                     },
-                    markdown: "\n\n## Comments\n\n...\n\n## Preparations\n\n...",
+                    markdown: "\n...",
                 },
                 vec!["example.com", "example.org",],
             ),),

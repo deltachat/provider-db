@@ -66,9 +66,8 @@ fn gather_data() -> (u32, String, u32, String) {
 
         // Get the "Preparations" paragraph from the markdown:
         lazy_static! {
-            static ref RE_PREPS: Regex = Regex::new(r"(?s)## Preparations\n(.*)").unwrap();
+            static ref RE_PREPS: Regex = Regex::new(r"(?s)## Preparations\n(.*?)($|\n## )").unwrap();
         }
-        println!("{}\n{:+?}", overview_page, RE_PREPS.captures(md_part));
         let md_preparations = match RE_PREPS.captures(md_part) {
             Some(cap) => (&cap[1]).to_string(),
             None => "".to_string()
