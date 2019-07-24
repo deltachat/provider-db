@@ -49,9 +49,9 @@ fn gather_data() -> (u32, String, u32, String) {
         file.read_to_string(&mut contents).unwrap();
         //println!("{}", contents);
         lazy_static! {
-            static ref RE: Regex = Regex::new(r"(?ims)^---\n(.+)\n---(.*)").unwrap();
+            static ref RE_YAML_AND_MD_PART: Regex = Regex::new(r"(?ims)^---\n(.+)\n---(.*)").unwrap();
         }
-        let cap = RE.captures(&contents).unwrap();
+        let cap = RE_YAML_AND_MD_PART.captures(&contents).unwrap();
         let yaml_part = &cap[1];
         let md_part = &cap[2];
         //println!("{} -> {}", yaml_part, md_part);
@@ -64,6 +64,16 @@ fn gather_data() -> (u32, String, u32, String) {
         let p_status_date = yaml["status"]["date"].as_str().unwrap();
         //println!("{} on {}; {:?}", p_status_state, p_status_date, p_domains);
 
+        // Get the "Preparations" paragraph from the markdown:
+        lazy_static! {
+            static ref RE_PREPS: Regex = Regex::new(r"(?s)## Preparations\n(.*)").unwrap();
+        }
+        println!("{}\n{:+?}", overview_page, RE_PREPS.captures(md_part));
+        let md_preparations = match RE_PREPS.captures(md_part) {
+            Some(cap) => (&cap[1]).to_string(),
+            None => "".to_string()
+        };
+
         provider_data.push(format!(
             r###"Provider {{
         overview_page: "{}",
@@ -74,7 +84,7 @@ fn gather_data() -> (u32, String, u32, String) {
             p_name,
             status_state_source(p_status_state),
             p_status_date,
-            md_part
+            md_preparations
         ));
         provider_data.push(",".to_string());
 
