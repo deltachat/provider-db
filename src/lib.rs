@@ -41,7 +41,7 @@ include!(concat!(env!("OUT_DIR"), "/data.rs"));
 
 /// Get the domain part of an valid email address
 pub fn get_domain_from_email(valid_email_address: &str) -> &str {
-    valid_email_address.split("@").last().unwrap()
+    valid_email_address.split('@').last().unwrap()
 }
 
 /// Get provider info for an email domain
@@ -55,14 +55,15 @@ pub fn get_provider_info(domain: &str) -> Option<(&Provider, Vec<&'static str>)>
 }
 
 fn get_domains_by_provider(provider_id: u32) -> Vec<&'static str> {
-    return DOMAIN_DB
+    DOMAIN_DB
         .iter()
         .filter(|entry| entry.list_index == provider_id)
         .map(|e| e.domain)
-        .collect();
+        .collect()
 }
 
 mod tests {
+    #[allow(unused_imports)]
     use super::*; // This import is NOT unused
 
     #[test]
