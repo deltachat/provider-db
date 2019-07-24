@@ -1,24 +1,33 @@
 #[allow(dead_code)]
 #[derive(Debug, PartialEq)]
 pub enum StatusState {
+    /// Works right out of the box without any preperation steps needed
     OK,
+    /// Works, but preparation steps are needed
     PREPARATION,
+    /// Doesn't work (too unstable to use falls also in this category)
     BROKEN,
 }
 #[allow(dead_code)]
 #[derive(Debug, PartialEq)]
+/// The status of a provider
 pub struct Status {
-    state: StatusState,
-    date: &'static str,
+    pub state: StatusState,
+    /// Date of when the state was last checked/updated
+    pub date: &'static str,
 }
 
 #[allow(dead_code)]
 #[derive(Debug, PartialEq)]
+/// Information about a provider
 pub struct Provider {
-    overview_page: &'static str, // for providers.delta.chat/{overview_page}
-    name: &'static str,
-    status: Status,
-    markdown: &'static str,
+    /// for linking to the providers page on the overview website
+    /// like `providers.delta.chat/{overview_page}`
+    pub overview_page: &'static str,
+    pub name: &'static str,
+    pub status: Status,
+    /// The markdown content of the providers page containing the preparation steps
+    pub markdown: &'static str,
 }
 
 #[allow(dead_code)]
@@ -30,10 +39,12 @@ struct DomainDBEntry {
 
 include!(concat!(env!("OUT_DIR"), "/data.rs"));
 
+/// Get the domain part of an valid email address
 pub fn get_domain_from_email(valid_email_address: &str) -> &str {
     valid_email_address.split("@").last().unwrap()
 }
 
+/// Get provider info for an email domain
 pub fn get_provider_info(domain: &str) -> Option<(&Provider, Vec<&'static str>)> {
     let domain_search_res: Option<&DomainDBEntry> = DOMAIN_DB.iter().find(|e| e.domain == domain);
     let provider_id: u32 = domain_search_res?.list_index;

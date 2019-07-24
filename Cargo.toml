@@ -1,7 +1,7 @@
 [package]
 name = "deltachat-provider-overview"
 version = "0.1.0"
-authors = ["simon <deltachat-provider-overview@simonlaux.de>"]
+authors = ["simon <deltachat-provider-overview@simonlaux.de>", "Hocuri"]
 edition = "2018"
 build = "build.rs"
 

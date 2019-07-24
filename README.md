@@ -70,3 +70,25 @@ This is an example provider
 
 ## Preperations
 ```
+
+## Use as cargo Package
+
+Usage:
+```rust
+extern crate deltachat_provider_overview;
+
+use deltachat_provider_overview::get_provider_info;
+
+
+fn main() {
+    let (provider, _domains) = get_provider_info("example.org").unwrap();
+
+    println!("{}", provider.name);
+
+    if provider.status.state == deltachat_provider_overview::StatusState::PREPARATION {
+        println!("{}", provider.markdown);
+    }
+}
+```
+
+See `cargo doc --open` for more information.
