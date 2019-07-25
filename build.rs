@@ -88,7 +88,7 @@ fn gather_data() -> (u32, String, u32, String) {
             p_name,
             status_state_source(p_status_state),
             p_status_date,
-            md_preparations
+            if p_status_state == "BROKEN" {md_part} else {&md_preparations}
         ));
         provider_data.push(",".to_string());
 
