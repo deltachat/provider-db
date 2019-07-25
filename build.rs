@@ -70,7 +70,12 @@ fn gather_data() -> (u32, String, u32, String) {
         }
         let md_preparations = match RE_PREPS.captures(md_part) {
             Some(cap) => (&cap[1]).to_string(),
-            None => "".to_string()
+            None => {
+                if p_status_state == "PREP" {
+                    panic!("{}: State was prep but there is no '## Preparations' section", overview_page);
+                }
+                "".to_string()
+            }
         };
 
         provider_data.push(format!(
