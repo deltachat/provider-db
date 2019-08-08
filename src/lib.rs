@@ -1,3 +1,4 @@
+#[repr(C)]
 #[allow(dead_code)]
 #[derive(Debug, PartialEq)]
 pub enum StatusState {
@@ -8,6 +9,8 @@ pub enum StatusState {
     /// Doesn't work (too unstable to use falls also in this category)
     BROKEN,
 }
+
+#[repr(C)]
 #[allow(dead_code)]
 #[derive(Debug, PartialEq)]
 /// The status of a provider
@@ -17,6 +20,7 @@ pub struct Status {
     pub date: &'static str,
 }
 
+#[repr(C)]
 #[allow(dead_code)]
 #[derive(Debug, PartialEq)]
 /// Information about a provider
