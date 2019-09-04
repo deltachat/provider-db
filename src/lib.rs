@@ -4,14 +4,13 @@ pub const PROVIDER_OVERVIEW_URL: &'static str = "https://providers.delta.chat";
 
 #[allow(dead_code)]
 #[derive(Debug, Serialize, PartialEq)]
-#[repr(u8)]
 pub enum StatusState {
     /// Works right out of the box without any preperation steps needed
-    OK = 0,
+    OK = 1,
     /// Works, but preparation steps are needed
-    PREPARATION = 1,
+    PREPARATION = 2,
     /// Doesn't work (too unstable to use falls also in this category)
-    BROKEN = 2,
+    BROKEN = 3,
 }
 
 #[derive(Debug, Serialize, PartialEq)]
