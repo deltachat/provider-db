@@ -1,6 +1,7 @@
-#[repr(C)]
+use serde::{Serialize};
+
 #[allow(dead_code)]
-#[derive(Debug, PartialEq)]
+#[derive(Debug, Serialize, PartialEq)]
 pub enum StatusState {
     /// Works right out of the box without any preperation steps needed
     OK,
@@ -10,9 +11,7 @@ pub enum StatusState {
     BROKEN,
 }
 
-#[repr(C)]
-#[allow(dead_code)]
-#[derive(Debug, PartialEq)]
+#[derive(Debug, Serialize, PartialEq)]
 /// The status of a provider
 pub struct Status {
     pub state: StatusState,
@@ -20,9 +19,7 @@ pub struct Status {
     pub date: &'static str,
 }
 
-#[repr(C)]
-#[allow(dead_code)]
-#[derive(Debug, PartialEq)]
+#[derive(Debug, Serialize, PartialEq)]
 /// Information about a provider
 pub struct Provider {
     /// for linking to the providers page on the overview website
@@ -34,8 +31,7 @@ pub struct Provider {
     pub markdown: &'static str,
 }
 
-#[allow(dead_code)]
-#[derive(Debug, PartialEq)]
+#[derive(Debug, Serialize, PartialEq)]
 struct DomainDBEntry {
     domain: &'static str,
     list_index: u32,
