@@ -1,5 +1,7 @@
 use serde::{Serialize};
 
+pub const PROVIDER_OVERVIEW_URL: &'static str = "https://providers.delta.chat";
+
 #[allow(dead_code)]
 #[derive(Debug, Serialize, PartialEq)]
 pub enum StatusState {
