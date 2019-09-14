@@ -47,22 +47,23 @@ pub fn get_domain_from_email(valid_email_address: &str) -> &str {
 }
 
 /// Get provider info for an email domain
-pub fn get_provider_info(domain: &str) -> Option<(&Provider, Vec<&'static str>)> {
+pub fn get_provider_info(domain: &str) -> Option<&Provider> {
     let domain_search_res: Option<&DomainDBEntry> = DOMAIN_DB.iter().find(|e| e.domain == domain);
     let provider_id: u32 = domain_search_res?.list_index;
-    Some((
-        &DATABASE[provider_id as usize],
-        get_domains_by_provider(provider_id),
-    ))
+    Some(&DATABASE[provider_id as usize])
+    // A list of the domains could be retrieved by 
+    // get_domains_by_provider(provider_id) (commented out below)
+    // See https://github.com/deltachat/provider-overview/pull/20
 }
 
+/*
 fn get_domains_by_provider(provider_id: u32) -> Vec<&'static str> {
     DOMAIN_DB
         .iter()
         .filter(|entry| entry.list_index == provider_id)
         .map(|e| e.domain)
         .collect()
-}
+}*/
 
 mod tests {
     #[allow(unused_imports)]
@@ -76,7 +77,7 @@ mod tests {
     #[test]
     fn test_example_domain() {
         assert_eq!(
-            Some((
+            Some(
                 &Provider {
                     overview_page: "example.com",
                     name: "Example",
@@ -85,9 +86,8 @@ mod tests {
                         date: "2018-09",
                     },
                     markdown: "\n...",
-                },
-                vec!["example.com", "example.org",],
-            ),),
+                }
+            ),
             get_provider_info("example.org")
         );
     }
