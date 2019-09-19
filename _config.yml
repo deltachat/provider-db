@@ -7,6 +7,7 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - "_providers/example.com.md"
+  - target
 
 defaults:
 -

@@ -24,7 +24,7 @@ function populateIndex() {
         if (!elem.dataset) continue;
         newIndex.push({
             elem: elem,
-            searchkey: elem.dataset.searchkey,
+            searchkey: elem.dataset.searchkey.toLowerCase(),
             no_preparation: elem.dataset.state === "OK",
             messagelimit: elem.dataset.messagelimit,
         })
@@ -56,7 +56,7 @@ function updateStripes(){
 }
 
 function search(searchword) {
-    return index.map(({ searchkey }) => searchkey.indexOf(searchword) !== -1)
+    return index.map(({ searchkey }) => searchkey.indexOf(searchword.toLowerCase()) !== -1)
 }
 
 function filter(property, value) {
