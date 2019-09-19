@@ -49,7 +49,8 @@ fn gather_data() -> (u32, String, u32, String) {
         file.read_to_string(&mut contents).unwrap();
         //println!("{}", contents);
         lazy_static! {
-            static ref RE_YAML_AND_MD_PART: Regex = Regex::new(r"(?ims)^---\n(.+)\n---(.*)").unwrap();
+            static ref RE_YAML_AND_MD_PART: Regex =
+                Regex::new(r"(?ims)^---\n(.+)\n---(.*)").unwrap();
         }
         let cap = RE_YAML_AND_MD_PART.captures(&contents).unwrap();
         let yaml_part = &cap[1];
@@ -66,13 +67,17 @@ fn gather_data() -> (u32, String, u32, String) {
 
         // Get the "Preparations" paragraph from the markdown:
         lazy_static! {
-            static ref RE_PREPS: Regex = Regex::new(r"(?s)## Preparations\n(.*?)($|\n## )").unwrap();
+            static ref RE_PREPS: Regex =
+                Regex::new(r"(?s)## Preparations\n(.*?)($|\n## )").unwrap();
         }
         let md_preparations = match RE_PREPS.captures(md_part) {
             Some(cap) => (&cap[1]).to_string(),
             None => {
                 if p_status_state == "PREP" {
-                    panic!("{}: State was prep but there is no '## Preparations' section", overview_page);
+                    panic!(
+                        "{}: State was prep but there is no '## Preparations' section",
+                        overview_page
+                    );
                 }
                 "".to_string()
             }
@@ -88,7 +93,11 @@ fn gather_data() -> (u32, String, u32, String) {
             p_name,
             status_state_source(p_status_state),
             p_status_date,
-            if p_status_state == "BROKEN" {md_part} else {&md_preparations}
+            if p_status_state == "BROKEN" {
+                md_part
+            } else {
+                &md_preparations
+            }
         ));
         provider_data.push(",".to_string());
 
@@ -133,7 +142,7 @@ fn status_state_source(state: &str) -> String {
         "OK" => "OK",
         "PREP" => "PREPARATION",
         "BROKEN" => "BROKEN",
-        _ => panic!(format!("{} is not a valid state", state))
+        _ => panic!(format!("{} is not a valid state", state)),
     };
     format!("StatusState::{}", status)
 }
