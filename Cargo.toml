@@ -4,6 +4,24 @@ version = "0.1.0"
 authors = ["simon <deltachat-provider-overview@simonlaux.de>", "Hocuri"]
 edition = "2018"
 build = "build.rs"
+license-file = "LICENSE"
+description = "List of providers and how well they work with Deltachat"
+homepage = "https://github.com/deltachat/provider-overview"
+repository = "https://github.com/deltachat/provider-overview"
+
+# exlcude "jekyll only"-stuff
+exclude = [
+    "_data/*",
+    "_includes/*",
+    "_layouts/*",
+    "_site/*",
+    "assets/*",
+    "_config.yml",
+    "fallback.html",
+    "index.html",
+    "Gemfile",
+    "Gemfile.lock"
+]
 
 [dependencies]
 
