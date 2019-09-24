@@ -26,6 +26,7 @@ jobs:
     - name: "post Link"
       uses: rytswd/respost@v0.1.0
       with:
+        title: "Preview changes"
         body: "Preview at: https://testrun.org/provider/${{ github.sha }}/_site/"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
