@@ -22,4 +22,4 @@ jobs:
         HOST: testrun.org
         PORT: 22
         SOURCE: _site
-        TARGET: providerOverview/${{ github.ref }}/
+        TARGET: providerOverview/${{ github.sha }}/
