@@ -14,3 +14,16 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+    - name: DebugLog
+      run: ls -lah
+    - name: Upload
+      uses: appleboy/scp-action@master
+      with:
+        secrets: 
+          - USERNAME
+          - KEY
+        env:
+          HOST: testrun.org
+          PORT: 22
+          SOURCE: _site
+          TARGET: providerOverview/${{ github.sha }}
