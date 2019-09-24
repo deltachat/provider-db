@@ -1,6 +1,6 @@
-name: Jekyll site CI
+name: Deploy Preview
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
@@ -14,3 +14,18 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+    - name: Upload
+      uses: appleboy/scp-action@master
+      env:
+        USERNAME: ${{ secrets.USERNAME }}
+        KEY: ${{ secrets.KEY }}
+        HOST: testrun.org
+        PORT: 22
+        SOURCE: _site
+        TARGET: providerOverview/${{ github.sha }}/
+    - name: "post Link"
+      uses: rytswd/respost@v0.1.0
+      with:
+        body: "Preview at: https://testrun.org/provider/${{ github.sha }}/_site/"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
