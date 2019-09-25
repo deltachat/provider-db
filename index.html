@@ -86,7 +86,7 @@ permalink: /
                         {% when 'OK' %}
                         OK
                         {% when 'PREP' %}
-                        <a href="{{provider.url}}#preperations">PREPARATION</a> NEEDED
+                        <a href=".{{provider.url}}#preperations">PREPARATION</a> NEEDED
                         {% when 'BROKEN' %}
                         NOT WORKING
                         {% endcase %}
@@ -94,7 +94,7 @@ permalink: /
                     <br>
                     on {{ provider.status.date }}
             </td>
-            <td><a href="{{provider.url}}">{{provider.name}}</a></td>
+            <td><a href=".{{provider.url}}">{{provider.name}}</a></td>
             <td>
                 {% unless provider.domains.first %}
                     {{provider.domains}}
