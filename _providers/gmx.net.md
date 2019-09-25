@@ -1,5 +1,6 @@
 ---
 name: GMX.net
+website: https://www.gmx.net/
 domains:
  - gmx.net
  - gmx.de

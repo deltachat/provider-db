@@ -1,6 +1,7 @@
 ---
-name: Hosteurope (Custom Domain)
-domains: hosteurope.de
+name: Hosteurope
+website: https://hosteurope.de
+domains: (custom)
 credentials: emailPass 
 status:
  state: OK

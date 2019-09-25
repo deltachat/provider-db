@@ -1,5 +1,6 @@
 ---
 name: T-Online
+website: https://www.t-online.de/
 domains: t-online.de
 credentials: emailAppPass
 status:

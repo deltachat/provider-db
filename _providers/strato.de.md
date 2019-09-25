@@ -1,5 +1,6 @@
 ---
-name: strato.de (custom domain)
+name: strato.de
+website: https://www.strato.de/mail/
 domains: (custom)
 credentials: emailPass
 status:

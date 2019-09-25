@@ -1,5 +1,6 @@
 ---
 name: POSTEO
+website: https://posteo.de/
 domains: posteo.de
 credentials: emailPass
 status:

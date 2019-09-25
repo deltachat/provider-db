@@ -1,5 +1,6 @@
 ---
 name: yahoo
+website: https://yahoo.com
 domains: yahoo.com
 credentials: emailPass
 status:

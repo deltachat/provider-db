@@ -1,5 +1,6 @@
 ---
 name: Mail.ru
+website: https://mail.ru/
 domains:
  - mail.ru 
  - inbox.ru

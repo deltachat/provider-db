@@ -1,5 +1,6 @@
 ---
 name: UKR.NET
+website: https://www.ukr.net/
 domains: ukr.net
 credentials: emailPass 
 status:

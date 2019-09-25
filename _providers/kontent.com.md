@@ -1,6 +1,9 @@
 ---
 name: KONTENT
-domains: kontent.com
+website: https://www.kontent.com/products/email/
+domains:
+- kontent.com
+- (custom)
 credentials: emailPass
 status:
  state: OK

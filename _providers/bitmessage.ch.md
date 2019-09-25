@@ -1,5 +1,6 @@
 ---
 name: Bitmessage Mail Gateway
+website: https://bitmessage.ch
 domains: bitmessage.ch
 credentials: emailPass
 status:
@@ -9,6 +10,8 @@ status:
 
 ## Comments
 - Registration of new Accounts is closed (at time of writing 24. April 2019)
+- Service is in process of termination: https://bitmessage.ch/term.html
+  - You can't send messages anymore
 
 ## Preparations
 
