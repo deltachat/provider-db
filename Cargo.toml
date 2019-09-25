@@ -1,13 +1,14 @@
 [package]
 name = "deltachat-provider-overview"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["simon <deltachat-provider-overview@simonlaux.de>", "Hocuri"]
 edition = "2018"
 build = "build.rs"
 license-file = "LICENSE"
-description = "List of providers and how well they work with Deltachat"
+description = "[DEPRECATED]: please use the renamed package https://crates.io/crates/deltachat-provider-database https://github.com/deltachat/provider-db"
 homepage = "https://github.com/deltachat/provider-overview"
 repository = "https://github.com/deltachat/provider-overview"
+maintenance = 'deprecated'
 
 # exlcude "jekyll only"-stuff
 exclude = [
