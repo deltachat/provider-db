@@ -5,12 +5,12 @@ domains:
  - hotmail.com
  - outlook.com
  - office365.com
-- outlook.com.tr
+ - outlook.com.tr
 credentials: 
  - emailPass
  - emailAppPass
- - OAuth
-status:
+ - Oauth
+ status:
  state: PREP
  date: 2019-09
 ### Login Instructions
