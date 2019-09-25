@@ -1,9 +1,11 @@
 ---
 name: hotmail / outlook / office365
+website: https://outlook.live.com/mail
 domains:
  - hotmail.com
  - outlook.com
  - office365.com
+ - outlook.com.tr
 credentials: emailPass
 status:
  state: BROKEN
@@ -12,7 +14,9 @@ status:
 
 > Detected to be not working any more, for details please check this [issue](https://github.com/deltachat/deltachat-core/issues/561)
 
+
 ## Comments
+- **Outlook isn't compliant with the industry standarts for email in header handling and is therefore incompatible with DeltaChat.**
 - Owned by Microsoft
 
 ## Preparations
