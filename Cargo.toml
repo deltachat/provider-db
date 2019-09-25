@@ -1,6 +1,6 @@
 [package]
 name = "deltachat-provider-database"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["simon <cargo@simonlaux.de>", "Hocuri"]
 edition = "2018"
 build = "build.rs"
