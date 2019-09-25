@@ -11,37 +11,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/normalize.css">
     <link rel="stylesheet" href="./assets/styles.css">
-    <title>{{ page.name }} - Provider Overview</title>
+    <title>{{ page.name }} - Provider Info</title>
 </head>
 
 <body>
     <div class="content">
         <a href="./">&lt;Back to Overview</a><br>
-        <h1>{{ page.name }} {%if page.website%}<small><a href="{{ page.website }}">Provider Website</a></small>{%endif%}</h1>
-        <b>domains</b>: {{ page.domains }} <!-- Can be array (todo handle that case) -->
-        <br>
-        <b>Authentication</b>: {{ page.credentials }}
-        <br>
-        <b>STATUS</b>:
-            <span class="value status-{{ page.status.state }}">
+        <h1>{{ page.name }} <small style="color: grey">Provider Info</small>
+        </h1>
+        <hr>
+        <div class="section">
+            <b>domains</b>: {{ page.domains }}
+            <!-- Can be array (todo handle that case) -->
+            <br>
+            <b>Authentication</b>: {{ page.credentials }}
+            <br>
+            <b>STATUS</b>:
+            <span class="status-minimal status-{{ page.status.state | downcase }}">
                 {% case page.status.state %}
                 {% when 'OK' %}
                 OK
                 {% when 'PREP' %}
-                <a href="#preperations">PREPARATION</a> NEEDED
+                PREPARATION NEEDED
                 {% when 'BROKEN' %}
                 NOT WORKING
                 {% endcase %}
                 on {{ page.status.date }}
             </span>
-        <br>
-        <b>Limits</b>: {{ page.limits }}
-        <br>
-        <b>Registration</b>: {{ page.registration }}
-    
-        {{ content }}
-    
-        <a href="https://github.com/deltachat/provider-db/blob/master/{{page.path}}">Edit This Page on Github</a>
+            <br>
+            <b>Limits</b>:
+            {%if page.limits %}
+                {{ page.limits }}
+            {%else%}
+                <i>Unknown</i>
+            {%endif%}
+            <br>
+            <b>Account Registration</b>: 
+            {%if page.registration %}
+                {{ page.registration }}
+            {%else%}
+                <i>Unknown</i>
+            {%endif%}
+            {%if page.website%}
+                <br>
+                <b>Website</b>: <a href="{{ page.website }}">{{ page.website }}</a>
+            {%endif%}
+        </div>
+        <hr>
+        <div class="section">
+            {{ content }}
+        </div>
+        <hr>
+        <a href="https://github.com/deltachat/provider-db/edit/master/_providers/{{page.path}}">Edit This Page on Github</a>
     </div>
 </body>
 
