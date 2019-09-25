@@ -86,9 +86,9 @@ smtp mail.example.com:465
 
 Usage:
 ```rust
-extern crate deltachat_provider_overview;
+extern crate deltachat_provider_database;
 
-use deltachat_provider_overview::get_provider_info;
+use deltachat_provider_database::get_provider_info;
 
 
 fn main() {
@@ -96,7 +96,7 @@ fn main() {
 
     println!("{}", provider.name);
 
-    if provider.status.state == deltachat_provider_overview::StatusState::PREPARATION {
+    if provider.status.state == deltachat_provider_database::StatusState::PREPARATION {
         println!("{}", provider.markdown);
     }
 }
