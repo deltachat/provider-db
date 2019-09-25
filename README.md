@@ -84,6 +84,8 @@ smtp mail.example.com:465
 
 ## Use as cargo Package
 
+https://crates.io/crates/deltachat-provider-database
+
 Usage:
 ```rust
 extern crate deltachat_provider_database;
