@@ -18,16 +18,11 @@
     <div class="content">
         <a href="./">&lt;Back to Overview</a><br>
         <h1>{{ page.name }}</h1>
-        {{ page.domains }} <!-- Can be array -->
-        {{ page.credentials }}
-        <span class="property">
-            <span class="key"></span>
-            <span class="value"></span>  
-        </span>
-        <span class="property" title="If it's working">
-            <span class="key">Status
-    
-            </span>
+        {{ page.domains }} <!-- Can be array (todo handle that case) -->
+        <br>
+        <b>Authentication</b>: {{ page.credentials }}
+        <br>
+        <b>STATUS</b>:
             <span class="value status-{{ page.status.state }}">
                 {% case page.status.state %}
                 {% when 'OK' %}
@@ -39,9 +34,10 @@
                 {% endcase %}
                 on {{ page.status.date }}
             </span>
-        </span>
-        Limits: {{ page.limits }}
-        Registration: {{ page.registration }}
+        <br>
+        <b>Limits</b>: {{ page.limits }}
+        <br>
+        <b>Registration</b>: {{ page.registration }}
     
         {{ content }}
     
