@@ -16,7 +16,7 @@ status:
 
 
 ## Comments
-- **Outlook isn't compliant with the industry standarts for email in header handling and is therefore incompatible with DeltaChat.**
+- **Outlook isn't compliant with the industry standards for email in header handling and is therefore incompatible with DeltaChat.**
 - Owned by Microsoft
 
 ## Preparations
