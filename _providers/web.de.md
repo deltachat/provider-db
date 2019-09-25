@@ -1,5 +1,6 @@
 ---
 name: web.de
+website: https://web.de
 domains:
 - web.de
 - email.de (€)

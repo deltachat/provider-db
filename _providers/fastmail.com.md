@@ -1,5 +1,6 @@
 ---
 name: FastMail
+website: https://www.fastmail.com/
 domains: fastmail.com
 credentials: emailAppPass
 status:

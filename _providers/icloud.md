@@ -1,6 +1,10 @@
 ---
 name: iCloud Mail
-domains: icloud.com
+website: https://www.icloud.com/mail
+domains: 
+- icloud.com
+- me.com
+- mac.com
 credentials: emailAppPass
 status:
  state: PREP

@@ -1,5 +1,6 @@
 ---
 name: yandex.ru
+website: https://yandex.ru/
 domains:
  - yandex.ru
  - yandex.com

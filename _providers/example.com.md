@@ -1,5 +1,6 @@
 ---
 name: Example
+website: https://example.com
 domains:
  - example.com
  - example.org

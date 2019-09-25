@@ -17,8 +17,8 @@
 <body>
     <div class="content">
         <a href="./">&lt;Back to Overview</a><br>
-        <h1>{{ page.name }}</h1>
-        {{ page.domains }} <!-- Can be array (todo handle that case) -->
+        <h1>{{ page.name }} {%if page.website%}<small><a href="{{ page.website }}">Provider Website</a></small>{%endif%}</h1>
+        <b>domains</b>: {{ page.domains }} <!-- Can be array (todo handle that case) -->
         <br>
         <b>Authentication</b>: {{ page.credentials }}
         <br>

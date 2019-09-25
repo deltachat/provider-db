@@ -63,7 +63,10 @@ registration:
 ~~~
 ---
 name: example
-website: example.com
+website: https://example.com
+domains:
+ - example.com
+ - example.org
 credentials: emailPass |  emailAppPass | Oauth
 status:
  state: OK | PREP | BROKEN

@@ -1,5 +1,6 @@
 ---
 name: Manitu (Custom Domain)
+website: https://www.manitu.de/webhosting/
 domains: manitu.de
 status:
  state: OK

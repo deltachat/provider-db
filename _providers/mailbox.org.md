@@ -1,5 +1,6 @@
 ---
 name: Mailbox.org
+website: https://mailbox.org
 domains: 
 - mailbox.org
 - secure.mailbox.org

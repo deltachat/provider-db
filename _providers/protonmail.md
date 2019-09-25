@@ -1,5 +1,6 @@
 ---
 name: ProtonMail
+website: https://protonmail.com/
 domains:
 - protonmail.com
 - protonmail.ch

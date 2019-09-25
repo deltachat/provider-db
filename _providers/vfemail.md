@@ -1,5 +1,6 @@
 ---
 name: VFEmail
+website: https://vfemail.net/
 domains: vfemail.net
 credentials: emailPass 
 status:

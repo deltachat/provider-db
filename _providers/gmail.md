@@ -1,5 +1,6 @@
 ---
 name: Google Mail
+website: https://gmail.com
 domains:
  - gmail.com
  - googlemail.com

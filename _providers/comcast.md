@@ -1,5 +1,6 @@
 ---
 name: Comcast / xfinity
+website: https://www.xfinity.com/
 domains: 
  - xfinity.com
  - comcast.net

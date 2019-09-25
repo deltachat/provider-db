@@ -12,6 +12,9 @@ status:
 
 > Detected to be not working any more, for details please check this [issue](https://github.com/deltachat/deltachat-core/issues/561)
 
+## Comments
+- Owned by Microsoft
+
 ## Preparations
 ```
 IMAP-Server: outlook.office365.com

@@ -1,5 +1,6 @@
 ---
 name: ziggo
+website: https://www.ziggo.nl/
 domains: ziggo.nl
 credentials: emailPass
 status:

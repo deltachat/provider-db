@@ -1,6 +1,7 @@
 ---
 name: All-Inkl.com
-domains: all-inkl.com
+website: https://all-inkl.com/
+domains: (custom)
 credentials: emailPass
 status:
  state: OK

@@ -1,6 +1,9 @@
 ---
 name: ZOHO
-domains: zoho.com
+website: https://www.zoho.com/mail/
+domains:
+- zoho.com
+- (custom)
 credentials: emailPass
 status:
  state: OK

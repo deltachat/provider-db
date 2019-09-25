@@ -1,5 +1,6 @@
 ---
-name: Bluewin
+name: Swisscom / Bluewin
+website: https://www.bluewin.ch/de/email/
 domains: bluewin.ch
 credentials: emailPass
 status:

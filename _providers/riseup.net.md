@@ -1,5 +1,6 @@
 ---
 name: riseup.net
+website: https://riseup.net/
 domains: riseup.net
 credentials: emailPass
 status:
@@ -10,7 +11,7 @@ registration:
  inviteOnly: true
  PhoneAuthRequired: false
  PersonalDataRequired: false
- price: "FREE"
+ price: FREE
 ---
 
 ## Comments
