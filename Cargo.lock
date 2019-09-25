@@ -9,7 +9,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "deltachat-provider-overview"
+name = "deltachat-provider-database"
 version = "0.1.0"
 dependencies = [
  "glob 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",

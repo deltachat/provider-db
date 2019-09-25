@@ -1,13 +1,13 @@
 [package]
-name = "deltachat-provider-overview"
+name = "deltachat-provider-database"
 version = "0.1.0"
-authors = ["simon <deltachat-provider-overview@simonlaux.de>", "Hocuri"]
+authors = ["simon <cargo@simonlaux.de>", "Hocuri"]
 edition = "2018"
 build = "build.rs"
 license-file = "LICENSE"
 description = "List of providers and how well they work with Deltachat"
-homepage = "https://github.com/deltachat/provider-overview"
-repository = "https://github.com/deltachat/provider-overview"
+homepage = "https://github.com/deltachat/provider-db"
+repository = "https://github.com/deltachat/provider-db"
 
 # exlcude "jekyll only"-stuff
 exclude = [

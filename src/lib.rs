@@ -50,7 +50,7 @@ pub fn get_provider_info(domain: &str) -> Option<&Provider> {
     Some(&DATABASE[provider_id as usize])
     // A list of the domains could be retrieved by
     // get_domains_by_provider(provider_id) (commented out below)
-    // See https://github.com/deltachat/provider-overview/pull/20
+    // See https://github.com/deltachat/provider-db/pull/20
 }
 
 /*
