@@ -33,7 +33,6 @@ permalink: /
         <tr>
             <th></th>
             <th colspan="3" scope="colgroup">Information</th>
-            <th colspan="3" scope="colgroup">Limits</th>
             <th colspan="4" scope="colgroup">Registration</th>
         </tr>
         <tr>
@@ -48,15 +47,6 @@ permalink: /
             </th>
             <th title="Authentication Methode">
                 Auth
-            </th>
-            <th title="The max recipient count dictates the max group size">
-                max. 👥
-            </th>
-            <th title="How many messages you can sent per Day">
-                💬 per Day
-            </th>
-            <th title="The maximum size for a file / image / voice recording / message you can sent">
-                max. 📧 Size
             </th>
             <th>
                 inviteOnly
@@ -121,45 +111,6 @@ permalink: /
                 - {% include authentication.html auth=auth %}<br>
                 {% endfor%}
                 {% endunless%}
-            </td>
-            <td>
-                {%unless provider.limits.maxRecipients%}
-                <span title="{{site.data.strings.NoData}}">
-                    ?
-                </span>
-                {%elsif provider.limits.maxRecipients == "Unlimited" %}
-                <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
-                    No Limit
-                </span>
-                {%else%}
-                {{provider.limits.maxRecipients}}
-                {%endunless%}
-            </td>
-            <td>
-                {%unless provider.limits.messagesPerDay%}
-                <span title="{{site.data.strings.NoData}}">
-                    ?
-                </span>
-                {%elsif provider.limits.messagesPerDay == "Unlimited" %}
-                <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
-                    No Limit
-                </span>
-                {%else%}
-                {{provider.limits.messagesPerDay}}
-                {%endunless%}
-            </td>
-            <td class="center">
-                {%unless provider.limits.maxFileSize%}
-                <span title="{{site.data.strings.NoData}}">
-                    ?
-                </span>
-                {%elsif provider.limits.maxFileSize == "Unlimited" %}
-                <span style="color:greenyellow" title="{{site.data.strings.NoData}}">
-                    No Limit
-                </span>
-                {%else%}
-                {{provider.limits.maxFileSize}}
-                {%endunless%}
             </td>
             <td class="center">
                 {%unless provider.registration.inviteOnly != nill %}
