@@ -20,5 +20,11 @@ registration:
  price: freemium
 ---
 
+## Comments
+some free accounts seem to support 20 folders only;
+if you have already more than 20 folders
+and want messages to be moved to the DeltaChat folder,
+please clean up and create the DeltaChat folder by hand.
+
 ## Preparations
 activate access for external mail client at gmx side
