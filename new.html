@@ -53,15 +53,6 @@ permalink: /new
 
         <tr data-searchkey="{{provider.name}}">
             <td><a href=".{{provider.url}}">{{provider.name}}</a></td>
-            <td>
-                {% unless provider.credentials.first %}
-                {% include authentication.html auth=provider.credentials %}
-                {%else%}
-                {% for auth in provider.credentials %}
-                - {% include authentication.html auth=auth %}<br>
-                {% endfor%}
-                {% endunless%}
-            </td>
             <td class="center">
                 {%unless provider.registration.inviteOnly != nill %}
                 <span title="{{site.data.strings.NoData}}">
