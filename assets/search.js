@@ -5,7 +5,7 @@ const noMessageLimit = document.getElementById("noMessageLimit")
 function enableInputs() {
     searchbar.disabled = false
     noPreperation.disabled = false
-    noMessageLimit.disabled = false
+    noMessageLimit.disabled = true
 
     searchbar.onkeyup = () => { run() }
     noPreperation.onchange = () => { run() }
