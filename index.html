@@ -15,7 +15,9 @@ permalink: /
 </head>
 
 <body>
-    <h1>Does my Provider work with Delta Chat?</h2>
+    <h1>Provider Database</h1>
+	
+    <h2>Does my Provider work with Delta Chat?</h2>
 
     <div>
         <div class="search-box-container">
@@ -46,18 +48,6 @@ permalink: /
             <th title="Authentication Methode">
                 Auth
             </th>
-            <th>
-                inviteOnly
-            </th>
-            <th>
-                PersonalData
-            </th>
-            <th title="Phone Auth - If you need to give them your Phonenumber to register">
-                📞
-            </th>
-            <th title="How much it costs">
-                💰
-            </th>
         </tr>
         </thead>
         <tbody id="provider_list">
@@ -66,7 +56,6 @@ permalink: /
         <tr 
             data-searchkey="{{provider.name}} {{provider.domains | join: ' '}}" 
             data-state="{{ provider.status.state }}"
-            data-messagelimit="{{provider.limits.messagesPerDay}}"
             >
             <td class="status-{{ provider.status.state | downcase }}">
                     <span class="status">
@@ -109,54 +98,6 @@ permalink: /
                 - {% include authentication.html auth=auth %}<br>
                 {% endfor%}
                 {% endunless%}
-            </td>
-            <td class="center">
-                {%unless provider.registration.inviteOnly != nill %}
-                <span title="{{site.data.strings.NoData}}">
-                    ?
-                </span>
-                {%else%}
-                    {%if provider.registration.inviteOnly%}
-                    Yes
-                    {%else%}
-                    No
-                    {%endif%}
-                {%endunless%}
-            </td>
-            <td class="center">
-                    {%unless provider.registration.PersonalDataRequired != nill %}
-                    <span title="{{site.data.strings.NoData}}">
-                        ?
-                    </span>
-                    {%else%}
-                        {%if provider.registration.PersonalDataRequired%}
-                        Yes
-                        {%else%}
-                        No
-                        {%endif%}
-                    {%endunless%}
-            </td>
-            <td  class="center">
-                    {%unless provider.registration.PhoneAuthRequired != nill %}
-                    <span title="{{site.data.strings.NoData}}">
-                        ?
-                    </span>
-                    {%else%}
-                        {%if provider.registration.PhoneAuthRequired%}
-                        Yes
-                        {%else%}
-                        No
-                        {%endif%}
-                    {%endunless%}
-            </td>
-            <td class="center">
-                    {%unless provider.registration.price != nill %}
-                    <span title="{{site.data.strings.NoData}}">
-                        ?
-                    </span>
-                    {%else%}
-                        {{provider.registration.price}}
-                    {%endunless%}
             </td>
         </tr>
         {% endfor %}

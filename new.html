@@ -15,7 +15,9 @@ permalink: /new
 </head>
 
 <body>
-    <h1>Mail Provider Database</h1>
+    <h1>Provider Database</h1>
+
+    <h2>Where could I get a mail address for Delta Chat?</h2>
 
     <div class="search-box-container">
        Search: <input type="search" id="search" value="Enable scripts to Enable Searching" disabled>
@@ -51,7 +53,10 @@ permalink: /new
         {% for provider in site.providers %}
 	{% if provider.status.state == 'OK' %}
 
-        <tr data-searchkey="{{provider.name}}">
+        <tr 
+	    data-searchkey="{{provider.name}}"
+            data-state="{{ provider.status.state }}"
+	>
             <td><a href=".{{provider.url}}">{{provider.name}}</a></td>
             <td class="center">
                 {%unless provider.registration.inviteOnly != nill %}
