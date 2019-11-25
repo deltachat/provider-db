@@ -52,6 +52,7 @@ permalink: /new
 	{% if provider.status.state == 'OK' %}
 
         <tr data-searchkey="{{provider.name}}">
+            <td><a href=".{{provider.url}}">{{provider.name}}</a></td>
             <td>
                 {% unless provider.credentials.first %}
                 {% include authentication.html auth=provider.credentials %}
