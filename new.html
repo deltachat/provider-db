@@ -17,6 +17,11 @@ permalink: /new
 <body>
     <h1>Mail Provider Database</h1>
 
+    <div class="search-box-container">
+       Search: <input type="search" id="search" value="Enable scripts to Enable Searching" disabled>
+       <script>document.getElementById("search").value = ""</script> 
+    </div>
+
     <table>
         <thead>
         <tr>
@@ -29,10 +34,10 @@ permalink: /new
                 Name
             </th>
             <th>
-                inviteOnly
+                Invite needed
             </th>
             <th>
-                PersonalData
+                Collects Personal Data
             </th>
             <th title="Phone Auth - If you need to give them your Phonenumber to register">
                 📞
@@ -46,10 +51,7 @@ permalink: /new
         {% for provider in site.providers %}
 	{% if provider.status.state == 'OK' %}
 
-        <tr 
-            data-searchkey="{{provider.name}}" 
-            data-messagelimit="{{provider.limits.messagesPerDay}}"
-            >
+        <tr data-searchkey="{{provider.name}}">
             <td>
                 {% unless provider.credentials.first %}
                 {% include authentication.html auth=provider.credentials %}
