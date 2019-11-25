@@ -11,3 +11,6 @@ status:
 limits:
  maxRecipients: 35
 ---
+
+## Comments
+- Linking your Phonenumber is still optional. (25 Nov 2019)
