@@ -1,15 +1,12 @@
 const searchbar = document.getElementById("search")
 const noPreperation = document.getElementById("noPreperation")
-const noMessageLimit = document.getElementById("noMessageLimit")
 
 function enableInputs() {
     searchbar.disabled = false
     noPreperation.disabled = false
-    noMessageLimit.disabled = false
 
     searchbar.onkeyup = () => { run() }
     noPreperation.onchange = () => { run() }
-    noMessageLimit.onchange = () => { run() }
 }
 
 let index = []
@@ -26,7 +23,6 @@ function populateIndex() {
             elem: elem,
             searchkey: elem.dataset.searchkey.toLowerCase(),
             no_preparation: elem.dataset.state === "OK",
-            messagelimit: elem.dataset.messagelimit,
         })
     }
 
@@ -71,8 +67,6 @@ async function runSearch() {
         masks.push(search(searchbar.value))
     if (noPreperation.checked)
         masks.push(filter('no_preparation', true))
-    if (noMessageLimit.checked)
-        masks.push(filter('messagelimit', "Unlimited"))
 
     let search_result = []
     
