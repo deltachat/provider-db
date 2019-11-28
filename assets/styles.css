@@ -50,7 +50,8 @@ td {
 table{
   border-collapse: collapse;
   min-width: calc(100% - 40pt);
-  margin: 20pt
+  margin: 10px;
+  overflow-x: scroll;
 
 }
 
@@ -117,6 +118,13 @@ td:last-child, th:last-child {
 }
 
 body>div, body>p, body>h2 { margin: 1em; }
+
+.filter {
+    margin-left: 30px;
+}
+main {
+    margin: 20px;
+}
 
 
 @media only screen and (min-width: 600px) {
