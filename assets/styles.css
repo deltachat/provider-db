@@ -206,6 +206,7 @@ body>div, body>p, body>h2 { margin: 1em; }
   .search-box-container {
       margin: auto;
       width: 250pt;
+      float: initial;
   }
   
   #search {
@@ -238,6 +239,10 @@ body>div, body>p, body>h2 { margin: 1em; }
   .highlight {
       display: inline-block;
       padding: 1pt;
+  }
+  .filter {
+    text-align: right;
+    float: right;
   }
   
   body>div, body>p, body>h2 { margin: 1em; }
