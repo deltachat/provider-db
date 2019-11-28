@@ -41,9 +41,6 @@ permalink: /
             <th>
                 Domain/s
             </th>
-            <th title="Authentication Methode">
-                Auth
-            </th>
         </tr>
         </thead>
         <tbody id="provider_list">
@@ -64,8 +61,6 @@ permalink: /
                         NOT WORKING
                         {% endcase %}
                     </span>
-                    <br>
-                    on {{ provider.status.date }}
             </td>
             <td><a href=".{{provider.url}}">{{provider.name}}</a></td>
             <td>
@@ -86,15 +81,6 @@ permalink: /
                     {% endif %}
                 {% endunless %}
             </td>
-            <td>
-                {% unless provider.credentials.first %}
-                {% include authentication.html auth=provider.credentials %}
-                {%else%}
-                {% for auth in provider.credentials %}
-                - {% include authentication.html auth=auth %}<br>
-                {% endfor%}
-                {% endunless%}
-            </td>
         </tr>
         {% endfor %}
         </tbody>
@@ -103,8 +89,8 @@ permalink: /
     <p>
         <b>DISCLAIMER: </b>
         We don't take responsibility for the information here provided.
-        If it is incorect please report it on the <a href="https://github.com/deltachat/provider-db/issues" target="_blank">github issue page</a>.
-        If you are able to do it, we apreciate pull requests as well.
+        If it is incorrect, please report it on the <a href="https://github.com/deltachat/provider-db/issues" target="_blank">github issue page</a>.
+        We apreciate pull requests as well :)
     </p>
 
     <script src="./assets/search.js"></script>
