@@ -128,8 +128,8 @@ body>div, body>p, body>h2 { margin: 1em; }
         margin-top: 35px;
     }
     .table {
-        width: 45%;
-        margin-left: 50%;
+        width: 55%;
+        margin-left: 45%;
     }
   .status-ok {
       color: var(--color-works);
@@ -245,6 +245,7 @@ body>div, body>p, body>h2 { margin: 1em; }
     text-align: right;
     float: right;
     margin-top: -35px;
+    margin-right: 2.5%;
   }
   h2 {
     margin-bottom: 50px;
@@ -252,8 +253,17 @@ body>div, body>p, body>h2 { margin: 1em; }
   
   body>div, body>p, body>h2 { margin: 1em; }
 }
-@media only screen and (max-width: 1548px) {
+@media only screen and (max-width: 1300px) {
     .filter {
         margin-top: 0px;
       }
+}
+@media only screen and (max-width: 860px) {
+    main {
+        width: 90%;
+    }
+    .table {
+        width: 100%;
+        margin-left: 0px;
+    }
 }
