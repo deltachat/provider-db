@@ -125,6 +125,7 @@ body>div, body>p, body>h2 { margin: 1em; }
         float: left;
         margin-left: 20px;
         margin-right: 20px;
+        margin-top: 35px;
     }
     .table {
         width: 45%;
@@ -243,7 +244,16 @@ body>div, body>p, body>h2 { margin: 1em; }
   .filter {
     text-align: right;
     float: right;
+    margin-top: -35px;
+  }
+  h2 {
+    margin-bottom: 50px;
   }
   
   body>div, body>p, body>h2 { margin: 1em; }
+}
+@media only screen and (max-width: 1548px) {
+    .filter {
+        margin-top: 0px;
+      }
 }
