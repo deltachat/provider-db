@@ -128,12 +128,26 @@ main {
 
 
 @media only screen and (min-width: 600px) {
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #eee;
+    color: white;
+    text-align: center;
+  }
+  .footer-text {
+    padding: 15px;
+    margin-bottom: 0px;
+    color: black;
+  }
     main {
         width: 45%;
         float: left;
         margin-left: 20px;
         margin-right: 20px;
-        margin-top: 35px;
+        margin-top: 15px;
     }
     .table {
         width: 55%;
@@ -152,7 +166,7 @@ main {
       text-decoration: none;
   }
   a.status-prep :hover, a.title:link, a.title:visited, a.title:active{
-    color: yellow;
+    text-decoration: none;
   }
   
   .status-broken {
