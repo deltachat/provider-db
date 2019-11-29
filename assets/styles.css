@@ -5,6 +5,7 @@
   }
 .table {
     width: 100%;
+    margin-bottom: 75px;
 }
 .status-ok {
   color: var(--color-works);
