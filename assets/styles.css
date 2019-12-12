@@ -290,3 +290,9 @@ main {
         margin-left: 0px;
     }
 }
+
+.explanation-text {
+    width: 75%;
+    margin-right: 5em;
+    margin-left: auto;
+}
