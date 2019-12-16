@@ -8,6 +8,6 @@ status:
  date: 2017-06
 ---
 
-disroot.org is unfortunately not very reliable, messages 
+Some users experienced long delays or rate-limits when sending out messages. 
 can have long delays. It doesn't seem to be about greylisting 
 but something else.
