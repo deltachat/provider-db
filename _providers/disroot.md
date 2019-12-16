@@ -9,5 +9,3 @@ status:
 ---
 
 Some users experienced long delays or rate-limits when sending out messages. 
-can have long delays. It doesn't seem to be about greylisting 
-but something else.
