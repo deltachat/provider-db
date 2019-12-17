@@ -1,6 +1,6 @@
 [package]
 name = "deltachat-provider-database"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["simon <cargo@simonlaux.de>", "Hocuri"]
 edition = "2018"
 build = "build.rs"
@@ -24,6 +24,7 @@ exclude = [
 ]
 
 [dependencies]
+serde = { version = "1.0", features = ["derive"] }
 
 [build-dependencies]
 glob = "0.3.0"

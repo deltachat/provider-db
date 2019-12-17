@@ -1,6 +1,7 @@
+use serde::{Serialize, Deserialize};
 pub const PROVIDER_OVERVIEW_URL: &'static str = "https://providers.delta.chat";
 
-#[derive(Debug, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, PartialEq)]
 pub enum StatusState {
     /// Works right out of the box without any preperation steps needed
     OK = 1,
@@ -10,7 +11,7 @@ pub enum StatusState {
     BROKEN = 3,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, PartialEq)]
 /// The status of a provider
 pub struct Status {
     pub state: StatusState,
@@ -18,7 +19,7 @@ pub struct Status {
     pub date: &'static str,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, PartialEq)]
 /// Information about a provider
 pub struct Provider {
     /// for linking to the providers page on the overview website
@@ -30,7 +31,7 @@ pub struct Provider {
     pub markdown: &'static str,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, PartialEq)]
 struct DomainDBEntry {
     domain: &'static str,
     list_index: u32,
