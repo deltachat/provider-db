@@ -50,7 +50,7 @@ td {
 
 table{
   border-collapse: collapse;
-  min-width: calc(100% - 40pt);
+  min-width: calc(100% - 50pt);
   margin: 10px;
   overflow-x: scroll;
 
