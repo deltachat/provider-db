@@ -16,19 +16,47 @@ permalink: /
 </head>
 
 <body>
-    <h1>Provider Database</h1>
+    <main>
+            <h1>Provider Database</h1>
 	
-    <h2>Does my Provider work with Delta Chat?</h2>
+    <h2>Does my E-Mail Provider work with Delta Chat?</h2>
 
-    <div>
-        <div class="search-box-container">
-           <input type="search" id="search" value="Enable scripts to Enable Searching" placeholder="Search:" disabled>
-           <script>document.getElementById("search").value = ""</script> 
-        </div>
-        <input type="checkbox" name="noPreperation" id="noPreperation" disabled>
-        <label for="noPreperation"> No Preparation needed</label>
+    <div class="explanation-text">
+        <p>
+	You can use your E-Mail account for Delta Chat.
+	This way, you can chat with everyone else who has an E-Mail address.
+	Usually it just works, but for some providers you need to adjust some settings.
+	Just click on "Preparations".
+        </p>
+        <p>
+	Just look in the table if your E-Mail provider is already tested - it's the part after the @ in your E-Mail address.
+	E.g. if your E-Mail address is jj.doe@gmail.com, then gmail.com is your E-Mail provider.
+	<a href="https://delta.chat/help" target="_blank">Other questions?</a>
+        </p>
+<!--
+	<p>
+	If you want to create a new E-Mail account for Delta Chat, take a look at our <a href="/new">provider comparison table</a>.
+	You can use it to compare which provider is best suited for your needs, in regards of price, privacy, or whether you need an invite.
+        </p>
+-->
+        <p>
+            <b>DISCLAIMER: </b>
+            We don't take responsibility for the information here provided.
+            If it is incorrect, please report it on the <a href="https://github.com/deltachat/provider-db/issues" target="_blank">github issue page</a>.
+            We apreciate pull requests as well :)
+        </p>
     </div>
+    </main>
+    <div class="table">
 
+                <div class="search-box-container">
+                       <input type="search" id="search" value="Enable scripts to Enable Searching" placeholder="Search:" disabled>
+                       <script>document.getElementById("search").value = ""</script> 
+                </div>
+                <div class="filter">
+                        <input type="checkbox" name="noPreperation" id="noPreperation" disabled>
+                        <label for="noPreperation"> No Preparations needed</label>
+                    </div>
     <table>
         <thead>
         <tr>
@@ -40,9 +68,6 @@ permalink: /
             </th>
             <th>
                 Domain/s
-            </th>
-            <th title="Authentication Methode">
-                Auth
             </th>
         </tr>
         </thead>
@@ -59,13 +84,11 @@ permalink: /
                         {% when 'OK' %}
                         OK
                         {% when 'PREP' %}
-                        <a href=".{{provider.url}}#preperations">PREPARATION</a> NEEDED
+                        <a href=".{{provider.url}}#preperations">PREPARATIONS</a>
                         {% when 'BROKEN' %}
                         NOT WORKING
                         {% endcase %}
                     </span>
-                    <br>
-                    on {{ provider.status.date }}
             </td>
             <td><a href=".{{provider.url}}">{{provider.name}}</a></td>
             <td>
@@ -86,26 +109,16 @@ permalink: /
                     {% endif %}
                 {% endunless %}
             </td>
-            <td>
-                {% unless provider.credentials.first %}
-                {% include authentication.html auth=provider.credentials %}
-                {%else%}
-                {% for auth in provider.credentials %}
-                - {% include authentication.html auth=auth %}<br>
-                {% endfor%}
-                {% endunless%}
-            </td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
+    </div>
+    <footer>
+        <p class="footer-text">foobar footertext</p>
+    </footer>
 
-    <p>
-        <b>DISCLAIMER: </b>
-        We don't take responsibility for the information here provided.
-        If it is incorect please report it on the <a href="https://github.com/deltachat/provider-db/issues" target="_blank">github issue page</a>.
-        If you are able to do it, we apreciate pull requests as well.
-    </p>
+
 
     <script src="./assets/search.js"></script>
 
