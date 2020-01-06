@@ -47,6 +47,10 @@ td {
   padding-right: 5pt;
 }
 
+td:first-child, th:first-child {
+  max-width: 20%;
+}
+
 #search {
   margin: 8pt
 }
