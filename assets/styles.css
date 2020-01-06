@@ -118,6 +118,10 @@ td:last-child, th:last-child {
   padding: 1pt;
 }
 
+.footer-text {
+  padding: 1em;
+}
+
 body>div, body>p, body>h2 { margin: 1em; }
 
 .filter {
@@ -139,7 +143,6 @@ main {
     text-align: center;
   }
   .footer-text {
-    padding: 15px;
     margin-bottom: 0px;
     color: black;
   }
