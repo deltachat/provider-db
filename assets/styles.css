@@ -42,7 +42,6 @@ blockquote > p {
 td {
   padding-left: 5pt;
   padding-right: 5pt;
-  white-space: nowrap;
 }
 
 td:last-child {
@@ -197,6 +196,7 @@ main {
   td {
       padding-left: 6pt;
       padding-right: 5pt;
+      white-space: nowrap;
   }
   
   #search {
