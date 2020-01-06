@@ -37,6 +37,11 @@ padding-left: 5pt;
   padding-left: 0;
 }
 
+h1, h2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 blockquote > p {
   border-left: 10px solid #ccc;
   background-color: beige
