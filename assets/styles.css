@@ -19,6 +19,9 @@
   padding-left: 5pt;
   text-decoration: none;
 }
+a.status-prep {
+  padding-left: 0;
+}
 a.status-prep :hover, a.title:link, a.title:visited, a.title:active{
 color: yellow;
 }
