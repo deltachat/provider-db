@@ -17,9 +17,9 @@ permalink: /
 
 <body>
     <main>
-            <h1>Provider Database</h1>
+    <h1 style="margin-bottom: 0.5em;">Provider Database</h1>
 	
-    <h2>Does my E-Mail Provider work with Delta Chat?</h2>
+    <h2 style="margin-bottom: 0.5em;">Does my E-Mail Provider work with Delta Chat?</h2>
 
     <div class="explanation-text">
         <p>
@@ -40,9 +40,7 @@ permalink: /
         </p>
 -->
         <p>
-            <b>DISCLAIMER: </b>
-            We don't take responsibility for the information here provided.
-            If it is incorrect, please report it on the <a href="https://github.com/deltachat/provider-db/issues" target="_blank">github issue page</a>.
+            If the information here is out of date, please report it on the <a href="https://github.com/deltachat/provider-db/issues" target="_blank">github issue page</a>.
             We apreciate pull requests as well :)
         </p>
     </div>
@@ -84,7 +82,7 @@ permalink: /
                         {% when 'OK' %}
                         OK
                         {% when 'PREP' %}
-                        <a href=".{{provider.url}}#preperations">PREPARATIONS</a>
+                        <a class="status-prep" href=".{{provider.url}}#preperations">PREPARE</a>
                         {% when 'BROKEN' %}
                         NOT WORKING
                         {% endcase %}
@@ -115,7 +113,7 @@ permalink: /
     </table>
     </div>
     <footer>
-        <p class="footer-text">foobar footertext</p>
+	    <p class="footer-text">We take no responsibility for this data. For more information about Delta Chat see <a href="https://delta.chat" target="_blank">our website</a>.</p>
     </footer>
 
 
