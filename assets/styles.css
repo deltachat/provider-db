@@ -45,10 +45,11 @@ blockquote > p {
 td {
   padding-left: 6pt;
   padding-right: 5pt;
+  white-space: nowrap;
 }
 
-td:first-child, th:first-child {
-  max-width: 20%;
+td:last-child {
+  width: 99%;
 }
 
 #search {
