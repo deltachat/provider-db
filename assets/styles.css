@@ -15,7 +15,7 @@
 }
 
 .status-prep {
-  color: white;
+  color: yellow;
   background: var(--color-prep);
   box-shadow: inset 10pt 0px 0px 0px var(--color-prep);
   padding-left: 5pt;
@@ -163,13 +163,11 @@ main {
   .status-ok {
       color: white;
       background: var(--color-works);
-      box-shadow: inset 10pt 0px 0px 0px var(--color-works);
       padding-left: 5pt;
   }
   
   .status-prep {
       background: var(--color-prep);
-      box-shadow: inset 10pt 0px 0px 0px var(--color-prep);
       padding-left: 5pt;
       text-decoration: none;
   }
@@ -181,7 +179,6 @@ main {
   .status-broken {
    color: white;
    background: var(--color-broken);
-   box-shadow: inset 10pt 0px 0px 0px var(--color-broken);
    padding-left: 5pt;
   }
   
