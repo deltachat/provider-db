@@ -37,11 +37,6 @@ padding-left: 5pt;
   padding-left: 0;
 }
 
-h1, h2 {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
 blockquote > p {
   border-left: 10px solid #ccc;
   background-color: beige
@@ -285,10 +280,6 @@ main {
     float: right;
     margin-top: -35px;
     margin-right: 2.5%;
-  }
-  h2 {
-    margin-bottom: 1em;
-    margin-top: 1em;
   }
   
   body>div, body>p, body>h2 { margin: 1em; }
