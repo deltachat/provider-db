@@ -1,12 +1,22 @@
 ---
-name: Example
-website: https://example.com
-domains:
- - example.com
- - example.org
+name: OVH
+website: https://ovh.it
+domains: ga-2.it
 credentials: emailPass
 status:
- state: OK
+ state: PREP
  date: 2019-12
+registration:
+ price: "&ge; 0.99€/mo"
+ inviteOnly: false
+ 
 ---
+
+## Comments
+
+With OVH, there are problems receiving emails with Delta Chat.
+
+## Preparations
+
+You need to allow IMAP/SMTP in the provider's web settings.
 
