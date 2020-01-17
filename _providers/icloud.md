@@ -6,6 +6,10 @@ domains:
 - me.com
 - mac.com
 credentials: emailAppPass
+before_login_hint: "You must create a specific password for Delta Chat before you can login. Please see PAGE_URL for details."
+after_login_hint: |
+  An example hint that contains newlines.
+  Sometimes we might have a lot to say.
 status:
  state: PREP
  date: 2017-05
