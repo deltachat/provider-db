@@ -4,20 +4,16 @@ website: https://aktivix.org/
 domains: aktivix.org
 credentials: emailPass
 status:
- state: PREP
+ state: OK
  date: 2018-10
-
-registration:
- inviteOnly: true
+connection:
+  imap:
+    host: newyear.aktivix.org
+    port: 143
+    sec: starttls
+  smtp:
+    host: newyear.aktivix.org
+    port: 25
+    sec: starttls
 ---
 
-## Coments
-- new Registrations are Invite only
-
-## Preparations
-Settings in Deltachat(Account setup):
-```
-IMAP newyear.aktivix.org:143
-SMTP newyear.aktivix.org:25
-sec: STARTTLS
-```

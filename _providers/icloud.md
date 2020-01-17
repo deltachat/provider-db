@@ -9,8 +9,19 @@ credentials: emailAppPass
 status:
  state: PREP
  date: 2017-05
+connection:
+  imap:
+    host: FIXME
+    port: FIXME
+    sec: FIXME
+  smtp:
+    host: FIXME
+    port: FIXME
+    sec: FIXME
 ---
 
-## Preparations
+To use Delta Chat with your iCloud email address you have to generate a specific password for it.
 
-For iCloud, you can’t use the regular password anymore, you have to [generate one for each external client](https://support.apple.com/en-gb/HT204397). Follow the [generation instructions](https://support.apple.com/en-us/HT202304) and use that password in Delta Chat.
+Please follow [these instructions](https://support.apple.com/en-us/HT202304) to do that.
+
+Afterwards you can login to Delta Chat using your iCloud email address and the newly created password.

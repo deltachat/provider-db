@@ -107,8 +107,8 @@ td:last-child, th:last-child {
 }
 
 .content{
-  max-width: 1000pt;
-  margin: auto;
+  max-width: 600pt;
+  margin: 5em auto 0em;
   padding: 0 4pt;
 }
 
@@ -258,8 +258,8 @@ main {
   }
   
   .content{
-      max-width: 1000pt;
-      margin: auto;
+      max-width: 600pt;
+      margin: 5em auto 0em;
       padding: 0 4pt;
   }
   
@@ -282,7 +282,6 @@ main {
     margin-right: 2.5%;
   }
   
-  body>div, body>p, body>h2 { margin: 1em; }
 }
 @media only screen and (max-width: 1300px) {
     .filter {
@@ -303,4 +302,47 @@ main {
     width: 75%;
     margin-right: 5em;
     margin-left: auto;
+}
+
+.github-link {
+  margin-top: 10em;
+  font-size: 0.7em;
+}
+
+.github-link a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.project-title {
+  color: gray;
+  font-size: small;
+  margin: 0 0 2rem 0;
+}
+
+.big-green {
+  font-weight: bold;
+  font-size: large;
+  color: green;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  clear: both;
+}
+
+p, div {
+  font-size: 1.2rem;
+}
+
+svg.loved-provider {
+  width: 1.5rem;
+  vertical-align: middle;
+}
+
+img.provider-db-logo {
+  float: right;
+  margin: -4rem 4rem 0rem 0rem;
+  width: 5rem;
 }
