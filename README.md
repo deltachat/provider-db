@@ -7,29 +7,16 @@ First check wether the file for the provider already exists, if it does skip to 
 Add [provider name].md to the _providers folder in the following format:
 ~~~
 ---
+website: [website of the provider]
 name: [provider name]
-domains: [ email domains of the provider / can also be yaml array when there are multiple ones can contain (€) to mark a premium domain]
-credentials: [emailPass | emailAppPass | Oauth] - can also be an array, if multiple are supported availible
+domains: [email domains of the provider / must be an yaml array]
+before_login_hint: [~ or a string that should be displayed before the user logs in]
+after_login_hint: [~ or a string that should be displayed after the user logged in]
 status:
-   state: [OK | PREP | BROKEN] - "PREP" stands for Preparation Steps needed
-   date: [YYYY-MM]
+  state: [OK | PREPARATION | BROKEN] - "PREPARATION" stands for Preparation Steps needed
+  date: [YYYY-MM]
 ---
-## Comments
-[If there are any, but make sure everything regarding preparation is under "## Preparations"]
-
-## Preparations
-
-### Advanced Login Settings [if applicable]
-```
-[imap and smpt server addresses]
-```
-
-[if the provider requires additional steps, describe them here, you may also include images or a video tutorial of the process here]
-
-## status history
-[if you change the status, copy the previous here that we can allow for a history]
-[has a table format? that we can color code the states]
-[just a link to github changelog/history of this file?]
+[markdown that descripes the preperation steps, this gets displayed on the website]
 ~~~
 
 ### Status options:
@@ -42,41 +29,20 @@ BROKEN | not working - Does not work. (too unstable to use falls also in this ca
 
 ## Edit an Entry
 
-## Entries
-
-Optional yaml font matter fields:
-```
-limits:
-    maxRecipients: number | "Unlimited"
-    messagesPerDay: number | "Unlimited"
-    maxFileSize: string | "Unlimited"
-
-registration:
- inviteOnly: boolean
- PhoneAuthRequired: boolean
- PersonalDataRequired: boolean
- price: string
-
-```
-
 ## Example
 ~~~
 ---
-name: example
 website: https://example.com
+name: example.com
 domains:
- - example.com
- - example.org
-credentials: emailPass |  emailAppPass | Oauth
+  - example.com
+  - example.org
+before_login_hint: ~
+after_login_hint: "hush this provider doesn't exist"
 status:
- state: OK | PREP | BROKEN
- date: YYYY-MM
+  state: PREPARATION
+  date: 2018-09
 ---
-
-## Comments
-This is an example provider
-
-## Preperations
 
 ### Advanced Login Settings
 ```
@@ -102,7 +68,7 @@ fn main() {
     println!("{}", provider.name);
 
     if provider.status.state == deltachat_provider_database::StatusState::PREPARATION {
-        println!("{}", provider.markdown);
+        println!("{}", provider.before_login_hint);
     }
 }
 ```

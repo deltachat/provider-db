@@ -1,4 +1,4 @@
-include:
+# include:
 
 exclude: 
   - TODO
@@ -8,6 +8,13 @@ exclude:
   - LICENSE
   - "_providers/example.com.md"
   - target
+  - build.rs
+  - Cargo.*
+  - rust-toolchain
+  - .travis.yml
+  - vendor
+  - .bundle
+  - "_providers/old"
 
 defaults:
 -

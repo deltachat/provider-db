@@ -1,7 +1,8 @@
 ---
 name: Aktivix
 website: https://aktivix.org/
-domains: aktivix.org
+domains:
+- aktivix.org
 credentials: emailPass
 status:
  state: OK
