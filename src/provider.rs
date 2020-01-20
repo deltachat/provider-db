@@ -45,7 +45,6 @@ pub struct DomainDBEntry {
 //     OAuth2
 // }
 
-
 #[derive(Serialize, Deserialize, Debug, PartialEq)]
 /// Only used by build.rs
 pub struct RawStatus {

@@ -55,9 +55,7 @@ mod tests {
 
     #[test]
     fn to_json() {
-        let j = serde_json::to_string(
-            &get_provider_info("example.org").unwrap()
-        );
+        let j = serde_json::to_string(&get_provider_info("example.org").unwrap());
         println!("{:?}", j)
     }
 
