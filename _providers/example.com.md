@@ -4,10 +4,9 @@ name: example.com
 domains:
   - example.com
   - example.org
-before_login_hint: ~
 after_login_hint: "hush this provider doesn't exist"
 status:
-  state: PREPARATION
+  state: OK
   date: 2018-09
 ---
 

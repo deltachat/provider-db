@@ -54,10 +54,41 @@ fn parse_provider(path: &Path) -> (String, Vec<String>) {
     let cap = RE_YAML_AND_MD_PART.captures(&contents).unwrap();
     let yaml_part = &cap[1];
     let raw_data: RawProviderData = serde_yaml::from_str(yaml_part).unwrap();
-    println!("{:#?}", raw_data);
 
     // Validation:
-    // TODO if state == preperation there should be a before_login_hint field
+    let mut is_valid: bool = true;
+
+    if (raw_data.status.state == StatusState::PREPARATION
+        || raw_data.status.state == StatusState::BROKEN)
+        && raw_data.before_login_hint.is_none()
+    {
+        println!("- before_login_hint must be set if state == preperation || state == broken");
+        is_valid = false;
+    }
+
+    if let Some(ref b) = raw_data.before_login_hint {
+        if b.trim().is_empty() {
+            println!("- before_login_hint can not be an empty string: '{}'", b);
+            is_valid = false;
+        }
+    }
+
+    if let Some(ref b) = raw_data.after_login_hint {
+        if b.trim().is_empty() {
+            println!("- after_login_hint can not be an empty string: '{}'", b);
+            is_valid = false;
+        }
+    }
+
+    if !is_valid {
+        println!(
+            "/\\ Error(s) above were found in the file for {} /\\",
+            raw_data.name
+        );
+        panic!("Data Error - look above to find out more");
+    } else {
+        println!("{:#?}", raw_data);
+    }
 
     // let provider = Provider {
     //     overview_page: overview_page,

@@ -7,8 +7,8 @@ First check wether the file for the provider already exists, if it does skip to 
 Add [provider name].md to the _providers folder in the following format:
 ~~~
 ---
-website: [website of the provider]
 name: [provider name]
+website: [website of the provider]
 domains: [email domains of the provider / must be an yaml array]
 before_login_hint: [~ or a string that should be displayed before the user logs in]
 after_login_hint: [~ or a string that should be displayed after the user logged in]
@@ -19,12 +19,14 @@ status:
 [markdown that descripes the preperation steps, this gets displayed on the website]
 ~~~
 
+Note: if the state is `PREPARATION` or `BROKEN`, you need to write something about that into the `before_login_hint` field.
+
 ### Status options:
 
 State | Meaning
 ---|---
 OK | works right out of the box, no additional steps needed (exception to this are custom domain email addresses where you might need to specify the smtp and imap server manualy)
-PREP | preparation step/s is/are needed - (a few steps are required then it works - for example enabling imap/smtp on provider page)
+PREPARATION | preparation step/s is/are needed - (a few steps are required then it works - for example enabling imap/smtp on provider page)
 BROKEN | not working - Does not work. (too unstable to use falls also in this category)
 
 ## Edit an Entry
@@ -32,8 +34,8 @@ BROKEN | not working - Does not work. (too unstable to use falls also in this ca
 ## Example
 ~~~
 ---
-website: https://example.com
 name: example.com
+website: https://example.com
 domains:
   - example.com
   - example.org
