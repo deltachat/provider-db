@@ -1,13 +1,14 @@
 ---
 name: OVH
 website: https://ovh.it
-domains: ga-2.it
+domains: 
+ - ga-2.it
 credentials: emailPass
 status:
  state: PREP
  date: 2019-12
 registration:
- price: "&ge; 0.99€/mo"
+ price: Advertising
  inviteOnly: false
  
 ---
