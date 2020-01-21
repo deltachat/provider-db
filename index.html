@@ -81,8 +81,8 @@ permalink: /
                         {% case provider.status.state %}
                         {% when 'OK' %}
                         OK
-                        {% when 'PREP' %}
-                        <a class="status-prep" href=".{{provider.url}}#preperations">PREPARE</a>
+                        {% when 'PREPARATION' %}
+                        <a class="status-prep" href=".{{provider.url}}">PREPARE</a>
                         {% when 'BROKEN' %}
                         NOT WORKING
                         {% endcase %}

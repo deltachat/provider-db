@@ -11,7 +11,7 @@ after_login_hint: |
   An example hint that contains newlines.
   Sometimes we might have a lot to say.
 status:
- state: PREP
+ state: PREPARATION
  date: 2017-05
 connection:
   imap:

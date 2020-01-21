@@ -1,41 +1,5 @@
-use serde::{Serialize, Deserialize};
-pub const PROVIDER_OVERVIEW_URL: &'static str = "https://providers.delta.chat";
-
-#[derive(Serialize, Deserialize, Debug, PartialEq)]
-pub enum StatusState {
-    /// Works right out of the box without any preperation steps needed
-    OK = 1,
-    /// Works, but preparation steps are needed
-    PREPARATION = 2,
-    /// Doesn't work (too unstable to use falls also in this category)
-    BROKEN = 3,
-}
-
-#[derive(Serialize, Deserialize, Debug, PartialEq)]
-/// The status of a provider
-pub struct Status {
-    pub state: StatusState,
-    /// Date of when the state was last checked/updated
-    pub date: &'static str,
-}
-
-#[derive(Serialize, Deserialize, Debug, PartialEq)]
-/// Information about a provider
-pub struct Provider {
-    /// for linking to the providers page on the overview website
-    /// like `providers.delta.chat/{overview_page}`
-    pub overview_page: &'static str,
-    pub name: &'static str,
-    pub status: Status,
-    /// The markdown content of the providers page containing the preparation steps
-    pub markdown: &'static str,
-}
-
-#[derive(Serialize, Deserialize, Debug, PartialEq)]
-struct DomainDBEntry {
-    domain: &'static str,
-    list_index: u32,
-}
+pub mod provider;
+use provider::*;
 
 include!(concat!(env!("OUT_DIR"), "/data.rs"));
 
@@ -76,16 +40,23 @@ mod tests {
     fn test_example_domain() {
         assert_eq!(
             Some(&Provider {
-                overview_page: "example.com",
-                name: "Example",
+                overview_page: "https://providers.delta.chat/example.com",
+                name: "example.com",
+                before_login_hint: None,
+                after_login_hint: Some("hush this provider doesn\'t exist"),
                 status: Status {
                     state: StatusState::PREPARATION,
-                    date: "2018-09",
-                },
-                markdown: "\n...",
+                    date: "2018-09"
+                }
             }),
             get_provider_info("example.org")
         );
+    }
+
+    #[test]
+    fn to_json() {
+        let j = serde_json::to_string(&get_provider_info("example.org").unwrap());
+        println!("{:?}", j)
     }
 
     #[test]
@@ -97,5 +68,4 @@ mod tests {
         assert_eq!("t.d", get_domain_from_email("0.!#$%&'*+-/=?^_`{|}~@t.d"));
         assert_eq!("b-b", get_domain_from_email("d@b-b"))
     }
-
 }
