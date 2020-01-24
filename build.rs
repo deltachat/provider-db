@@ -106,25 +106,44 @@ fn main() {
             format!(
                 r#"static ref PROVIDER_{}: Provider = Provider {{
     name: "{}",
-    website: Some(
-        "https://aktivix.org/",
-    ),
+    website: {},
     domains: vec![
-        "aktivix.org",
+        {}
     ],
     credentials: vec![
-        "emailPass",
+        {}
     ],
     status: Status {{
-        state: Prep,
-        date: "2018-10",
+        state: State::{:?},
+        date: "{}",
     }},
     registration: Registration {{
         invite_only: {},
     }},
 }}
 "#,
-                i, provider.name, provider.registration.invite_only,
+                i,
+                provider.name,
+                if let Some(website) = provider.website {
+                    format!("Some(\"{}\")", website)
+                } else {
+                    "None".to_string()
+                },
+                provider
+                    .domains
+                    .iter()
+                    .map(|s| format!("\"{}\"", s))
+                    .collect::<Vec<_>>()
+                    .join(", "),
+                provider
+                    .credentials
+                    .iter()
+                    .map(|s| format!("\"{}\"", s))
+                    .collect::<Vec<_>>()
+                    .join(", "),
+                provider.status.state,
+                provider.status.date,
+                provider.registration.invite_only,
             )
             .as_bytes(),
         )
