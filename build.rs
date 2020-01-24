@@ -1,153 +1,133 @@
-#[macro_use]
-extern crate lazy_static;
-use std::env;
+use std::fmt;
 use std::fs::File;
+use std::io::Read;
 use std::io::Write;
 use std::path::Path;
 
-extern crate glob;
 use glob::glob;
-use std::io::Read;
-extern crate regex;
-use regex::Regex;
-extern crate yaml_rust;
-use yaml_rust::YamlLoader;
+use serde::de::{self, value, Deserializer, SeqAccess, Visitor};
+use serde::Deserialize;
 
-fn main() {
-    let out_dir = env::var("OUT_DIR").unwrap();
-    let dest_path = Path::new(&out_dir).join("data.rs");
-    let mut f = File::create(&dest_path).unwrap();
-    println!("path: {:?}", dest_path);
-    let (provider_count, provider_data, domain_count, domain_data) = gather_data();
-    f.write_fmt(format_args!(
-        "static DATABASE:[Provider;{}] = [{}];\n static DOMAIN_DB:[DomainDBEntry;{}] = [{}];",
-        provider_count, provider_data, domain_count, domain_data
-    ))
-    .unwrap();
-    println!("done");
+#[derive(Debug, Deserialize)]
+struct Provider {
+    name: String,
+    website: Option<String>,
+    #[serde(deserialize_with = "string_or_vec")]
+    domains: Vec<String>,
+    #[serde(deserialize_with = "string_or_vec", default = "Vec::new")]
+    credentials: Vec<String>,
+    status: Status,
+    #[serde(default = "Registration::default")]
+    registration: Registration,
 }
 
-fn gather_data() -> (u32, String, u32, String) {
-    println!("gather data");
-    let mut provider_data = Vec::new();
-    let mut provider_count: u32 = 0;
-    let mut domain_data = Vec::new();
-    let mut domain_count: u32 = 0;
+#[derive(Debug, Deserialize, Default)]
+struct Registration {
+    #[serde(rename(deserialize = "inviteOnly"))]
+    invite_only: bool,
+}
 
-    for e in glob("./_providers/*.md").expect("Failed to read glob pattern") {
+#[derive(Debug, Deserialize)]
+struct Status {
+    state: State,
+    date: String,
+}
+#[derive(Debug, Deserialize)]
+enum State {
+    #[serde(rename(deserialize = "OK"))]
+    Ok,
+    #[serde(rename(deserialize = "PREP"))]
+    Prep,
+    #[serde(rename(deserialize = "BROKEN"))]
+    Broken,
+}
+
+// Based on https://github.com/serde-rs/serde/issues/889
+
+fn string_or_vec<'de, D>(deserializer: D) -> Result<Vec<String>, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    struct StringOrVec;
+
+    impl<'de> Visitor<'de> for StringOrVec {
+        type Value = Vec<String>;
+
+        fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+            formatter.write_str("string or list of strings")
+        }
+
+        fn visit_none<E>(self) -> Result<Self::Value, E>
+        where
+            E: de::Error,
+        {
+            Ok(Vec::new())
+        }
+
+        fn visit_str<E>(self, s: &str) -> Result<Self::Value, E>
+        where
+            E: de::Error,
+        {
+            Ok(vec![s.to_owned()])
+        }
+
+        fn visit_seq<S>(self, seq: S) -> Result<Self::Value, S::Error>
+        where
+            S: SeqAccess<'de>,
+        {
+            Deserialize::deserialize(value::SeqAccessDeserializer::new(seq))
+        }
+    }
+
+    deserializer.deserialize_any(StringOrVec)
+}
+
+fn main() {
+    let out_dir = "./"; //std::env::var("OUT_DIR").unwrap();
+    let dest_path = Path::new(&out_dir).join("providers.rs");
+    let mut dest = File::create(dest_path).unwrap();
+
+    for (i, e) in glob("./_providers/*.md")
+        .expect("Failed to read glob pattern")
+        .enumerate()
+    {
         let pathbuf = e.unwrap();
         let path = pathbuf.as_path();
-        //println!("{}", path.display());
-        let overview_page = path
-            .file_name()
-            .unwrap()
-            .to_str()
-            .unwrap()
-            .trim_end_matches(".md");
         let mut file = File::open(path).unwrap();
         let mut contents = String::new();
         file.read_to_string(&mut contents).unwrap();
-        //println!("{}", contents);
-        lazy_static! {
-            static ref RE_YAML_AND_MD_PART: Regex =
-                Regex::new(r"(?ims)^---\n(.+)\n---(.*)").unwrap();
-        }
-        let cap = RE_YAML_AND_MD_PART.captures(&contents).unwrap();
-        let yaml_part = &cap[1];
-        let md_part = &cap[2];
-        //println!("{} -> {}", yaml_part, md_part);
-        let yaml = &YamlLoader::load_from_str(yaml_part).unwrap()[0];
 
-        let p_name = yaml["name"].as_str().unwrap();
-        println!("{}", p_name);
-        let p_domains = parse_yml_string_array(yaml["domains"].clone());
-        let p_status_state = yaml["status"]["state"].as_str().unwrap(); //TODO convert to ENUM
-        let p_status_date = yaml["status"]["date"].as_str().unwrap();
-        //println!("{} on {}; {:?}", p_status_state, p_status_date, p_domains);
+        let details = contents.split("---").nth(1).unwrap().trim();
+        println!("\n\nparsing: {:?}", &details);
 
-        // Get the "Preparations" paragraph from the markdown:
-        lazy_static! {
-            static ref RE_PREPS: Regex =
-                Regex::new(r"(?s)## Preparations\n(.*?)($|\n## )").unwrap();
-        }
-        let md_preparations = match RE_PREPS.captures(md_part) {
-            Some(cap) => (&cap[1]).to_string(),
-            None => {
-                if p_status_state == "PREP" {
-                    panic!(
-                        "{}: State was prep but there is no '## Preparations' section",
-                        overview_page
-                    );
-                }
-                "".to_string()
-            }
-        };
+        let provider: Provider = serde_yaml::from_str(&details).expect("invalid provider");
 
-        provider_data.push(format!(
-            r###"Provider {{
-        overview_page: "{}",
-        name: "{}",
-        status: Status {{ state: {}, date: "{}" }},
-        markdown: r##"{}"## }}"###,
-            overview_page,
-            p_name,
-            status_state_source(p_status_state),
-            p_status_date,
-            if p_status_state == "BROKEN" {
-                md_part
-            } else {
-                &md_preparations
-            }
-        ));
-        provider_data.push(",".to_string());
-
-        for raw_domain_field in &p_domains {
-            // remove (€) from domains
-            let domain = raw_domain_field.replace("(€)", "").replace(" ", "");
-            domain_data.push(format!(
-                "DomainDBEntry {{ domain: \"{}\", list_index: {} }}",
-                domain, provider_count
-            ));
-
-            domain_data.push(",\n".to_string());
-            domain_count += 1;
-        }
-
-        provider_count += 1;
-    }
-
-    //remove last commas
-    provider_data.pop();
-    domain_data.pop();
-
-    let provider_string: String = provider_data.join("");
-    let domain_string: String = domain_data.join("");
-    (provider_count, provider_string, domain_count, domain_string)
-}
-
-fn parse_yml_string_array(array: yaml_rust::yaml::Yaml) -> Vec<String> {
-    //? could be one string or an array of strings -> eitherway please convert to vector?
-    if !array.is_array() {
-        vec![array.as_str().unwrap().to_string()]
-    } else {
-        array
-            .into_iter()
-            .map(|x| x.as_str().unwrap().to_string())
-            .collect()
+        dest.write_all(
+            format!(
+                r#"static ref PROVIDER_{}: Provider = Provider {{
+    name: "{}",
+    website: Some(
+        "https://aktivix.org/",
+    ),
+    domains: vec![
+        "aktivix.org",
+    ],
+    credentials: vec![
+        "emailPass",
+    ],
+    status: Status {{
+        state: Prep,
+        date: "2018-10",
+    }},
+    registration: Registration {{
+        invite_only: {},
+    }},
+}}
+"#,
+                i, provider.name, provider.registration.invite_only,
+            )
+            .as_bytes(),
+        )
+        .unwrap();
     }
 }
-
-fn status_state_source(state: &str) -> String {
-    let status = match state {
-        "OK" => "OK",
-        "PREP" => "PREPARATION",
-        "BROKEN" => "BROKEN",
-        _ => panic!(format!("{} is not a valid state", state)),
-    };
-    format!("StatusState::{}", status)
-}
-
-/*
-idea:
-- [ ] Error on missing yml/invalid value? / ci test to run on pull requests?
-*/
