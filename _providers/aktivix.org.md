@@ -1,20 +1,17 @@
 ---
 name: Aktivix
-website: https://aktivix.org/
+state: OK
 domains:
-- aktivix.org
-credentials: emailPass
-status:
- state: OK
- date: 2018-10
-connection:
-  imap:
-    host: newyear.aktivix.org
+  - aktivix.org
+server:
+  - type: imap
+    socket: STARTTLS
+    hostname: newyear.aktivix.org
     port: 143
-    sec: starttls
-  smtp:
-    host: newyear.aktivix.org
+  - type: smtp
+    socket: STARTTLS
+    hostname: newyear.aktivix.org
     port: 25
-    sec: starttls
+last_checked: 2018-10
+website: https://aktivix.org/
 ---
-

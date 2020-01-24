@@ -320,10 +320,22 @@ main {
   margin: 0 0 2rem 0;
 }
 
-.big-green {
+.state-subheading {
   font-weight: bold;
   font-size: large;
+  padding: 0.5rem 0 1rem;
+}
+
+.state-ok {
   color: green;
+}
+
+.state-preparation {
+  color: orange;
+}
+
+.state-broken {
+  color: red;
 }
 
 h1 {
