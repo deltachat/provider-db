@@ -323,7 +323,12 @@ main {
 .state-subheading {
   font-weight: bold;
   font-size: large;
-  padding: 0.5rem 0 1rem;
+}
+
+.state-subheading svg {
+  width: 1.5rem;
+  vertical-align: middle;
+  margin-left: 0.5em;
 }
 
 .state-ok {
@@ -346,11 +351,6 @@ h1 {
 
 p, div {
   font-size: 1.2rem;
-}
-
-svg.loved-provider {
-  width: 1.5rem;
-  vertical-align: middle;
 }
 
 img.provider-db-logo {
