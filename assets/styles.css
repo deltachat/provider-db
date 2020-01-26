@@ -358,3 +358,11 @@ img.provider-db-logo {
   margin: -4rem 4rem 0rem 0rem;
   width: 5rem;
 }
+
+h3, h2 {
+  margin-top: 2rem;
+}
+
+li {
+  margin: 0.2rem 0 0 1.2rem
+}
