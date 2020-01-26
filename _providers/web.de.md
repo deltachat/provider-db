@@ -34,20 +34,17 @@ server:
     socket: SSL
     hostname: imap.web.de
     port: 993
-    username: |
-      %EMAILLOCALPART%
+    username_pattern: emaillocalpart
   - type: imap
     socket: STARTTLS
     hostname: imap.web.de
     port: 143
-    username: |
-      %EMAILLOCALPART%
+    username_pattern: emaillocalpart
   - type: smtp
     socket: STARTTLS
     hostname: smtp.web.de
     port: 587
-    username: |
-      %EMAILLOCALPART%
+    username_pattern: emaillocalpart
 before_login_hint: |
   You must allow IMAP access to your account before you can login.
 last_checked: 2017-06

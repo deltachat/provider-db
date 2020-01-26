@@ -10,8 +10,7 @@ server:
     socket: SSL
     hostname: imap.mail.me.com
     port: 993
-    username: |
-      %EMAILLOCALPART%
+    username_pattern: emaillocalpart
   - type: smtp
     socket: STARTTLS
     hostname: smtp.mail.me.com
