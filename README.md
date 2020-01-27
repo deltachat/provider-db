@@ -1,110 +1,65 @@
 # Delta Chat Provider Info
 
+This repository collects information on email providers and their interoperability with Delta Chat.
 
-## Add an Entry
-First check wether the file for the provider already exists, if it does skip to the **Edit an Entry** section.
+Parts of that information (the metadata, aka front matter) is included into the deltachat-core, to provides them to the Delta Chat apps on the different platforms.
 
-Add [provider name].md to the _providers folder in the following format:
-~~~
+The page's content is built into a web page that shows the state of the respective provider regarding its usage with Delta Chat, and details possibly required preparation steps, or explains why the interoperability is broken.
+
+
+## Format
+
+The files build on this format:
+
+```yaml
 ---
-name: [provider name]
-domains: [ email domains of the provider / can also be yaml array when there are multiple ones can contain (€) to mark a premium domain]
-credentials: [emailPass | emailAppPass | Oauth] - can also be an array, if multiple are supported availible
-status:
-   state: [OK | PREP | BROKEN] - "PREP" stands for Preparation Steps needed
-   date: [YYYY-MM]
+name: [name of the provider]
+state: [OK or PREPARATION or BROKEN]
+domains: 
+  - an_array
+  - of_domains
+  - used_by_this_provider
+server:
+  # Repeat the following block for each server (usually one for imap, one for smtp).
+  - type: [imap or smtp]
+    socket: [SSL or STARTTLS or NONE]
+    hostname: [hostname to connect to]
+    port: [port number]
+    username: [optional: %EMAILADDRESS% or %EMAILLOCALPART%, default is %EMAILADDRESS%]
+before_login_hint: |
+  [optional: a string that will be displayed before the user logs in.
+  Multiple lines are possible (line-breaks will be honoured), but keep in mind this text appears within the login form on possibly small displays.
+  ]
+after_login_hint: |
+  [optional: a string that will be displayed in the device chat after the user logged in.
+  Multiple lines are possible (line-breaks will be honoured).
+  There's more room for text in the device chat than in the login form, but please keep the text concise nonetheless.
+  ]
+date: [optional: date when the information was last checked]
+website: [optional: website of the provider]
 ---
-## Comments
-[If there are any, but make sure everything regarding preparation is under "## Preparations"]
-
-## Preparations
-
-### Advanced Login Settings [if applicable]
-```
-[imap and smpt server addresses]
+[Markdown-formatted content that gets displayed as provider-page on the web, linked from the apps (if state is not OK)]
 ```
 
-[if the provider requires additional steps, describe them here, you may also include images or a video tutorial of the process here]
+## Status options:
 
-## status history
-[if you change the status, copy the previous here that we can allow for a history]
-[has a table format? that we can color code the states]
-[just a link to github changelog/history of this file?]
-~~~
+### OK
 
-### Status options:
+If the state is `OK`, a standard text is used as page content. You don't need to put in anything.
 
-State | Meaning
----|---
-OK | works right out of the box, no additional steps needed (exception to this are custom domain email addresses where you might need to specify the smtp and imap server manualy)
-PREP | preparation step/s is/are needed - (a few steps are required then it works - for example enabling imap/smtp on provider page)
-BROKEN | not working - Does not work. (too unstable to use falls also in this category)
+### PREPARATION
 
-## Edit an Entry
+This state means that the user must do some preparing steps before they can use Delta Chat with their provider. For example enabling IMAP/SMTP at their provider's settings, or creating an app-specific password.
 
-## Entries
+The required steps must be described as page content in a friendly, helpful howto-style.
 
-Optional yaml font matter fields:
-```
-limits:
-    maxRecipients: number | "Unlimited"
-    messagesPerDay: number | "Unlimited"
-    maxFileSize: string | "Unlimited"
+Additionally a short, informative sentence must be written as `before_login_hint`, so tech-savy users already know what to do, and others get an idea what to expect from the linked provider page.
 
-registration:
- inviteOnly: boolean
- PhoneAuthRequired: boolean
- PersonalDataRequired: boolean
- price: string
+### BROKEN
 
-```
+This state means that Delta Chat will not work with this provider.
 
-## Example
-~~~
----
-name: example
-website: https://example.com
-domains:
- - example.com
- - example.org
-credentials: emailPass |  emailAppPass | Oauth
-status:
- state: OK | PREP | BROKEN
- date: YYYY-MM
----
+The problems blocking the usage must be summarized as page content in a friendly tone.
 
-## Comments
-This is an example provider
+Additionally a short, informative sentence must be written as `before_login_hint`, so tech-savy users already know what's up, and others get an idea what to expect from the linked provider page.
 
-## Preperations
-
-### Advanced Login Settings
-```
-imap mail.example.com:993
-smtp mail.example.com:465
-```
-~~~
-
-## Use as cargo Package
-
-https://crates.io/crates/deltachat-provider-database
-
-Usage:
-```rust
-extern crate deltachat_provider_database;
-
-use deltachat_provider_database::get_provider_info;
-
-
-fn main() {
-    let (provider, _domains) = get_provider_info("example.org").unwrap();
-
-    println!("{}", provider.name);
-
-    if provider.status.state == deltachat_provider_database::StatusState::PREPARATION {
-        println!("{}", provider.markdown);
-    }
-}
-```
-
-See `cargo doc --open` for more information.

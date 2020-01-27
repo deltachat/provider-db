@@ -1,35 +1,37 @@
 ---
 name: GMX.net
-website: https://www.gmx.net/
+state: PREPARATION
 domains:
  - gmx.net
  - gmx.de
  - gmx.at
  - gmx.ch
- - gmx.org (€)
- - gmx.eu (€)
- - gmx.info (€)
- - gmx.biz (€)
- - gmx.com (€)
-credentials: emailPass
-status:
- state: PREP
- date: 2017-06
-registration:
- inviteOnly: false
- price: freemium
+ - gmx.org
+ - gmx.eu
+ - gmx.info
+ - gmx.biz
+ - gmx.com
+server:
+  - type: imap
+    socket: SSL
+    hostname: imap.gmx.net
+    port: 993
+  - type: smtp
+    socket: SSL
+    hostname: mail.gmx.net
+    port: 465
+  - type: smtp
+    socket: STARTTLS
+    hostname: mail.gmx.net
+    port: 587
+before_login_hint: |
+  You must allow IMAP access to your account before you can login.
+last_checked: 2017-06
+website: https://www.gmx.net/
 ---
 
-## Comments
-some free accounts seem to support 20 folders only.
+To use your GMX email address with Delta Chat you have to enable access for 3rd party applications through IMAP. Please see [GMX's own article on how to do that](https://support.gmx.com/pop-imap/toggle.html).
 
-if you have already 20 or more folders,
-DeltaChat cannot create the DeltaChat folder and move messages there.
+Afterwards you can use Delta Chat with your GMX email address and the newly created password.
 
-in this case, please clean up 
-(note, that also folders in the trash are counted to the "20 folder maximum")
-and create the DeltaChat folder 
-in the gmx-webinterface manually.
-
-## Preparations
-activate access for external mail client at gmx side
+One more tip: In case you find that Delta Chat messages are not moved into the designated "DeltaChat"-folder of your email account, please make sure that you have less than 20 folders altogether. Apparently web.de allows only for 20 folders under certain circumstances. Note that also folders in the trash do count.
