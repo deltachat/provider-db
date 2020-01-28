@@ -47,6 +47,10 @@ server:
     username_pattern: emaillocalpart
 before_login_hint: |
   You must allow IMAP access to your account before you can login.
+after_login_hint: |
+  Note: if you have your web.de spam settings too strict, you won't receive contact requests from new people.
+  If you want to receive contact requests, you should disable the "3-Wege-Spamschutz" in the web.de settings. 
+  Read how: https://hilfe.web.de/email/spam-und-viren/spamschutz-einstellungen.html
 last_checked: 2020-01
 website: https://web.de
 ---
