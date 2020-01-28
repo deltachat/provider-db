@@ -1,6 +1,6 @@
 ---
 name: WEB.DE
-state: PREPARATION
+status: PREPARATION
 domains:
   - web.de
   - email.de

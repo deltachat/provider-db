@@ -1,6 +1,6 @@
 ---
 name: Aktivix
-state: OK
+status: OK
 domains:
   - aktivix.org
 server:

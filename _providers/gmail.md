@@ -1,6 +1,6 @@
 ---
 name: Gmail
-state: PREPARATION
+status: PREPARATION
 domains:
   - gmail.com
   - googlemail.com

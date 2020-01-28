@@ -1,6 +1,6 @@
 ---
 name: iCloud Mail
-state: PREPARATION
+status: PREPARATION
 domains: 
 - icloud.com
 - me.com
