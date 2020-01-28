@@ -15,6 +15,7 @@ def get_yaml(file):
         raw_yaml = yaml.safe_load(raw)
     return raw_yaml
 
+
 def get_xml(raw_yml):
     i = 0
     file = ""
@@ -22,6 +23,7 @@ def get_xml(raw_yml):
         file = "/home/user/Desktop/autoconfig.thunderbird.net/" + raw_yml['domains'][i]
         i += 1
     return ET.parse(file).getroot()
+
 
 def get_servers_from_xml(raw_yml):
     # add server data from XML
@@ -48,7 +50,31 @@ def get_servers_from_xml(raw_yml):
     return servers
 
 
-files = ["comcast"]
+files = ["all-inkl.com",
+         "bluewin.ch",
+         "comcast",
+         "dismail.de",
+         "disroot",
+         "freenet.de",
+         "hosteurope",
+         "i.ua",
+         "kolst.com",
+         "kontent.com",
+         "mailbox.org",
+         "mail.ru",
+         "manitu.de",
+         "nauta.cu",
+         "posteo",
+         "riseup.net",
+         "rogers.com",
+         "strato.de",
+         "tiscali.it",
+         "ukr.net",
+         "verizon",
+         "vfemail",
+         "yandex.ru",
+         "ziggo.nl",
+         "zoho.com", ]
 
 for file in files:
     # get YML from file.md
@@ -73,5 +99,5 @@ for file in files:
     # write to ../file.md
     with open("../" + file + ".md", "a+") as output:
         output.write("---\n")
-        yaml.dump(new_yml, output, default_flow_style = False)
+        yaml.dump(new_yml, output, default_flow_style=False)
         output.write("---\n")
