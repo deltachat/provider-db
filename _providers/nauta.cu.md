@@ -5,11 +5,11 @@ domains:
 status: OK
 server:
   - type: imap
-    socket: NONE
+    socket: STARTTLS
     hostname: imap.nauta.cu
     port: 143
   - type: smtp
-    socket: NONE
+    socket: STARTTLS
     hostname: smtp.nauta.cu
     port: 25
 after_login_hint: |
