@@ -1,6 +1,6 @@
 ---
 name: GMX.net
-state: PREPARATION
+status: PREPARATION
 domains:
  - gmx.net
  - gmx.de

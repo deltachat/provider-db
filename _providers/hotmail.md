@@ -1,6 +1,6 @@
 ---
 name: Hotmail (Outlook, Office365)
-state: BROKEN
+status: BROKEN
 domains:
   - hotmail.com
   - outlook.com

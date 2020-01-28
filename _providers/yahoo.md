@@ -1,6 +1,6 @@
 ---
 name: yahoo
-state: PREPARATION
+status: PREPARATION
 domains: 
   - yahoo.com
   - yahoo.com
