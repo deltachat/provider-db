@@ -21,11 +21,11 @@ domains:
   - used_by_this_provider
 server:
   # Repeat the following block for each server (usually one for imap, one for smtp).
-  - type: [imap or smtp]
-    socket: [SSL or STARTTLS or NONE]
+  - type: [IMAP or SMTP]
+    socket: [SSL or STARTTLS]
     hostname: [hostname to connect to]
     port: [port number]
-    username: [optional: %EMAILADDRESS% or %EMAILLOCALPART%, default is %EMAILADDRESS%]
+    username_pattern: [optional: EMAIL or EMAILLOCALPART, default is EMAIL]
 before_login_hint: |
   [optional: a string that will be displayed before the user logs in.
   Multiple lines are possible (line-breaks will be honoured), but keep in mind this text appears within the login form on possibly small displays.
