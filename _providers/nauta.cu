@@ -13,8 +13,8 @@ server:
     hostname: smtp.nauta.cu
     port: 25
 after_login_hint: |
-    Attención - con nauta.cu, puedes enviar mensajes sólo a un máximo de 20 personas. 
-    En grupos más grandes que eso, no puedes dejar o enviar mensajes.
+    Atención - con nauta.cu, puede enviar mensajes sólo a un máximo de 20 personas.
+    En grupos más grandes que eso, no puede dejar o enviar mensajes.
 last_checked: 2020-01
 website: https://nauta.cu
 ---
