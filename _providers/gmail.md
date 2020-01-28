@@ -1,42 +1,31 @@
 ---
-name: Google Mail
-website: https://gmail.com
+name: Gmail
+status: PREPARATION
 domains:
- - gmail.com
- - googlemail.com
-credentials: 
- - emailPass
- - emailAppPass
- - Oauth
-status:
- state: PREP
- date: 2018-05
-limits:
- maxRecipients: 500
- messagesPerDay: 500
-
-registration:
- inviteOnly: false
- PhoneAuthRequired: true
- PersonalDataRequired: true
- price: FREE
+  - gmail.com
+  - googlemail.com
+server:
+  - type: imap
+    socket: SSL
+    hostname: imap.gmail.com
+    port: 993
+  - type: smtp
+    socket: SSL
+    hostname: smtp.gmail.com
+    port: 465
+before_login_hint: |
+  For Gmail accounts, you need to create an app-password if you have "2-Step Verification" enabled. If this setting is not available, you need to enable "less secure apps".
+last_checked: 2018-05
+website: https://gmail.com
 ---
 
-## Comments
+To use Delta Chat with your Gmail email address you have to take **one of the following actions**. We prefer the first one, because it is the easiest. If that doesn't suit you, try one of the other options.
 
-- Additional information to the email sending/recieving limits can be found on https://support.google.com/mail/answer/22839?hl=en
-
-## Preparations
-
-### Use OAuth (recomended)
-
-When Deltachat asks you to use Oauth, accept and login in the google login that pops up.
+* **Authenticate using "oauth"**: *This currently works only with Delta Chat Android.* Delta Chat automatically tries this method for recognized Gmail-accounts, it is the extra login dialog you get to see when trying to log in with Delta Chat for the first time. If you cancelled that dialog you may simply start the login process again to authenticate with "oauth".
+* **Create an app-specific password**: This method is only viable if you use "2-Step Verification" for logging into Gmail. It means to create an additional password that allows access to your emails, which you use only for one device or app.  Please [follow Google's instructions](https://support.google.com/accounts/answer/185833), and then use the newly generated password to log in with Delta Chat.
+* **Allow "less-secure apps"**: This sounds like a bad idea, but it actually just enables a very commonly used way to access emails, so don't let yourself be scared away. Please [switch this feature on](https://myaccount.google.com/lesssecureapps), and then log in with Delta Chat just normally.
 
 
-### Without 2FA
+## Further information
 
-Enable "less-secure-apps" to allow non google programms to connect to your email account. (It is recomended to use Outh instead)
-
-### With 2FA
-
-Create an "App Specific Passwort" for DeltaChat.
+Gmail places some limits on the [amount of emails you may send and receive per day](https://support.google.com/mail/answer/22839).

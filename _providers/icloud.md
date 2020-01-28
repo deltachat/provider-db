@@ -1,16 +1,27 @@
 ---
 name: iCloud Mail
-website: https://www.icloud.com/mail
+status: PREPARATION
 domains: 
 - icloud.com
 - me.com
 - mac.com
-credentials: emailAppPass
-status:
- state: PREP
- date: 2017-05
+server:
+  - type: imap
+    socket: SSL
+    hostname: imap.mail.me.com
+    port: 993
+    username_pattern: emaillocalpart
+  - type: smtp
+    socket: STARTTLS
+    hostname: smtp.mail.me.com
+    port: 587
+before_login_hint: "You must create an app-specific password for Delta Chat before you can login."
+last_checked: 2020-01
+website: https://www.icloud.com/mail
 ---
 
-## Preparations
+To use Delta Chat with your iCloud email address you have to generate a specific password for it.
 
-For iCloud, you can’t use the regular password anymore, you have to [generate one for each external client](https://support.apple.com/en-gb/HT204397). Follow the [generation instructions](https://support.apple.com/en-us/HT202304) and use that password in Delta Chat.
+Please follow [these instructions by Apple](https://support.apple.com/en-us/HT202304) to do that.
+
+Afterwards you can use Delta Chat with your iCloud email address and the newly created password.

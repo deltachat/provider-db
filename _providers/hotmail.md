@@ -1,26 +1,18 @@
 ---
-name: hotmail / outlook / office365
-website: https://outlook.live.com/mail
+name: Hotmail (Outlook, Office365)
+status: BROKEN
 domains:
- - hotmail.com
- - outlook.com
- - office365.com
- - outlook.com.tr
-credentials: emailPass
-status:
- state: BROKEN
- date: 2019-02
+  - hotmail.com
+  - outlook.com
+  - office365.com
+  - outlook.com.tr
+before_login_hint: |
+  Outlook email addresses will not work as expected as these servers remove some important transport information.
+  Hopefully sooner or later there will be a fix, for now we suggest to use another email address.
+last_checked: 2019-02
+website: https://outlook.live.com/mail
 ---
 
-> Detected to be not working any more, for details please check this [issue](https://github.com/deltachat/deltachat-core/issues/561)
+Unfortunately outlook.com breaks using Delta Chat by manipulating messages in a way that we can't work around. We're very sorry indeed, but it's not our fault.
 
-
-## Comments
-- **Outlook isn't compliant with the industry standards for email in header handling and is therefore incompatible with DeltaChat.**
-- Owned by Microsoft
-
-## Preparations
-```
-IMAP-Server: outlook.office365.com
-Note: SMTP-Server can be omitted as outlook.office365.com is used (automatically by Delta Chat) and working. Other SMTP-Server that are working are smtp.office365.com 1 and smtp-mail.outlook.com 6.
-```
+If this situation ever changes we will update this page, but for now please use a different email provider with Delta Chat.
