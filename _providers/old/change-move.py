@@ -11,7 +11,6 @@ def get_yaml(file):
         raw = f.read()
         raw = raw[4:]
         raw = sub(r'---(?s).*', '', raw)
-        print(raw)
         raw_yaml = yaml.safe_load(raw)
     return raw_yaml
 
@@ -19,9 +18,12 @@ def get_yaml(file):
 def get_xml(raw_yml):
     i = 0
     file = ""
-    while not exists(file):
-        file = "/home/user/Desktop/autoconfig.thunderbird.net/" + raw_yml['domains'][i]
-        i += 1
+    if raw_yml['domains'] is dict:
+        while not exists(file):
+            file = "/home/user/Desktop/autoconfig.thunderbird.net/" + raw_yml['domains'][i]
+            i += 1
+    elif type(raw_yml['domains']) is str:
+        file = "/home/user/Desktop/autoconfig.thunderbird.net/" + raw_yml['domains']
     return ET.parse(file).getroot()
 
 
@@ -79,25 +81,28 @@ files = ["all-inkl.com",
 for file in files:
     # get YML from file.md
     raw_yml = get_yaml(file)
-    print(raw_yml)
 
     # initalize dictionary, add values from yaml
     new_yml = {"name": raw_yml["name"],
                "status": "OK",
                "domains": raw_yml["domains"],
                # get XML from TB autoconfig
-               "server": get_servers_from_xml(raw_yml),
                }
 
-    if raw_yml["status"]["date"]:
+    if "date" in raw_yml["status"]:
         new_yml["last_checked"] = raw_yml["status"]["date"]
-    if raw_yml["website"]:
+    if "website" in raw_yml:
         new_yml["website"] = raw_yml["website"]
+    try:
+        new_yml["server"]: get_servers_from_xml(raw_yml)
+    except FileNotFoundError:
+        pass
 
-    print(new_yml)
-
-    # write to ../file.md
+        # write to ../file.md
     with open("../" + file + ".md", "a+") as output:
         output.write("---\n")
         yaml.dump(new_yml, output, default_flow_style=False)
         output.write("---\n")
+        #print("---")
+        #print(yaml.safe_dump(new_yml, default_flow_style=False), end="")
+        #print("---")
