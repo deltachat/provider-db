@@ -7,6 +7,15 @@ domains:
   - office365.com
   - outlook.com.tr
   - live.com
+server:
+  - type: imap
+    socket: SSL
+    hostname: imap-mail.outlook.com
+    port: 993
+  - type: smtp
+    socket: STARTTLS
+    hostname: smtp-mail.outlook.com
+    port: 587
 before_login_hint: |
   Outlook email addresses will not work as expected as these servers remove some important transport information.
   Hopefully sooner or later there will be a fix, for now we suggest to use another email address.
