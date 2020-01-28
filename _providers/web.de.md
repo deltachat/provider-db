@@ -47,7 +47,7 @@ server:
     username_pattern: emaillocalpart
 before_login_hint: |
   You must allow IMAP access to your account before you can login.
-last_checked: 2017-06
+last_checked: 2020-01
 website: https://web.de
 ---
 
