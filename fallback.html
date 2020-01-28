@@ -18,7 +18,7 @@
                   <b>
                     <a href="{{ provider.url }}">{{ provider.title }}</a> [ {{ provider.domains | join: "; "  }} ]<br>
                   </b>
-                  [ {{ provider.status.state }} on {{ provider.status.date }} ]<br>
+                  [ {{ provider.status.status }} on {{ provider.status.last_checked }} ]<br>
                   [ {{ provider.credentials | join: " or " }} ]
                 </li>
                 {% endfor %}

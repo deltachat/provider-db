@@ -22,7 +22,7 @@ function populateIndex() {
         newIndex.push({
             elem: elem,
             searchkey: elem.dataset.searchkey.toLowerCase(),
-            no_preparation: elem.dataset.state === "OK",
+            no_preparation: elem.dataset.status === "OK",
         })
     }
 
