@@ -6,6 +6,7 @@ domains:
   - outlook.com
   - office365.com
   - outlook.com.tr
+  - live.com
 before_login_hint: |
   Outlook email addresses will not work as expected as these servers remove some important transport information.
   Hopefully sooner or later there will be a fix, for now we suggest to use another email address.
