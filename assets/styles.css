@@ -7,32 +7,32 @@
     width: calc(100%-50pt);
     margin-bottom: 75px;
 }
-.status-ok {
+.provider_list .status-ok {
   color: white;
   background: var(--color-works);
   padding-left: 5pt;
 }
 
-.status-prep {
+.provider_list .status-prep {
   color: yellow;
   background: var(--color-prep);
   padding-left: 5pt;
   text-decoration: none;
 }
-a.status-prep {
+.provider_list a.status-prep {
   padding-left: 0;
 }
-a.status-prep :hover, a.title:link, a.title:visited, a.title:active{
+.provider_list a.status-prep :hover, a.title:link, a.title:visited, a.title:active{
 color: yellow;
 }
 
-.status-broken {
+.provider_list .status-broken {
 color: white;
 background: var(--color-broken);
 padding-left: 5pt;
 }
 
-.status-minimal {
+.provider_list .status-minimal {
   box-shadow: none;
   padding-left: 0;
 }
@@ -164,29 +164,29 @@ main {
         width: 55%;
         margin-left: 45%;
     }
-  .status-ok {
+  .provider_list .status-ok {
       color: white;
       background: var(--color-works);
       padding-left: 5pt;
   }
   
-  .status-prep {
+  .provider_list .status-prep {
       background: var(--color-prep);
       padding-left: 5pt;
       text-decoration: none;
   }
-  a.status-prep :hover, a.title:link, a.title:visited, a.title:active{
+  .provider_list a.status-prep :hover, a.title:link, a.title:visited, a.title:active{
     text-decoration: none;
     color: yellow;
   }
   
-  .status-broken {
+  .provider_list .status-broken {
    color: white;
    background: var(--color-broken);
    padding-left: 5pt;
   }
   
-  .status-minimal {
+  .provider_list .status-minimal {
       box-shadow: none;
       padding-left: 0;
   }
