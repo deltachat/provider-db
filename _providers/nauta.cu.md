@@ -16,6 +16,6 @@ after_login_hint: |
     Atención - con nauta.cu, puede enviar mensajes sólo a un máximo de 20 personas a la vez.
     En grupos más grandes, no puede enviar mensajes o abandonar el grupo.
 last_checked: 2020-01
-website: https://webmail.nauta.cu/
+website: https://webmail.nauta.cu
 ---
 
