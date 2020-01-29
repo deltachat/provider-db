@@ -1,9 +1,8 @@
 ---
-domains:
-- kontent.com
-- (custom)
-last_checked: 2018-06
 name: KONTENT
 status: OK
+domains:
+- kontent.com
+last_checked: 2018-06
 website: https://www.kontent.com/products/email/
 ---
