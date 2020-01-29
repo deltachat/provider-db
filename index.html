@@ -74,11 +74,11 @@ permalink: /
 
         <tr 
             data-searchkey="{{provider.name}} {{provider.domains | join: ' '}}" 
-            data-status="{{ provider.status.status }}"
+            data-status="{{ provider.status }}"
             >
-            <td class="status-{{ provider.status.status | downcase }}">
+            <td class="status-{{ provider.status | downcase }}">
                     <span class="status">
-                        {% case provider.status.status %}
+                        {% case provider.status %}
                         {% when 'OK' %}
                         OK
                         {% when 'PREPARATION' %}
