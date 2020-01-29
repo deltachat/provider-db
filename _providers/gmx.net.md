@@ -34,5 +34,5 @@ To use your GMX email address with Delta Chat you have to enable access for 3rd 
 
 Afterwards you can use Delta Chat with your GMX email address and the newly created password.
 
-One more tip: In case you find that Delta Chat messages are not moved into the designated "DeltaChat"-folder of your email account, please make sure that you have less than 20 folders altogether. Apparently web.de allows only for 20 folders under certain circumstances. Note that also folders in the trash do count.
+One more tip: In case you find that Delta Chat messages are not moved into the designated "DeltaChat"-folder of your email account, please make sure that you have less than 20 folders altogether. Apparently GMX Freemail allows only for 20 folders. Note that also folders in the trash do count.
 

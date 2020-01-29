@@ -71,3 +71,4 @@ Protection, as described here:
 
 ![3-Wege-Spamschutz in den web.de-Einstellungen](../assets/img/web.de-spam-protection.png)
 
+One more tip: In case you find that Delta Chat messages are not moved into the designated "DeltaChat"-folder of your email account, please make sure that you have less than 40 folders altogether. Apparently web.de allows only for 40 folders. Note that also folders in the trash do count.
