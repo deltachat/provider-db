@@ -1,5 +1,5 @@
 ---
-name: Hotmail (Outlook, Office365)
+name: Outlook.com
 status: BROKEN
 domains:
   - hotmail.com
@@ -17,10 +17,10 @@ server:
     hostname: smtp-mail.outlook.com
     port: 587
 before_login_hint: |
-  Outlook email addresses will not work as expected as these servers remove some important transport information.
+  Outlook.com email addresses will not work as expected as these servers remove some important transport information.
   Hopefully sooner or later there will be a fix, for now we suggest to use another email address.
 after_login_hint: |
-  Outlook email addresses will not work as expected as these servers remove some important transport information.
+  Outlook.com email addresses will not work as expected as these servers remove some important transport information.
   Unencrypted 1-on-1 chats kind of work, but groups and encryption don't.
   Hopefully sooner or later there will be a fix, for now we suggest to use another email address.
 last_checked: 2019-02
