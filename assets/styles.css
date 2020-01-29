@@ -320,26 +320,26 @@ main {
   margin: 0 0 2rem 0;
 }
 
-.state-subheading {
+.status-subheading {
   font-weight: bold;
   font-size: large;
 }
 
-.state-subheading svg {
+.status-subheading svg {
   width: 1.5rem;
   vertical-align: middle;
   margin-left: 0.5em;
 }
 
-.state-ok {
+.status-ok {
   color: green;
 }
 
-.state-preparation {
+.status-preparation {
   color: orange;
 }
 
-.state-broken {
+.status-broken {
   color: red;
 }
 
