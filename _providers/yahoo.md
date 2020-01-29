@@ -1,5 +1,5 @@
 ---
-name: yahoo
+name: Yahoo
 status: PREPARATION
 domains: 
   - yahoo.com
@@ -27,11 +27,12 @@ server:
     socket: SSL
     hostname: smtp.mail.yahoo.com
     port: 465
+before_login_hint: To use Delta Chat with your Yahoo email address you have to allow "less secure apps" in the Yahoo webinterface.
 last_checked: 2017-12
 website: https://yahoo.com
 ---
 
-To use Delta Chat with your yahoo email address you have to allow "less secure apps":
+To use Delta Chat with your Yahoo email address you have to allow "less secure apps":
 
 In your [account security screen](https://login.yahoo.com/account/security) you will find a setting titled "Allow apps that use less secure sign in". Please switch that on to allow Delta Chat to log in to your account.
 
