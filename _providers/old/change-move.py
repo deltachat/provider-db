@@ -4,6 +4,7 @@ import yaml
 import xml.etree.ElementTree as ET
 from re import sub
 from os.path import exists
+from os import remove
 
 
 def get_yaml(file):
@@ -106,3 +107,6 @@ for file in files:
         #print("---")
         #print(yaml.safe_dump(new_yml, default_flow_style=False), end="")
         #print("---")
+
+    # remove old file
+    remove(file + ".md")
