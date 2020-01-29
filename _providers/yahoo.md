@@ -3,7 +3,6 @@ name: Yahoo
 status: PREPARATION
 domains: 
   - yahoo.com
-  - yahoo.com
   - yahoo.de
   - yahoo.it
   - yahoo.fr
