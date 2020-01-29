@@ -23,7 +23,6 @@ after_login_hint: |
   Outlook email addresses will not work as expected as these servers remove some important transport information.
   Unencrypted 1-on-1 chats kind of work, but groups and encryption don't.
   Hopefully sooner or later there will be a fix, for now we suggest to use another email address.
-  You can find out which providers work well with Delta Chat at https://providers.delta.chat/
 last_checked: 2019-02
 website: https://outlook.live.com/mail
 ---
