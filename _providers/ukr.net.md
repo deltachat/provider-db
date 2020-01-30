@@ -1,5 +1,5 @@
 ---
-name: UKR.NET
+name: ukr.net
 status: OK
 domains:
   - ukr.net

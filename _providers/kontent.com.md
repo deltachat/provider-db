@@ -1,5 +1,5 @@
 ---
-name: KONTENT
+name: Kontent
 status: OK
 domains:
 - kontent.com

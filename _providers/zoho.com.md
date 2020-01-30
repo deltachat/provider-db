@@ -1,5 +1,5 @@
 ---
-name: ZOHO
+name: Zoho
 status: OK
 domains:
 - zoho.com

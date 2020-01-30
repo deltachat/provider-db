@@ -1,5 +1,5 @@
 ---
-name: POSTEO
+name: Posteo
 status: OK
 domains:
   - posteo.de

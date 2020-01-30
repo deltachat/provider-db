@@ -1,5 +1,5 @@
 ---
-name: KOLST
+name: Kolst
 status: OK
 domains:
 - kolst.com
