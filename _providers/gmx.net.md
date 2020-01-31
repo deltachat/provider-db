@@ -25,7 +25,7 @@ server:
     hostname: mail.gmx.net
     port: 587
 before_login_hint: |
-  You must allow IMAP access to your account before you can login.
+  You must allow IMAP access in the GMX web interface before you can login.
 last_checked: 2017-06
 website: https://www.gmx.net/
 ---

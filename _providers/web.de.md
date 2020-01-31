@@ -1,5 +1,5 @@
 ---
-name: WEB.DE
+name: Web.de
 status: PREPARATION
 domains:
   - web.de
@@ -46,10 +46,10 @@ server:
     port: 587
     username_pattern: emaillocalpart
 before_login_hint: |
-  You must allow IMAP access to your account before you can login.
+  You must allow IMAP access in the Web.de web interface before you can login.
 after_login_hint: |
   Note: if you have your web.de spam settings too strict, you won't receive contact requests from new people.
-  If you want to receive contact requests, you should disable the "3-Wege-Spamschutz" in the web.de settings. 
+  If you want to receive contact requests, you should disable the "3-Wege-Spamschutz" in the Web.de settings.
   Read how: https://hilfe.web.de/email/spam-und-viren/spamschutz-einstellungen.html
 last_checked: 2020-01
 website: https://web.de
@@ -57,11 +57,11 @@ website: https://web.de
 
 To use your web.de email address with Delta Chat you have to enable IMAP access. Please see [web.de's own article on how to do that](https://hilfe.web.de/pop-imap/einschalten.html).
 
-Afterwards you can use Delta Chat with your web.de email address and the newly created password.
+Afterwards you can use Delta Chat with your Web.de email address and the newly created password.
 
 ## Disable 3-Way Spam Protection
 
-If the 3-Way Spam Protection is enabled in the web.de settings, Delta Chat
+If the 3-Way Spam Protection is enabled in the Web.de settings, Delta Chat
 won't work as expected, as all emails by unknown contacts will be moved to the
 "Unbekannt" folder instead of the Inbox. 
 
@@ -71,4 +71,4 @@ Protection, as described here:
 
 ![3-Wege-Spamschutz in den web.de-Einstellungen](../assets/img/web.de-spam-protection.png)
 
-One more tip: In case you find that Delta Chat messages are not moved into the designated "DeltaChat"-folder of your email account, please make sure that you have less than 40 folders altogether. Apparently web.de allows only for 40 folders. Note that also folders in the trash do count.
+One more tip: In case you find that Delta Chat messages are not moved into the designated "DeltaChat"-folder of your email account, please make sure that you have less than 40 folders altogether. Apparently Web.de allows only for 40 folders. Note that also folders in the trash do count.

@@ -26,7 +26,7 @@ server:
     socket: SSL
     hostname: smtp.mail.yahoo.com
     port: 465
-before_login_hint: To use Delta Chat with your Yahoo email address you have to allow "less secure apps" in the Yahoo webinterface.
+before_login_hint: To use Delta Chat with your Yahoo email address you have to allow "less secure apps" in the Yahoo web interface.
 last_checked: 2017-12
 website: https://yahoo.com
 ---
