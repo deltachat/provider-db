@@ -13,7 +13,7 @@ servers:
     hostname: smtp.aol.com
     port: 465
 before_login_hint: For now, you can't use Delta Chat to login to AOL.
-last_checked: 2017-12
+last_checked: 2020-02
 website: https://aol.com
 ---
 
