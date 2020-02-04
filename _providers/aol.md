@@ -12,11 +12,13 @@ servers:
     socket: SSL
     hostname: smtp.aol.com
     port: 465
-before_login_hint: For now, you can't use Delta Chat to login to AOL.
+before_login_hint: You can't use Delta Chat to login to AOL.
 last_checked: 2020-02
 website: https://aol.com
 ---
 
-This provider needs an extra OAuth2 implementation in core, which is [not
-planned right now](https://github.com/deltachat/provider-db/issues/91).
+To enable using AOL, Delta Chat would have to provide an extra authentication
+mechanism (OAuth2). There are [no plans for
+this](https://github.com/deltachat/provider-db/issues/91) in the foreseeable
+future, so for now you can't use Delta Chat to log into your AOL account.
 
