@@ -27,7 +27,7 @@ server:
     port: [port number]
     username_pattern: [optional: EMAIL or EMAILLOCALPART, default is EMAIL]
 before_login_hint: |
-  [optional: a string that will be displayed before the user logs in.
+  [required for status PREPARATION or BROKEN: a string that will be displayed before the user logs in.
   Multiple lines are possible (line-breaks will be honoured), but keep in mind this text appears within the login form on possibly small displays.
   ]
 after_login_hint: |
