@@ -13,6 +13,7 @@ servers:
     socket: SSL
     hostname: securesmtp.t-online.de
     port: 465
+before_login_hint: To use Delta Chat with a T-Online email address, you need an app password.
 last_checked: 2020-02
 website: https://www.t-online.de/
 ---
