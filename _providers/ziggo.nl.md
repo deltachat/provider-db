@@ -12,7 +12,6 @@ server:
     port: 587
     socket: STARTTLS
     type: smtp
-status: OK
 last_checked: 2017-06
 website: https://www.ziggo.nl/
 ---

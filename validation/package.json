@@ -1,0 +1,16 @@
+{
+  "name": "dc-provider-db-validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "js-yaml": "^3.13.1"
+  }
+}
