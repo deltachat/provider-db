@@ -27,19 +27,19 @@ function test(fileContent) {
     if (json.status == "PREPARATION") {
         // If status == PREPARATION, does before_login_hint exist?
         if (!json.before_login_hint || json.before_login_hint.trim() === "") {
-            throw new Error("Status is Preparation, but 'before_login_hint' is missing")
+            throw new Error("Status is PREPARATION, but 'before_login_hint' is missing")
         }
         // If status == PREPARATION, does markdown exist? (maybe even require screenshots?)
         if (markdown.trim() === "") {
-            throw new Error("Status is Preparation, but website content is missing")
+            throw new Error("Status is PREPARATION, but website content is missing")
         }
     } else if (json.status == "BROKEN") {
         // If status == BROKEN, does before_login_hint & after_login_hint exist?
         if (!json.before_login_hint || json.before_login_hint.trim() === "") {
-            throw new Error("Status is Broken, but 'before_login_hint' is missing")
+            throw new Error("Status is BROKEN, but 'before_login_hint' is missing")
         }
-        if (!json.after_login_hint || json.after_login_hint.trim() === "") {
-            throw new Error("Status is Broken, but 'after_login_hint' is missing")
+        if (markdown.trim() === "") {
+            throw new Error("Status is BROKEN, but website content is missing")
         }
     }
 
