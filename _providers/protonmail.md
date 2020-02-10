@@ -5,7 +5,7 @@ domains:
 - protonmail.com
 - protonmail.ch
 before_login_hint: |
-  Unfortunately, Protonmail doesn't offer IMAP, so you cannot log in with Delta Chat to Protonmail.
+  Protonmail does not offer the standard IMAP e-mail protocol, so you cannot log in with Delta Chat to Protonmail.
 last_checked: 2019-02
 website: https://protonmail.com/
 ---
