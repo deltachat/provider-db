@@ -24,11 +24,11 @@ Do you know which servers the provider uses?
 ```
     smtp-server: smtp.example.com
     smtp-port: 25/465/587...
-    smtp-security: SSL/STARTTLS/NONE
+    smtp-security-socket: SSL/STARTTLS
 
     imap-server: imap.example.com
     imap-port: 993/143...
-    imap-security: SSL/STARTTLS/NONE
+    imap-security-socket: SSL/STARTTLS
 ```
 
 ## Other Comments 
