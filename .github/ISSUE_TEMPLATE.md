@@ -1,11 +1,11 @@
 
 ## Basic information (please modify and submit) 
 
-**domain(s)**: DOMAIN (the domain part of your e-mail that you tried it with) 
+**Domain(s):** DOMAIN (the domain part of your e-mail that you tried it with) 
 
-**website of provider**: URL 
+**Website of provider:** example.com 
 
-**works without preps**: YES/NO 
+**Does it work without Preparations?** YES/NO/Doesn't work at all
 
 These three points are already useful enough to submit.
 
@@ -17,25 +17,23 @@ But if you can please provide more information below.
 - [ ] setting an option in provider's web interface 
 - [ ] other: please describe 
 
-### following advanced settings need to be set
+### Server Settings
 
-neccessary manually typed advanced settings:
+Do you know which servers the provider uses?
 
-    smtp-server: *
-    smtp-port: *
-    smtp-security: *
-    imap-server: *
-    imap-port: *
-    imap-security: *
+```
+    smtp-server: smtp.example.com
+    smtp-port: 25/465/587...
+    smtp-security: SSL/STARTTLS/NONE
 
-### provider is funded by 
-- [ ] advertisements 
-- [ ] recurring payments 
-- [ ] donations 
-- [ ] private/pro-bono for friends 
+    imap-server: imap.example.com
+    imap-port: 993/143...
+    imap-security: SSL/STARTTLS/NONE
+```
 
-## other comments 
+## Other Comments 
 
-freestyle ... whatever you want to write here :) 
-because it's hard to categorize everything without
-producing large confusing forms to fill out. 
+How can you register at the provider?
+
+Is there anything else we need to know about the provider?
+
