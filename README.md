@@ -63,3 +63,4 @@ The problems blocking the usage must be summarized as page content in a friendly
 
 Additionally a short, informative sentence must be written as `before_login_hint`, so tech-savy users already know what's up, and others get an idea what to expect from the linked provider page.
 
+**Note:** Bear in mind the `before_login_hint` is displayed by the UIs as normal text, **without** html, markdown, whatever. Therefore, links in the `before_login_hint` are *not allowed*, especially as they tend to be wider than some smartphone displays.
