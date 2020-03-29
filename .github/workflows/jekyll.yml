@@ -19,6 +19,7 @@ jobs:
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
     - name: Upload
+      if: steps.prepare.outputs.uploadtoserver
       uses: appleboy/scp-action@master
       env:
         USERNAME: ${{ secrets.USERNAME }}
@@ -29,6 +30,7 @@ jobs:
         TARGET: providerOverview/${{ github.sha }}/
     - name: "Post links to details"
       if: steps.prepare.outputs.uploadtoserver
+      id: details
       run: |
         # URLs for API connection and uploads
         export GITHUB_API_URL="https://api.github.com/repos/deltachat/provider-db/statuses/${{ github.event.after }}"
@@ -38,11 +40,13 @@ jobs:
                              \"description\": \"Preview the page here:\", \
                              \"context\": \"Page Preview\", \
                              \"target_url\": \"${PREVIEW_LINK}\"}"
-        curl -X POST --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --url "$GITHUB_API_URL" --header "content-type: application/json" --data "$STATUS_DATA"
-#   - name: "post Link"
-#     uses: rytswd/respost@v0.1.0
-#     with:
-#       title: "Preview changes"
-#       body: "Preview at: https://testrun.org/provider/${{ github.sha }}/_site/"
-#     env:
-#       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        export RESPONSE=$(curl -X POST --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --url "$GITHUB_API_URL" --header "content-type: application/json" --data "$STATUS_DATA" | jq -r .message)
+        if [ "$RESPONSE" == "Not Found" ]; then echo ::set-output name=comment::true ;fi
+    - name: "Post link to comments"
+      if: steps.details.outputs.comment
+      uses: rytswd/respost@v0.1.0
+      with:
+        body: "Check out the page preview at https://testrun.org/provider/${{ github.sha }}/_site/"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
