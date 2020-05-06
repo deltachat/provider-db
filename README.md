@@ -21,6 +21,8 @@ domains:
   - used_by_this_provider
 server:
   # Repeat the following block for each server (usually one for imap, one for smtp).
+  # If no servers are defined, autoconfig, autodiscover or guessing is used;
+  # this will lead to the same server-configuration as if there is no provider-entry at all.
   - type: [IMAP or SMTP]
     socket: [SSL or STARTTLS]
     hostname: [hostname to connect to]
