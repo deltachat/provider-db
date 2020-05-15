@@ -37,13 +37,17 @@ after_login_hint: |
   Multiple lines are possible (line-breaks will be honoured).
   There's more room for text in the device chat than in the login form, but please keep the text concise nonetheless.
   ]
+config_defaults:
+  # optional, see below for details
+  key: value
+  other_key: other_value
 last_checked: [optional: date when the information was last checked: YYYY-MM]
 website: [optional: website of the provider]
 ---
 [Markdown-formatted content that gets displayed as provider-page on the web, linked from the apps (if status is not OK)]
 ```
 
-## Status options:
+## Status options
 
 ### OK
 
@@ -66,3 +70,23 @@ The problems blocking the usage must be summarized as page content in a friendly
 Additionally a short, informative sentence must be written as `before_login_hint`, so tech-savy users already know what's up, and others get an idea what to expect from the linked provider page.
 
 **Note:** Bear in mind the `before_login_hint` is displayed by the UIs as normal text, **without** html, markdown, whatever. Therefore, links in the `before_login_hint` are *not allowed*, especially as they tend to be wider than some smartphone displays.
+
+
+## Configuration Defaults
+
+Beside the server-configuration, Delta Chat has several other options
+that can typically be set by the user at runtime.
+In most cases the global-default for these options are fine for most providers,
+however, if not, you have the possibility to define provider-specific-defaults
+with the `config_defaults` section.
+
+The api for that is a bit low-level: you have to define key-value-pairs
+where the keys have to match the names used in the API, the values have to be
+plain numeric values, see
+[Delta Chat API](https://c.delta.chat/classdc__context__t.html#aff3b894f6cfca46cab5248fdffdf083d)
+for details.
+
+The provider-specific-defaults are applied _once_
+after the first successful configuration,
+they are not applied later on re-configures or on updates -
+reason for that is to respect user-choice of changing these values.
