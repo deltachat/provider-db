@@ -23,6 +23,8 @@ config_defaults:
   mvbox_move: 0
   e2ee_enabled: 0
   media_quality: 1
+  imap_certificate_checks: 0
+  smtp_certificate_checks: 0
 last_checked: 2020-01
 website: https://webmail.nauta.cu
 ---
