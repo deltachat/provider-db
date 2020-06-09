@@ -51,7 +51,7 @@ domains:
   - posteo.tn
   - posteo.uk
   - posteo.us
-  
+strict_tls: true
 server:
 - hostname: posteo.de
   port: 143

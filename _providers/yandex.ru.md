@@ -4,6 +4,7 @@ status: PREPARATION
 domains:
 - yandex.ru
 - yandex.com
+strict_tls: true
 before_login_hint: |
   For Yandex accounts, you have to set IMAP protocol option turned on.
 last_checked: 2020-03
