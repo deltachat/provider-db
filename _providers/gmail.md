@@ -4,6 +4,7 @@ status: PREPARATION
 domains:
   - gmail.com
   - googlemail.com
+strict_tls: true
 server:
   - type: imap
     socket: SSL
