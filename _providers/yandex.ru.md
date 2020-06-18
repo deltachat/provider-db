@@ -2,8 +2,14 @@
 name: yandex.ru
 status: PREPARATION
 domains:
-- yandex.ru
 - yandex.com
+- yandex.by
+- yandex.kz
+- yandex.ru
+- yandex.ua
+- ya.ru
+- narod.ru
+oauth2: yandex
 strict_tls: true
 before_login_hint: |
   For Yandex accounts, you have to set IMAP protocol option turned on.
