@@ -90,3 +90,26 @@ The provider-specific-defaults are applied _once_
 after the first successful configuration,
 they are not applied later on re-configures or on updates -
 reason for that is to respect user-choice of changing these values.
+
+
+## OAuth2
+
+With the top-level option `oauth2=AUTHORIZER` you can specify,
+that emails on the given domains support OAuth2 with the given authorizers.
+Supported authorizers are `yandex` and `gmail`.
+
+In contrast to other authorization methods, you cannot use oauth2
+only because the server may support it.
+New Oauth2 authorizers require adaptions in deltachat-core
+and typically also bureaucratic effort.
+
+### Use OAuth2 together with other options
+
+If for an entered address, OAuth2 is supported,
+and the used client supports OAuth2,
+the user will be asked if he wants to continue with that.
+
+Only if that is _cancelled_, the `before_login_hint` is shown;
+so it is not needed to say sth. about OAuth2 before login.
+
+All other options are applied as usual.
