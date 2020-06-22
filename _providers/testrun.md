@@ -17,6 +17,10 @@ server:
   hostname: testrun.org
   port: 587
   socket: STARTTLS
+config_defaults:
+  sentbox_watch: 0
+  mvbox_watch: 0
+  mvbox_move: 0
 website: https://testrun.org
-last_checked: 2020-02
+last_checked: 2020-06
 ---
