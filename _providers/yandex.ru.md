@@ -11,6 +11,15 @@ domains:
 - narod.ru
 oauth2: yandex
 strict_tls: true
+server:
+  - type: imap
+    socket: SSL
+    hostname: imap.yandex.com
+    port: 993
+  - type: smtp
+    socket: SSL
+    hostname: smtp.yandex.com
+    port: 465
 before_login_hint: |
   For Yandex accounts, you have to set IMAP protocol option turned on.
 last_checked: 2020-03
