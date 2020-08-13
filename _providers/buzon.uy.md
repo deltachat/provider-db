@@ -3,6 +3,7 @@ name: Buzon.uy
 status: OK
 domains:
   - buzon.uy
+strict_tls: true
 server:
 - type: imap
   hostname: buzon.uy
