@@ -4,7 +4,7 @@ status: PREPARATION
 domains:
 - firemail.at
 - firemail.de
-before_login_hint: Firemail erlaubt den vollen Zugriff auf das E-Mail-Protokoll nur bei bezahlten Accounts. Wenn Sie nicht für Firemail bezahlen, verwenden Sie bitte eine andere E-Mail-Adresse.
+before_login_hint: Firemail erlaubt nur bei bezahlten Accounts den vollen Zugriff auf das E-Mail-Protokoll. Wenn Sie nicht für Firemail bezahlen, verwenden Sie bitte einen anderen E-Mail-Provider.
 after_login_hint: Leider schränkt Firemail die maximale Gruppengröße ein. Je nach Bezahlmodell sind nur 5 bis 30 Gruppenmitglieder erlaubt.
 last_checked: 2020-08
 website: https://firemail.de
