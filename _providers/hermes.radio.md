@@ -1,6 +1,6 @@
 ---
 name: hermes.radio
-status: PREPARATION
+status: OK
 domains:
   - hermes.radio
 strict_tls: false
