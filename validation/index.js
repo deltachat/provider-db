@@ -16,11 +16,14 @@ function testServer(server){
 }
 
 function test(fileContent) {
-    if (fontmatterRegex.test(fontmatterRegex)) {
-        throw new Error("Fontmatter not found / bad formatted / not ended")
+    if (!fontmatterRegex.test(fileContent)) {
+        console.log(fileContent);
+        throw new Error("Fontmatter not found / bad formatted / not ended (make sure the EOL is set to LF not to CRLF)")
     }
-    const yamlString = fileContent.match(fontmatterRegex)[1]
-    const markdown = fileContent.match(fontmatterRegex)[2]
+    
+    const parseResult = fileContent.match(fontmatterRegex)
+    const yamlString = parseResult[1]
+    const markdown = parseResult[2]
 
     const json = yaml.load(yamlString);
 
