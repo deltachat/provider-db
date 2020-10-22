@@ -6,13 +6,13 @@ domains:
 strict_tls: true
 server:
 - type: imap
-  hostname: buzon.uy
+  hostname: mail.buzon.uy
   port: 143
   socket: STARTTLS
 - type: smtp
-  hostname: buzon.uy
+  hostname: mail.buzon.uy
   port: 587
   socket: STARTTLS
-last_checked: 2020-08
+last_checked: 2020-10
 website: https://buzon.uy
 ---
