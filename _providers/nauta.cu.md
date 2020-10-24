@@ -23,7 +23,7 @@ config_defaults:
   mvbox_move: 0
   e2ee_enabled: 0
   media_quality: 1
-  fetch_existing: 0
+  fetch_existing_msgs: 0
 last_checked: 2020-10
 website: https://webmail.nauta.cu
 ---
