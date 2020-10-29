@@ -24,6 +24,7 @@ config_defaults:
   e2ee_enabled: 0
   media_quality: 1
   fetch_existing_msgs: 0
+  max_smtp_rcpt_to: 20
 last_checked: 2020-10
 website: https://webmail.nauta.cu
 ---
