@@ -118,7 +118,7 @@ All other options are applied as usual.
 ## limit RCPT TO header
 
 With the optional top-level option `max_smtp_rcpt_to=MAX`
-you can set the max. number of recipients
+you can set the maximum number of recipients
 that should be used in an `RCPT TO:` smtp header.
 If a message needs to be sent to more recipients,
 multiple messages are sent out,
