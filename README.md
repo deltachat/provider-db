@@ -113,3 +113,16 @@ Only if that is _cancelled_, the `before_login_hint` is shown;
 so it is not needed to say sth. about OAuth2 before login.
 
 All other options are applied as usual.
+
+
+## limit RCPT TO header
+
+With the optional top-level option `max_smtp_rcpt_to=MAX`
+you can set the max. number of recipients
+that should be used in an `RCPT TO:` smtp header.
+If a message needs to be sent to more recipients,
+multiple messages are sent out,
+each with exactly the same MIME-message
+(with `To:` mime headers that may contain all recipients).
+
+If this limit is not specified, the library picks an reasonable default.
