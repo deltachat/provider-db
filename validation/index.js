@@ -66,6 +66,26 @@ function test(fileContent) {
             throw new Error("Server definition needs atlease one server of both types")
         }
     }
+
+    // Check that config contains only valid keys
+    for (const key in json) {
+        if (![
+            'after_login_hint',
+            'before_login_hint',
+            'config_defaults',
+            'domains',
+            'last_checked',
+            'max_smtp_rcpt_to',
+            'name',
+            'oauth2',
+            'server',
+            'status',
+            'strict_tls',
+            'website',
+        ].includes(key)) {
+            throw new Error(`Unexpected key "${key}"`)
+        }
+    }
 }
 
 (async () => {
