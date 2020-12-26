@@ -4,7 +4,7 @@ status: PREPARATION
 domains: 
   - t-online.de
   - magenta.de
-servers:
+server:
   - type: imap
     socket: SSL
     hostname: secureimap.t-online.de

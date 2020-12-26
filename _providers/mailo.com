@@ -3,7 +3,7 @@ name: mailo.com
 status: OK
 domains:
   - mailo.com
-servers:
+server:
   - type: imap
     socket: SSL
     hostname: imap.mailo.com

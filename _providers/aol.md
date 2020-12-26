@@ -3,7 +3,7 @@ name: Aol. (America Online)
 domains: 
   - aol.com
 status: PREPARATION
-servers:
+server:
   - type: imap
     socket: SSL
     hostname: imap.aol.com
