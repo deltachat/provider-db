@@ -4,6 +4,7 @@ domains:
   - nauta.cu
 status: OK
 max_smtp_rcpt_to: 20
+strict_tls: false
 server:
   - type: imap
     socket: STARTTLS
