@@ -4,6 +4,7 @@ status: PREPARATION
 domains:
   - gmail.com
   - googlemail.com
+  - google.com
 oauth2: gmail
 strict_tls: true
 server:
