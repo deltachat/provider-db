@@ -4,6 +4,7 @@ status: BROKEN
 domains:
   - example.com
   - example.org
+  - example.net
 server:
   - type: imap
     socket: SSL
