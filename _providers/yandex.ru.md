@@ -26,4 +26,7 @@ last_checked: 2020-03
 website: https://yandex.ru/
 ---
 
-To use Delta Chat with your Yandex accounts you have to set IMAP protocol option *turned on* in the Yandex web interface. Please visit https://yandex.ru/support/mail/mail-clients.html for more details.
+To use Delta Chat with your Yandex accounts you have to set IMAP protocol option *turned on* in the Yandex web interface. Please visit https://yandex.com/support/mail/mail-clients.html for more details.
+
+Russian help: https://yandex.ru/support/mail/mail-clients.html 
+
