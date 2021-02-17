@@ -13,6 +13,9 @@ jobs:
       run: |
         if [ $(expr length "${{ secrets.USERNAME }}") -gt "1" ]; then echo ::set-output name=uploadtoserver::true ;fi
     - uses: actions/checkout@v1
+    - name: Fix lockfile permissions
+      run: |
+        chmod 666 Gemfile.lock
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
