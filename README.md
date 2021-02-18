@@ -41,6 +41,7 @@ config_defaults:
   # optional, see below for details
   key: value
   other_key: other_value
+strict_tls: [optional: default is true]
 last_checked: [optional: date when the information was last checked: YYYY-MM]
 website: [optional: website of the provider]
 ---
@@ -126,3 +127,11 @@ each with exactly the same MIME-message
 (with `To:` mime headers that may contain all recipients).
 
 If this limit is not specified, the library picks an reasonable default.
+
+
+## Strict TLS
+
+By default, all providers in to the provider-database
+are assumed to support "Strict TLS".
+If that is not true for a specific provider,
+you have to add the optional top-level option `strict_tls: false`.
