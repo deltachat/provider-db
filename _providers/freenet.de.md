@@ -14,7 +14,7 @@ server:
   type: smtp
 last_checked: 2017-06
 website: https://www.freenet.de/index.html
-before_login_hint: Um deine freenet.de E-Mail Adresse mit Delta Chat zu benutzen, musst du erst auf deren Webseite "POP3/IMAP/SMTP" aktivieren.
+before_login_hint: Um deine freenet.de E-Mail-Adresse mit Delta Chat zu benutzen, musst du erst auf der freenet.de-Webseite "POP3/IMAP/SMTP" aktivieren.
 ---
 
 Um deine freenet.de E-Mail Adresse mit Delta Chat zu benutzen, musst du erst
