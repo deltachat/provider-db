@@ -1,6 +1,6 @@
 ---
 name: Outlook.com
-status: BROKEN
+status: OK
 domains:
   - hotmail.com
   - outlook.com
@@ -10,24 +10,12 @@ domains:
 server:
   - type: imap
     socket: SSL
-    hostname: imap-mail.outlook.com
+    hostname: outlook.office365.com
     port: 993
   - type: smtp
     socket: STARTTLS
-    hostname: smtp-mail.outlook.com
+    hostname: smtp.office365.com
     port: 587
-before_login_hint: |
-  Outlook.com email addresses will not work as expected as these servers remove some important transport information.
-  Hopefully sooner or later there will be a fix, for now we suggest to use another email address.
-after_login_hint: |
-  Outlook.com email addresses will not work as expected as these servers remove some important transport information.
-  Unencrypted 1-on-1 chats kind of work, but groups and encryption don't.
-  Hopefully sooner or later there will be a fix, for now we suggest to use another email address.
-last_checked: 2019-02
+last_checked: 2021-02
 website: https://outlook.live.com/mail
----
-
-Unfortunately outlook.com breaks using Delta Chat by manipulating messages in a way that we can't work around. We're very sorry indeed, but it's not our fault.
-
-If this situation ever changes we will update this page, but for now please use a different email provider with Delta Chat.
 
