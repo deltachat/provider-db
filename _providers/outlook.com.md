@@ -18,4 +18,4 @@ server:
     port: 587
 last_checked: 2021-02
 website: https://outlook.live.com/mail
-
+---
