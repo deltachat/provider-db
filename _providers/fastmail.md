@@ -26,10 +26,10 @@ To use Delta Chat with your Fastmail email address
 you have to generate a specific password for it.
 
 You can do that in the Fastmail web interface
-at "Settings / Import & Setup / Setup Guides / Thunderbird / Next":
+at "Settings / Account: Password & Security / App Passwords: Manage":
 
-- Type in the password shown there into the Delta Chat password field 
-
-Then, click "Next" again and then "Done".
+1. Click "New App Password".
+2. Click "Generate password". You can optionally select a custom "Name" for this password to make it easier to find later.
+3. Enter the 16-digit password shown there into the Delta Chat password field.
 
 Afterwards you can use Delta Chat as usual.
