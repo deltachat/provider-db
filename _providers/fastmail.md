@@ -33,3 +33,7 @@ at "Settings / Account: Password & Security / App Passwords: Manage":
 3. Enter the 16-digit password shown there into the Delta Chat password field.
 
 Afterwards you can use Delta Chat as usual.
+
+## Custom domains
+
+If your login email does not end with `@fastmail.com`, you will need to manually type server information by clicking "Advanced" in Delta Chat and entering the details specified in the "Technical specs" link below.
