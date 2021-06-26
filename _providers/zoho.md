@@ -22,4 +22,5 @@ To enable using Zoho Mail, you have to turn on IMAP Access:
 2. There should be check box for imap access so tick that
 
 These instructions are also on [this Zoho Mail help page](https://www.zoho.com/mail/help/imap-access.html#EnableIMAPAccess)
+
 You should also make sure that you specify the mail server manually since going with the defaults may result in errors.
