@@ -18,5 +18,4 @@ last_checked: 2021-06
 website: https://mail.naver.com/
 ---
 
-Manually enabling IMAP/SMTP is required. Please follow [the guide provided by
-Naver](https://help.naver.com/support/contents/contents.help?serviceNo=2342&categoryNo=2288).
+[Manually enabling IMAP/SMTP](https://help.naver.com/support/contents/contents.help?serviceNo=2342&categoryNo=2288) is required.
