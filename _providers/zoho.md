@@ -13,6 +13,7 @@ server:
     socket: SSL
     hostname: smtp.zoho.eu
     port: 465
+before_login_hint: To use Zoho Mail, you have to turn on IMAP in the Zoho Mail backend.
 last_checked: 2021-06
 website: https://www.zoho.com/
 ---
