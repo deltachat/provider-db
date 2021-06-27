@@ -20,8 +20,4 @@ last_checked: 2020-01
 website: https://www.icloud.com/mail
 ---
 
-To use Delta Chat with your iCloud email address you have to generate a specific password for it.
-
-Please follow [these instructions by Apple](https://support.apple.com/en-us/HT202304) to do that.
-
-Afterwards you can use Delta Chat with your iCloud email address and the newly created password.
+To use Delta Chat with your iCloud email address [it is required to generate a specific password for it](https://support.apple.com/en-us/HT202304). Afterwards you can use Delta Chat with your iCloud email address and the newly created password.
