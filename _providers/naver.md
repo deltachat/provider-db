@@ -13,10 +13,10 @@ server:
     socket: STARTTLS
     hostname: smtp.naver.com
     port: 587
-before_login_hint: "You don't have to create an app-specific password for Delta Chat, but manually enabling IMAP/SMTP is required, like using any other mail clients with Naver Mail."
+before_login_hint: "Manually enabling IMAP/SMTP is required."
 last_checked: 2021-06
 website: https://mail.naver.com/
 ---
 
-Please follow [the document provided by
-Naver](https://help.naver.com/support/contents/contents.help?serviceNo=2342&categoryNo=2288) to enable IMAP/SMTP.
+Manually enabling IMAP/SMTP is required. Please follow [the guide provided by
+Naver](https://help.naver.com/support/contents/contents.help?serviceNo=2342&categoryNo=2288).
