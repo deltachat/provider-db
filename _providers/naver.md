@@ -1,6 +1,6 @@
 ---
 name: Naver Mail
-status: OK
+status: PREPARATION
 domains:
 - naver.com
 server:
@@ -19,4 +19,4 @@ website: https://mail.naver.com/
 ---
 
 Please follow [the document provided by
-Naver](https://help.naver.com/support/contents/contents.help?serviceNo=2342&categoryNo=2288).
+Naver](https://help.naver.com/support/contents/contents.help?serviceNo=2342&categoryNo=2288) to enable IMAP/SMTP.
