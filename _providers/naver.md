@@ -13,7 +13,7 @@ server:
     socket: SSL/TLS
     hostname: smtp.naver.com
     port: 587
-before_login_hint: "You do not create an app-specific password for Delta Chat, like using any other mail clients with Naver Mail."
+before_login_hint: "You do not create an app-specific password for Delta Chat, but manually enabling IMAP/SMTP is required, like using any other mail clients with Naver Mail."
 last_checked: 2021-06
 website: https://mail.naver.com/
 ---
