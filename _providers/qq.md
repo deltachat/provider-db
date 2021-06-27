@@ -1,6 +1,6 @@
 ---
 name: QQ Mail
-status: OK
+status: PREPARATION
 domains:
 - qq.com
 - foxmail.com
