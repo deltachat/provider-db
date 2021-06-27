@@ -10,7 +10,7 @@ server:
     port: 993
     username_pattern: emaillocalpart
   - type: smtp
-    socket: SSL/TLS
+    socket: STARTTLS
     hostname: smtp.naver.com
     port: 587
 before_login_hint: "You don't have to create an app-specific password for Delta Chat, but manually enabling IMAP/SMTP is required, like using any other mail clients with Naver Mail."
