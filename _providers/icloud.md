@@ -1,7 +1,7 @@
 ---
 name: iCloud Mail
 status: PREPARATION
-domains: 
+domains:
 - icloud.com
 - me.com
 - mac.com
@@ -15,7 +15,7 @@ server:
     socket: STARTTLS
     hostname: smtp.mail.me.com
     port: 587
-before_login_hint: "You must create an app-specific password for Delta Chat before you can login."
+before_login_hint: "You must create an app-specific password for Delta Chat before login."
 last_checked: 2020-01
 website: https://www.icloud.com/mail
 ---
