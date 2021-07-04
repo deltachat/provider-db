@@ -4,6 +4,7 @@ status: OK
 domains:
 - mail.ru
 - inbox.ru
+- internet.ru
 - bk.ru
 - list.ru
 server:
