@@ -62,6 +62,6 @@ server:
   port: 587
   socket: STARTTLS
   type: smtp
-last_checked: 2017-06
+last_checked: 2021-07
 website: https://posteo.de/
 ---
