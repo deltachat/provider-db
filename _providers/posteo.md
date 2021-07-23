@@ -26,6 +26,7 @@ domains:
   - posteo.ie
   - posteo.in
   - posteo.is
+  - posteo.it
   - posteo.jp
   - posteo.la
   - posteo.li
