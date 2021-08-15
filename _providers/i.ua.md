@@ -1,8 +1,8 @@
 ---
 name: I.ua
-status: OK
+status: BROKEN
 domains:
   - i.ua
-last_checked: 2017-12
+last_checked: 2021-08
 website: https://www.i.ua/
 ---
