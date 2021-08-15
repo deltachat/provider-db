@@ -9,4 +9,4 @@ website: https://www.i.ua/
 ---
 
 Unfortunately, i.ua doesn't support IMAP, so it doesn't work with Delta Chat.
-For more information, see the first topic on http://help.i.ua/section/11.
+For more information, see the first topic on [http://help.i.ua/section/11](http://help.i.ua/section/11).
