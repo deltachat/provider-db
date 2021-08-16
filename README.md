@@ -24,7 +24,7 @@ server:
   # If no servers are defined, autoconfig, autodiscover or guessing is used;
   # this will lead to the same server-configuration as if there is no provider-entry at all.
   - type: [IMAP or SMTP]
-    socket: [SSL or STARTTLS]
+    socket: [SSL or STARTTLS or PLAIN]
     hostname: [hostname to connect to]
     port: [port number]
     username_pattern: [optional: EMAIL or EMAILLOCALPART, default is EMAIL]
