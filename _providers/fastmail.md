@@ -30,7 +30,7 @@ at "Settings / Account: Password & Security / Third-Party-Apps: Add":
 
 1. Enter your Password to be able to make changes. Then click "New App Password".
 2. Choose a new name for the password.
-3. At access, choose "Mail (IMAP/POP/SMTP)"
+3. At access, choose "Mail (IMAP/POP/SMTP)".
 4. Click "Generate password".
 5. Enter the 16-digit password shown there into the Delta Chat password field.
    **Careful** - leave out the spaces, it's just 16 digits. Better copy-paste
