@@ -3,6 +3,7 @@ name: Yggmail
 domains: 
   - yggmail
 status: PREPARATION
+strict_tls: false
 server:
   - type: imap
     socket: PLAIN
