@@ -18,7 +18,7 @@ server:
     port: 465
 before_login_hint: |
   For Gmail accounts, you need to create an app-password if you have "2-Step Verification" enabled. If this setting is not available, you need to enable "less secure apps".
-last_checked: 2018-05
+last_checked: 2021-08
 website: https://gmail.com
 ---
 
@@ -28,6 +28,9 @@ To use Delta Chat with your Gmail email address you have to take **one of the fo
 * **Create an app-specific password**: This method is only viable if you use "2-Step Verification" for logging into Gmail. It means to create an additional password that allows access to your emails, which you use only for one device or app.  Please [follow Google's instructions](https://support.google.com/accounts/answer/185833), and then use the newly generated password to log in with Delta Chat.
 * **Allow "less-secure apps"**: This sounds like a bad idea, but it actually just enables a very commonly used way to access emails, so don't let yourself be scared away. Please [switch this feature on](https://myaccount.google.com/lesssecureapps), and then log in with Delta Chat just normally.
 
+If you still have login problems,
+make sure IMAP is enabled in the Gmail web interface
+at **Settings / See all settings / Forwarding and POP/IMAP / IMAP access / Enable IMAP**.
 
 ## Further information
 
