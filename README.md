@@ -136,5 +136,5 @@ are assumed to support "Strict TLS".
 If that is not true for a specific provider,
 you have to add the optional top-level option `strict_tls: false`.
 
-Connections with `socket: PLAIN` are not affected by `strict_tls`,
+Connections with `socket: PLAIN` are not affected by the `strict_tls` option,
 it's not ignored, there is just no TLS at all.
