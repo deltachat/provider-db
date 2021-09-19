@@ -2,6 +2,7 @@
 name: Zoho Mail
 domains: 
   - zohomail.eu
+  - zohomail.com
   - zoho.com 
 status: PREPARATION
 server:
