@@ -1,6 +1,6 @@
 ---
 name: blindzeln
-status: BROKEN
+status: OK
 domains:
   - delta.blindzeln.de
   - delta.blindzeln.org
