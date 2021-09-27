@@ -2,7 +2,7 @@
 name: blindzeln
 status: OK
 domains:
-  - delta.blindzeln.de
+  - delta.blinzeln.de
   - delta.blindzeln.org
 server:
   - type: imap
