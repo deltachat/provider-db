@@ -1,5 +1,5 @@
 ---
-name: ik.me / infomaniak.com
+name: infomaniak.com
 status: OK
 domains:
   - ik.me
