@@ -4,6 +4,7 @@ status: BROKEN
 domains:
 - protonmail.com
 - protonmail.ch
+- pm.me
 before_login_hint: |
   Protonmail does not offer the standard IMAP e-mail protocol, so you cannot log in with Delta Chat to Protonmail.
 after_login_hint: |
