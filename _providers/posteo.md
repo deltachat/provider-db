@@ -3,9 +3,9 @@ name: Posteo
 status: OK
 domains:
   - posteo.de
-  - posteo.af
   - posteo.at
   - posteo.be
+  - posteo.ca
   - posteo.ch
   - posteo.cl
   - posteo.co
@@ -45,7 +45,6 @@ domains:
   - posteo.pm
   - posteo.pt
   - posteo.ro
-  - posteo.ru
   - posteo.se
   - posteo.sg
   - posteo.si
@@ -62,6 +61,6 @@ server:
   port: 587
   socket: STARTTLS
   type: smtp
-last_checked: 2021-07
+last_checked: 2021-10
 website: https://posteo.de/
 ---
