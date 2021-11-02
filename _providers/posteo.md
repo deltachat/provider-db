@@ -3,6 +3,7 @@ name: Posteo
 status: OK
 domains:
   - posteo.de
+  - posteo.af
   - posteo.at
   - posteo.be
   - posteo.ca
@@ -45,6 +46,7 @@ domains:
   - posteo.pm
   - posteo.pt
   - posteo.ro
+  - posteo.ru
   - posteo.se
   - posteo.sg
   - posteo.si
