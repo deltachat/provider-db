@@ -15,5 +15,6 @@ server:
     port: 465
     username: EMAILADDRESS
 last_checked: 2021-10
+max_smtp_rcpt_to: 10
 website: https://infomaniak.com
 ---
