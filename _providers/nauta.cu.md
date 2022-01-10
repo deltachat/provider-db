@@ -18,7 +18,6 @@ config_defaults:
   delete_server_after: 1
   bcc_self: 0
   sentbox_watch: 0
-  mvbox_watch: 0
   mvbox_move: 0
   e2ee_enabled: 0
   media_quality: 1
