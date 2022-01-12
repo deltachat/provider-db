@@ -7,14 +7,16 @@ import imaplib
 import sys
 
 
-def test_smtp(server: dict):
+def test_smtp(server: dict, quiet: bool):
     """Test if connecting to an SMTP server works.
 
     :param server: the server dict, part of the provider dict
+    :param quiet: whether output should be printed
     """
     host = server["hostname"]
     port = server["port"]
-    print("testing %s:%s" % (host, port))
+    if not quiet:
+        print("testing %s:%s" % (host, port))
     if server["socket"] == "SSL":
         smtplib.SMTP_SSL(host, port)
     elif server["socket"] == "STARTTLS":
@@ -26,14 +28,16 @@ def test_smtp(server: dict):
         smtplib.SMTP(host, port)
 
 
-def test_imap(server: dict):
+def test_imap(server: dict, quiet: bool):
     """Test if connecting to an IMAP server works.
 
+    :param server: the server dict, part of the provider dict
     :param server: the server dict, part of the provider dict
     """
     host = server["hostname"]
     port = server["port"]
-    print("testing %s:%s" % (host, port))
+    if not quiet:
+        print("testing %s:%s" % (host, port))
     if server["socket"] == "SSL":
         imaplib.IMAP4_SSL(host, port=port)
     elif server["socket"] == "STARTTLS":
@@ -76,6 +80,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--path", type=str, default="_providers", help="Path to provider-db/_providers")
     parser.add_argument("--name", type=str, default="", help="Test only a specific provider")
+    parser.add_argument("-q", "--quiet", action="store_true", help="Only print errors")
     args = parser.parse_args()
 
     filenames = get_filenames(args.path)
@@ -92,9 +97,9 @@ def main():
         for server in provider["server"]:
             try:
                 if server["type"] == "smtp":
-                    test_smtp(server)
+                    test_smtp(server, args.quiet)
                 if server["type"] == "imap":
-                    test_imap(server)
+                    test_imap(server, args.quiet)
             except Exception as e:
                 print("[error] %s:%s \t%s: %s" %
                       (server["hostname"], server["port"], sys.exc_info()[0].__name__, sys.exc_info()[1]))
