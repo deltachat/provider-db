@@ -81,10 +81,11 @@ def main():
     filenames = get_filenames(args.path)
     providers = [parse_provider(filename) for filename in filenames]
 
+    exitcode = 0
     for provider in providers:
         if provider.get("server") is None:
             continue
-        if provider.get("name") == "example.com":
+        if provider.get("name") == "example.com" or provider.get("name") == "Yggmail":
             continue
         if args.name not in provider.get("name"):
             continue
@@ -97,6 +98,10 @@ def main():
             except Exception as e:
                 print("[error] %s:%s \t%s: %s" %
                       (server["hostname"], server["port"], sys.exc_info()[0].__name__, sys.exc_info()[1]))
+                exitcode += 1
+
+    if __name__ == "__main__":
+        exit(exitcode)
 
 
 if __name__ == "__main__":
