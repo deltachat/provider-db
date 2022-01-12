@@ -99,6 +99,8 @@ def main():
         if args.name not in provider.get("name"):
             continue
         for server in provider["server"]:
+            if server["hostname"].endswith(".onion"):
+                continue  # :todo SOCKS5 support https://gist.github.com/sstevan/efccf3d5d3e73039c21aa848353ff52f
             try:
                 if server["type"] == "smtp":
                     test_smtp(server, args.quiet)
