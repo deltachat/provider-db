@@ -74,7 +74,8 @@ def parse_provider(filename: str) -> dict:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("path", type=str, default="_providers", help="Path to provider-db/_providers")
+    parser.add_argument("--path", type=str, default="_providers", help="Path to provider-db/_providers")
+    parser.add_argument("--name", type=str, default="", help="Test only a specific provider")
     args = parser.parse_args()
 
     filenames = get_filenames(args.path)
@@ -84,6 +85,8 @@ def main():
         if provider.get("server") is None:
             continue
         if provider.get("name") == "example.com":
+            continue
+        if args.name not in provider.get("name"):
             continue
         for server in provider["server"]:
             try:
