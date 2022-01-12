@@ -4,6 +4,7 @@ import os
 import yaml  # pip install pyyaml
 import ssl
 import imaplib
+from socket import gaierror
 
 
 def test_smtp(server: dict):
@@ -83,10 +84,13 @@ def main():
         if provider.get("server") is None:
             continue
         for server in provider["server"]:
-            if server["type"] == "smtp":
-                test_smtp(server)
-            if server["type"] == "imap":
-                test_imap(server)
+            try:
+                if server["type"] == "smtp":
+                    test_smtp(server)
+                if server["type"] == "imap":
+                    test_imap(server)
+            except gaierror as e:
+                    print("[error] %s: %s" % (server["hostname"], e.strerror))
 
 
 if __name__ == "__main__":
