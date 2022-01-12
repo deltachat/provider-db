@@ -1,7 +1,11 @@
 import argparse
 import smtplib
 import os
-import yaml  # pip install pyyaml
+try:
+    import yaml  # pip install pyyaml
+except ModuleNotFoundError:
+    print("Please install pyyaml, e.g. with: pip install pyyaml")
+    exit(1)
 import ssl
 import imaplib
 import sys
