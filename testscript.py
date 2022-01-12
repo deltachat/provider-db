@@ -109,7 +109,7 @@ def main():
             except Exception:
                 print("[error] %s:%s \t%s: %s" %
                       (server["hostname"], server["port"], sys.exc_info()[0].__name__, sys.exc_info()[1]))
-                if args.name in provider.get("name"):
+                if args.name in provider.get("name") and args.name != "":
                     raise
                 exitcode += 1
 
