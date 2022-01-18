@@ -1,6 +1,6 @@
 ---
 name: Mail.ru
-status: PREPARATIONS
+status: PREPARATION
 domains:
 - mail.ru
 - inbox.ru
