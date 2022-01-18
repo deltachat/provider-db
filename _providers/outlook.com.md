@@ -17,6 +17,6 @@ server:
     socket: STARTTLS
     hostname: smtp.office365.com
     port: 587
-last_checked: 2021-02
+last_checked: 2022-01
 website: https://outlook.live.com/mail
 ---
