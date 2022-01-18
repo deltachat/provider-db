@@ -7,6 +7,7 @@ domains:
   - office365.com
   - outlook.com.tr
   - live.com
+  - outlook.de
 server:
   - type: imap
     socket: SSL
