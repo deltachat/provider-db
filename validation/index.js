@@ -44,6 +44,9 @@ function test(fileContent) {
         if (markdown.trim() === "") {
             throw new Error("Status is BROKEN, but website content is missing")
         }
+    } else if (json.status != "OK" && json.status != "BROKEN" && json.status != "PREPARATION") {
+	// If status != OK, something is wrong. It must be one of these three
+	throw new Error("Status is neither OK, BROKEN, nor PREPARATION")
     }
 
     // is server data populated?
