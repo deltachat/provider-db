@@ -34,10 +34,12 @@ at "Settings / Account: Password & Security / Third-Party-Apps: Add":
 4. Click "Generate password".
 5. Enter the 16-digit password shown there into the Delta Chat password field.
    **Careful** - leave out the spaces, it's just 16 digits. Better copy-paste
-   it.
+   it, which will always paste without the spaces.
 
-Afterwards you can use Delta Chat as usual.
+Fastmail supports [many different domains](https://www.fastmail.com/about/ourdomains/) for your webmail email address when you register an account with them, which confuses auto-detection of server settings.  If the webmail address you selected when registering with them is an @fastmail.com address, you can simply use your webmail login and the 16-digit Fastmail assigned password.  If you selected any other domain during registration or have a custom domain, you will need to use "Advanced" during setup.
 
-## Custom domains
+# Setup using Advanced
 
-If your login email does not end with `@fastmail.com`, you will need to manually type server information by clicking "Advanced" in Delta Chat and entering the details specified in the "Technical specs" link below.
+The email address you're using with Delta.chat should be entered as the "email" address, while your Fastmail webmail login email address should be used as the "IMAP Login Name" and "SMTP Login Name".  Your "password" and "SMTP Password" should be the 16-digit password generated for you by Fastmail.  
+
+For security, the SSL/TLS settings should be explicitly selected and used for both IMAP and SMTP, and "Strict" for the Certificate Checks.  STARTTLS is technically supported by Fastmail, but not recommended or as secure.  Allowing Delta.chat to use "Automatic" risks an automatic security downgrade if it encounters errors (which it shouldn't).
