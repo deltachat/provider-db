@@ -31,4 +31,3 @@ To use Delta Chat with your mailbox.org email address you have to connect your d
 5. Open / download Delta Chat, click on “add account”
 6. Open "advanced settings" (below), in section IMAP Server replace “automatic” with "imap.mailbox.org", in section SMTP Server replace “automatic” with “smtp.mailbox.org"
 7. Enter your mailbox.org email address and browser account password, click on login, start chatting.
----
