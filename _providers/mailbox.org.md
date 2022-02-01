@@ -17,9 +17,10 @@ server:
     port: 465
     username: EMAILADDRESS
 strict_tls: true
-last_checked: 2019-03
+before_login_hint: |
+  You must allow IMAP access to your account before you can login.
+last_checked: 2022-02
 website: https://mailbox.org
----
 
 To use Delta Chat with your mailbox.org email address you have to connect your device with your email. You can do that in the mailbox.org web interface at "Settings" (the little wheel in the upper right corner):
 
