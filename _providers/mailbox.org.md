@@ -27,7 +27,7 @@ To use Delta Chat with your mailbox.org email address you have to connect your d
 1. In your browser mailbox.org email account go to "Settings" and click on "Connect your device".
 2. Chose the type of device you want to configure (Windows PC, Android phone or tablet, MacOS, iPhone or iPad).
 3. Chose which application do you want to use (OX Drive or Mail), chose mail.
-4. Save information about Server: IMAP and SMPT
+4. Save information about Server: IMAP and SMTP
 5. Open / download Delta Chat, click on “add account”
 6. Open "advanced settings" (below), in section IMAP Server replace “automatic” with "imap.mailbox.org", in section SMTP Server replace “automatic” with “smtp.mailbox.org"
 7. Enter your mailbox.org email address and browser account password, click on login, start chatting.
