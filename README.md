@@ -43,6 +43,7 @@ config_defaults:
   other_key: other_value
 strict_tls: [optional: default is true]
 last_checked: [optional: date when the information was last checked: YYYY-MM]
+skip_auto_test: [optional: skip the provider in the automated tests. default is false]
 website: [optional: website of the provider]
 ---
 [Markdown-formatted content that gets displayed as provider-page on the web, linked from the apps (if status is not OK)]

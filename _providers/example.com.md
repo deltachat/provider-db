@@ -21,6 +21,7 @@ after_login_hint: |
     This provider doesn't really exist, so you can't use it :/
     If you need an email provider for Delta Chat, take a look at providers.delta.chat!
 last_checked: 2020-01
+skip_auto_test: true
 website: https://example.com
 ---
 

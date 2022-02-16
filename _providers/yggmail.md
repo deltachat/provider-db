@@ -17,6 +17,7 @@ after_login_hint: |
     Make sure, the Yggmail companion app runs whenever you want to use this account.
     Note, that you usually cannot write from @yggmail addresses to normal e-mail-addresses (as @gmx.net). However, you can create another account in the normal e-mail-network for this purpose.
 last_checked: 2021-08
+skip_auto_test: true
 website: https://github.com/neilalexander/yggmail
 ---
 
