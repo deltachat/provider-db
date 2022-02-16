@@ -11,16 +11,13 @@ import imaplib
 import sys
 
 
-def test_smtp(server: dict, quiet: bool):
+def test_smtp(server: dict):
     """Test if connecting to an SMTP server works.
 
     :param server: the server dict, part of the provider dict
-    :param quiet: whether output should be printed
     """
     host = server["hostname"]
     port = server["port"]
-    if not quiet:
-        print("testing %s:%s" % (host, port))
     if server["socket"] == "SSL":
         smtplib.SMTP_SSL(host, port)
     elif server["socket"] == "STARTTLS":
@@ -32,7 +29,7 @@ def test_smtp(server: dict, quiet: bool):
         smtplib.SMTP(host, port)
 
 
-def test_imap(server: dict, quiet: bool):
+def test_imap(server: dict):
     """Test if connecting to an IMAP server works.
 
     :param server: the server dict, part of the provider dict
@@ -40,8 +37,6 @@ def test_imap(server: dict, quiet: bool):
     """
     host = server["hostname"]
     port = server["port"]
-    if not quiet:
-        print("testing %s:%s" % (host, port))
     if server["socket"] == "SSL":
         imaplib.IMAP4_SSL(host, port=port)
     elif server["socket"] == "STARTTLS":
@@ -102,20 +97,26 @@ def main():
             if server["hostname"].endswith(".onion"):
                 continue  # :todo SOCKS5 support https://gist.github.com/sstevan/efccf3d5d3e73039c21aa848353ff52f
             try:
+                if not args.quiet:
+                    print("testing %s:%s" % (server["hostname"], server["port"]), end="... ")
+                    sys.stdout.flush()
                 if server["type"] == "smtp":
-                    test_smtp(server, args.quiet)
+                    test_smtp(server)
                 if server["type"] == "imap":
-                    test_imap(server, args.quiet)
+                    test_imap(server)
+                if not args.quiet:
+                    print("done")
             except Exception:
-                print("[error] %s:%s \t%s: %s" %
-                      (server["hostname"], server["port"], sys.exc_info()[0].__name__, sys.exc_info()[1]))
+                if args.quiet:
+                    print("testing %s:%s" % (server["hostname"], server["port"]), end="... ")
+                print("[error] %s: %s" %
+                      (sys.exc_info()[0].__name__, sys.exc_info()[1]))
                 if args.name in provider.get("name") and args.name != "":
                     raise
                 exitcode += 1
-
-    if __name__ == "__main__":
-        exit(exitcode)
+    return exitcode
 
 
 if __name__ == "__main__":
-    main()
+    exitcode = main()
+    exit(exitcode)
