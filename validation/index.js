@@ -84,6 +84,7 @@ function test(fileContent) {
             'server',
             'status',
             'strict_tls',
+            'skip_auto_test',
             'website',
         ].includes(key)) {
             throw new Error(`Unexpected key "${key}"`)
