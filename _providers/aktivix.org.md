@@ -11,7 +11,7 @@ server:
   - type: smtp
     socket: STARTTLS
     hostname: newyear.aktivix.org
-    port: 25
+    port: 587
 last_checked: 2018-10
 website: https://aktivix.org/
 ---
