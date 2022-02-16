@@ -13,5 +13,6 @@ jobs:
         python-version: 3.x
     - name: run test
       run: |
+        cd validation
         pip install pyyaml
-        python3 testscript.py -q
+        python3 autotest.py -q --path ../_providers
