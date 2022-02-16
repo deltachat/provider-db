@@ -23,6 +23,7 @@ config_defaults:
   media_quality: 1
   fetch_existing_msgs: 0
 last_checked: 2021-01
+skip_auto_test: true
 website: https://webmail.nauta.cu
 ---
 

@@ -89,7 +89,7 @@ def main():
     for provider in providers:
         if provider.get("server") is None:
             continue
-        if provider.get("name") == "example.com" or provider.get("name") == "Yggmail":
+        if provider.get("skip_auto_test"):
             continue
         if args.name.lower() not in provider.get("name").lower():
             continue
@@ -111,6 +111,8 @@ def main():
                     print("testing %s:%s" % (server["hostname"], server["port"]), end="... ")
                 print("[error] %s: %s" %
                       (sys.exc_info()[0].__name__, sys.exc_info()[1]))
+                if "[SSL: DH_KEY_TOO_SMALL]" in str(sys.exc_info()[1]) and provider["name"] == "Naver Mail":
+                    continue  # exception: as of 2021-06 naver.com worked; the misconfiguration doesn't seem to be fatal
                 if args.name.lower() in provider.get("name").lower() and args.name != "":
                     raise
                 exitcode += 1
