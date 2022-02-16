@@ -13,5 +13,6 @@ server:
     hostname: smtp.tiscali.it
     port: 465
 last_checked: 2019-12
+skip_auto_test: true
 website: https://tiscali.it
 ---
