@@ -11,7 +11,7 @@ server:
     port: 993
     username_pattern: emaillocalpart
   - type: smtp
-    socket: STARTTLS
+    socket: SSL
     hostname: smtp.qq.com
     port: 465
 before_login_hint: "Manually enabling IMAP/SMTP and creating an app-specific password for Delta Chat are required."
