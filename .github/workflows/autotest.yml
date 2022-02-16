@@ -1,0 +1,17 @@
+name: test IMAP & SMTP settings
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Python3
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+    - name: run test
+      run: |
+        pip install pyyaml
+        python3 testscript.py -q
