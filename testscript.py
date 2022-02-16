@@ -91,7 +91,7 @@ def main():
             continue
         if provider.get("name") == "example.com" or provider.get("name") == "Yggmail":
             continue
-        if args.name not in provider.get("name"):
+        if args.name.lower() not in provider.get("name").lower():
             continue
         for server in provider["server"]:
             if server["hostname"].endswith(".onion"):
@@ -111,7 +111,7 @@ def main():
                     print("testing %s:%s" % (server["hostname"], server["port"]), end="... ")
                 print("[error] %s: %s" %
                       (sys.exc_info()[0].__name__, sys.exc_info()[1]))
-                if args.name in provider.get("name") and args.name != "":
+                if args.name.lower() in provider.get("name").lower() and args.name != "":
                     raise
                 exitcode += 1
     return exitcode
