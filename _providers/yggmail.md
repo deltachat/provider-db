@@ -12,6 +12,8 @@ server:
     socket: PLAIN
     hostname: localhost
     port: 1025
+config_defaults:
+  mvbox_move: 0
 before_login_hint: An Yggmail companion app needs to be installed on your device to access the Yggmail network.
 after_login_hint: |
     Make sure, the Yggmail companion app runs whenever you want to use this account.
