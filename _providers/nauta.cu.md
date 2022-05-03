@@ -19,10 +19,9 @@ config_defaults:
   bcc_self: 0
   sentbox_watch: 0
   mvbox_move: 0
-  e2ee_enabled: 0
   media_quality: 1
   fetch_existing_msgs: 0
-last_checked: 2021-01
+last_checked: 2022-05
 skip_auto_test: true
 website: https://webmail.nauta.cu
 ---
