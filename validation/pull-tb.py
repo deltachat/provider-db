@@ -35,11 +35,13 @@ def write_yaml_to_file(provider: dict, yaml: str, providers_path: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--providers_path", type=str, default="_providers",
+    parser.add_argument("--providers_path", "-p", type=str, default="_providers",
                         help="Path to provider-db/_providers")
     parser.add_argument("--root-url", type=str, default="https://autoconfig.thunderbird.net/v1.1/",
                         help="URL to XML sources")
-    parser.add_argument("--provider-url", type=str, help="a single provider you want to pull")
+    parser.add_argument("--dry-run", "-d", action="store_true",
+                        help="don't write the TB autoconfig info to the provider-db for now")
+    parser.add_argument("--provider-url", "-u", type=str, help="a single provider you want to pull")
     # parser.add_argument("-q", "--quiet", action="store_true", help="Only print errors")
 
     args = parser.parse_args()
@@ -57,8 +59,11 @@ def main():
     for url in provider_urls:
         provider = get_provider(url)
         provider_yaml = get_yaml_from_provider(provider)
+        if args.dry_run:
+            print("YAML:", provider_yaml)
+            continue
         filename = write_yaml_to_file(provider, provider_yaml, args.providers_path)
-        print(filename)
+        print("written provider info to file:", filename)
 
 
 if __name__ == "__main__":
