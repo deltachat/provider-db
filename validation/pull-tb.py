@@ -1,3 +1,5 @@
+import xml.dom.minidom
+
 try:
     from bs4 import BeautifulSoup
 except ModuleNotFoundError:
@@ -6,6 +8,7 @@ except ModuleNotFoundError:
 import argparse
 import requests
 from xml.dom import minidom
+from pprint import pprint
 
 
 def get_provider(url: str) -> dict:
@@ -22,7 +25,36 @@ def get_provider(url: str) -> dict:
     provider["name"] = prov_element.getAttribute("id")
     domains = [domain.firstChild.data for domain in prov_element.getElementsByTagName("domain")]
     provider["domains"] = domains
+    # missing: status. not included in TB autoconfig
+    for incoming_server in prov_element.getElementsByTagName("incomingServer"):
+        if incoming_server.getAttribute("type") == "imap":
+            provider["server"] = [
+                get_server_data(prov_element.getElementsByTagName("outgoingServer")[0]),
+                get_server_data(incoming_server)
+            ]
+            break
     return provider
+
+
+def get_server_data(server_element: xml.dom.minidom.Element) -> dict:
+    """Get server configuration from an XML element.
+
+    :param server_element: the incomingServer or outgoingServer element
+    :return: the dictionary with the server's data.
+    """
+    server_dict = {
+        "type": server_element.getAttribute("type")
+    }
+    for element in server_element.childNodes:
+        if element.localName == "socketType":
+            server_dict["socket"] = element.firstChild.data
+        elif element.localName == "hostname":
+            server_dict["hostname"] = element.firstChild.data
+        elif element.localName == "port":
+            server_dict["port"] = element.firstChild.data
+        elif element.localName == "username":
+            server_dict["username"] = element.firstChild.data.strip("%")
+    return server_dict
 
 
 def get_yaml_from_provider(provider: dict) -> str:
@@ -31,7 +63,6 @@ def get_yaml_from_provider(provider: dict) -> str:
     :param provider: the data parsed from the autoconfig XML.
     :return: a string with YAML data which we can write to a provider-db.md file.
     """
-    return str(provider)
 
 
 def write_yaml_to_file(provider: dict, yaml: str, providers_path: str) -> str:
@@ -70,7 +101,7 @@ def main():
         provider = get_provider(url)
         provider_yaml = get_yaml_from_provider(provider)
         if args.dry_run:
-            print("YAML:", provider_yaml)
+            pprint(provider)
             continue
         filename = write_yaml_to_file(provider, provider_yaml, args.providers_path)
         print("written provider info to file:", filename)
