@@ -1,3 +1,5 @@
+import os
+import pathlib
 import xml.dom.minidom
 
 try:
@@ -11,6 +13,28 @@ from xml.dom import minidom
 from pprint import pprint
 
 
+def get_xml_from_file(ppath: str) -> minidom.parseString:
+    """Get provider XML from a file
+
+    :param ppath: path to the provider XML file
+    :return: an XML DOM from a certain provider
+    """
+    with open(ppath, "r") as f:
+        content = f.read()
+    return minidom.parseString(content)
+
+
+def get_xml_from_url(url: str) -> minidom.parseString:
+    """Download provider XML from a URL
+
+    :param url: URL to a specific provider XML
+    :return: an XML DOM from a certain provider
+    """
+    res = requests.get(url).content
+    # print(str(res))
+    return minidom.parseString(res)
+
+
 def get_provider(url: str) -> dict:
     """Get the data of one provider.
 
@@ -18,9 +42,10 @@ def get_provider(url: str) -> dict:
     :return: the data parsed from the autoconfig XML.
     """
     provider = {}
-    res = requests.get(url).content
-    #print(str(res))
-    parser = minidom.parseString(res)
+    if url.startswith("http"):
+        parser = get_xml_from_url(url)
+    else:
+        parser = get_xml_from_file(url)
     prov_element = parser.getElementsByTagName("emailProvider")[0]
     provider["name"] = prov_element.getAttribute("id")
     domains = [domain.firstChild.data for domain in prov_element.getElementsByTagName("domain")]
@@ -77,25 +102,39 @@ def write_yaml_to_file(provider: dict, yaml: str, providers_path: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--providers_path", "-p", type=str, default="_providers",
+    parser.add_argument("--providers-path", "-p", type=str, default="_providers",
                         help="Path to provider-db/_providers")
-    parser.add_argument("--root-url", type=str, default="https://autoconfig.thunderbird.net/v1.1/",
-                        help="URL to XML sources")
+    parser.add_argument("--root-url", type=str, help="URL or path to XML sources")
+    parser.add_argument("--xml-path", type=str, default="tb-autoconfig/ispdb/",
+                        help="path to local XML sources")
     parser.add_argument("--dry-run", "-d", action="store_true",
                         help="don't write the TB autoconfig info to the provider-db for now")
-    parser.add_argument("--provider-url", "-u", type=str, help="a single provider you want to pull")
+    parser.add_argument("--provider-domain", "-u", type=str, help="a single provider to pull")
     # parser.add_argument("-q", "--quiet", action="store_true", help="Only print errors")
 
     args = parser.parse_args()
 
     provider_urls = set()
-    if args.provider_url:
-        provider_urls.add(args.root_url + args.provider_url)
+    if not args.root_url and pathlib.Path.exists(pathlib.Path(args.xml_path)):
+        if args.provider_domain:
+            provider_urls.add(args.xml_path + args.provider_domain)
+        else:
+            for dirpath, _, filenames in os.walk(args.xml_path):
+                for filename in filenames:
+                    print(dirpath, filename)
+                    provider_urls.add(dirpath + filename)
     else:
-        root_html = requests.get(args.root_url).content
-        root = BeautifulSoup(root_html, features="html.parser")
-        for a in root.find_all("a"):
-            provider_urls.add(args.root_url + a["href"])
+        root_url = args.root_url
+        if root_url is None:
+            root_url = "https://autoconfig.thunderbird.net/v1.1/"
+        if args.provider_domain:
+            provider_urls = set(root_url + args.provider_domain)
+        else:
+            root_html = requests.get(root_url).content
+            root = BeautifulSoup(root_html, features="html.parser")
+            for a in root.find_all("a"):
+                print(root_url, a["href"])
+                provider_urls.add(root_url + a["href"])
 
     for url in provider_urls:
         provider = get_provider(url)

@@ -1,0 +1,3 @@
+[submodule "tb-autoconfig"]
+	path = tb-autoconfig
+	url = ./tb-autoconfig
