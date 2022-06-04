@@ -34,7 +34,6 @@ domains:
   - ka13.hermes.radio
   - ka14.hermes.radio
   - ka15.hermes.radio
-  - ka15.hermes.radio
   - hermes.radio
 strict_tls: false
 config_defaults:
