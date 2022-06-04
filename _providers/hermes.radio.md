@@ -2,13 +2,45 @@
 name: hermes.radio
 status: OK
 domains:
+  - ac.hermes.radio
+  - ac1.hermes.radio
+  - ac2.hermes.radio
+  - ac3.hermes.radio
+  - ac4.hermes.radio
+  - ac5.hermes.radio
+  - ac6.hermes.radio
+  - ac7.hermes.radio
+  - ac8.hermes.radio
+  - ac9.hermes.radio
+  - ac10.hermes.radio
+  - ac11.hermes.radio
+  - ac12.hermes.radio
+  - ac13.hermes.radio
+  - ac14.hermes.radio
+  - ac15.hermes.radio
+  - ka.hermes.radio
+  - ka1.hermes.radio
+  - ka2.hermes.radio
+  - ka3.hermes.radio
+  - ka4.hermes.radio
+  - ka5.hermes.radio
+  - ka6.hermes.radio
+  - ka7.hermes.radio
+  - ka8.hermes.radio
+  - ka9.hermes.radio
+  - ka10.hermes.radio
+  - ka11.hermes.radio
+  - ka12.hermes.radio
+  - ka13.hermes.radio
+  - ka14.hermes.radio
+  - ka15.hermes.radio
+  - ka15.hermes.radio
   - hermes.radio
 strict_tls: false
 config_defaults:
   mdns_enabled: 0
   e2ee_enabled: 0
-  media_quality: 1
   show_emails: 2
-last_checked: 2020-10
+last_checked: 2022-06
 website: http://hermes.radio
 ---
