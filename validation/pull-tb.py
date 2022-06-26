@@ -58,6 +58,14 @@ def get_provider(url: str) -> dict:
                 get_server_data(incoming_server)
             ]
             break
+    # some providers have documentation on how to enable IMAP
+    if prov_element.getElementsByTagName("documentation"):
+        doc_element = prov_element.getElementsByTagName("documentation")[0]
+        provider["status"] = "PREPARATION"
+        for descr in doc_element.getElementsByTagName("descr"):
+            provider["markdown"] = descr.firstChild.data + ": " + doc_element.getAttribute("url")
+            if descr.getAttribute("lang") == "en":
+                break  # if english exists, use that
     return provider
 
 
@@ -110,6 +118,7 @@ def main():
     parser.add_argument("--dry-run", "-d", action="store_true",
                         help="don't write the TB autoconfig info to the provider-db for now")
     parser.add_argument("--provider-domain", "-u", type=str, help="a single provider to pull")
+    parser.add_argument("--just-print-domains", action="store_true", help="just print all domains")
     # parser.add_argument("-q", "--quiet", action="store_true", help="Only print errors")
 
     args = parser.parse_args()
@@ -138,11 +147,14 @@ def main():
 
     for url in provider_urls:
         provider = get_provider(url)
+        if args.just_print_domains:
+            [print(domain) for domain in provider.get("domains")]
+            continue
         provider_yaml = get_yaml_from_provider(provider)
         if args.dry_run:
+            filename = write_yaml_to_file(provider, provider_yaml, args.providers_path)
             pprint(provider)
             continue
-        filename = write_yaml_to_file(provider, provider_yaml, args.providers_path)
         print("written provider info to file:", filename)
 
 
