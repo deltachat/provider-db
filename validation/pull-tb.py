@@ -2,6 +2,8 @@ import os
 import pathlib
 import xml.dom.minidom
 
+import yaml
+
 try:
     from bs4 import BeautifulSoup
 except ModuleNotFoundError:
@@ -96,6 +98,16 @@ def get_yaml_from_provider(provider: dict) -> str:
     :param provider: the data parsed from the autoconfig XML.
     :return: a string with YAML data which we can write to a provider-db.md file.
     """
+    lines = ["---"]
+    lines.append("\nname: " + provider.get("name"))
+    lines.append("\nstatus: " + provider.get("status"))
+    lines.append("\ndomains:\n")
+    lines.append(yaml.dump(provider.get("domains")))
+    lines.append("server:\n")
+    lines.append(yaml.dump(provider.get("server")))
+    lines.append("---\n\n")
+    lines.append(provider.get("markdown"))
+    return ''.join(lines)
 
 
 def write_yaml_to_file(provider: dict, yaml: str, providers_path: str) -> str:
@@ -153,7 +165,7 @@ def main():
         provider_yaml = get_yaml_from_provider(provider)
         if args.dry_run:
             filename = write_yaml_to_file(provider, provider_yaml, args.providers_path)
-            pprint(provider)
+            print(provider_yaml)
             continue
         print("written provider info to file:", filename)
 
