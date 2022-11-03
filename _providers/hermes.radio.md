@@ -34,6 +34,22 @@ domains:
   - ka13.hermes.radio
   - ka14.hermes.radio
   - ka15.hermes.radio
+  - ec.hermes.radio
+  - ec1.hermes.radio
+  - ec2.hermes.radio
+  - ec3.hermes.radio
+  - ec4.hermes.radio
+  - ec5.hermes.radio
+  - ec6.hermes.radio
+  - ec7.hermes.radio
+  - ec8.hermes.radio
+  - ec9.hermes.radio
+  - ec10.hermes.radio
+  - ec11.hermes.radio
+  - ec12.hermes.radio
+  - ec13.hermes.radio
+  - ec14.hermes.radio
+  - ec15.hermes.radio
   - hermes.radio
 strict_tls: false
 config_defaults:
