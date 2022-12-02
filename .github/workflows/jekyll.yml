@@ -27,7 +27,7 @@ jobs:
       with:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
-        host: testrun.org
+        host: mailadm.testrun.org
         port: 22
         source: _site
         target: providerOverview/${{ github.sha }}/
