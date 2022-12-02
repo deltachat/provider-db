@@ -24,13 +24,13 @@ jobs:
     - name: Upload
       if: steps.prepare.outputs.uploadtoserver
       uses: appleboy/scp-action@master
-      env:
-        USERNAME: ${{ secrets.USERNAME }}
-        KEY: ${{ secrets.KEY }}
-        HOST: testrun.org
-        PORT: 22
-        SOURCE: _site
-        TARGET: providerOverview/${{ github.sha }}/
+      with:
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        host: testrun.org
+        port: 22
+        source: _site
+        target: providerOverview/${{ github.sha }}/
     - name: "Post links to details"
       if: steps.prepare.outputs.uploadtoserver
       id: details
