@@ -61,6 +61,7 @@ def get_provider(url: str) -> dict:
             ]
             break
     # some providers have documentation on how to enable IMAP
+    provider["status"] = "OK"
     if prov_element.getElementsByTagName("documentation"):
         doc_element = prov_element.getElementsByTagName("documentation")[0]
         provider["status"] = "PREPARATION"
@@ -103,11 +104,17 @@ def get_yaml_from_provider(provider: dict) -> str:
     lines.append("\nstatus: " + provider.get("status"))
     lines.append("\ndomains:\n")
     lines.append(yaml.dump(provider.get("domains")))
-    lines.append("server:\n")
-    lines.append(yaml.dump(provider.get("server")))
+    if yaml.dump(provider.get("server")) != "null\n...\n":
+        lines.append("server:\n")
+        lines.append(yaml.dump(provider.get("server")))
     lines.append("---\n\n")
-    lines.append(provider.get("markdown"))
-    return ''.join(lines)
+    if provider.get("markdown"):
+        lines.append(provider.get("markdown"))
+    try:
+        return ''.join(lines)
+    except:
+        print(lines)
+        raise
 
 
 def write_yaml_to_file(provider: dict, yaml: str, providers_path: str) -> str:
