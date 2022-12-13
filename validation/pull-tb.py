@@ -125,6 +125,10 @@ def write_yaml_to_file(provider: dict, yaml: str, providers_path: str) -> str:
     :param providers_path: path to provider-db/_providers
     :return path of the file to which the provider data was written.
     """
+    filename = "_providers/%s.md" % (provider.get("name"),)
+    with open(filename, "w+") as f:
+        f.write(yaml)
+    return filename
 
 
 def main():
@@ -172,10 +176,10 @@ def main():
             [print(domain) for domain in provider.get("domains")]
             continue
         provider_yaml = get_yaml_from_provider(provider)
+        print(provider_yaml)
         if args.dry_run:
-            filename = write_yaml_to_file(provider, provider_yaml, args.providers_path)
-            print(provider_yaml)
             continue
+        filename = write_yaml_to_file(provider, provider_yaml, args.providers_path)
         print("written provider info to file:", filename)
 
 
