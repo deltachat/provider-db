@@ -165,6 +165,8 @@ def main():
                 provider_urls.add(root_url + a["href"])
 
     for url in provider_urls:
+        if "=" in url or "1.1//" in url:
+            continue
         provider = get_provider(url)
         if args.just_print_domains:
             [print(domain) for domain in provider.get("domains")]
