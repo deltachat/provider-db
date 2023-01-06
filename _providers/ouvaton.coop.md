@@ -17,4 +17,4 @@
  strict_tls: true
  last_checked: 2022-12
  website: https://ouvaton.coop
- ---
+---
