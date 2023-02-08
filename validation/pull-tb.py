@@ -173,7 +173,7 @@ def main():
             continue
         provider = get_provider(url)
         if args.just_print_domains:
-            [print(domain) for domain in provider.get("domains")]
+            [print("- " + domain) for domain in provider.get("domains")]
             continue
         provider_yaml = get_yaml_from_provider(provider)
         print(provider_yaml)
