@@ -60,8 +60,16 @@ server:
   socket: SSL
   type: imap
 - hostname: posteo.de
+  port: 143
+  socket: STARTTLS
+  type: imap
+- hostname: posteo.de
   port: 465
   socket: SSL
+  type: smtp
+- hostname: posteo.de
+  port: 587
+  socket: STARTTLS
   type: smtp
 last_checked: 2023-02
 website: https://posteo.de/
