@@ -56,13 +56,13 @@ domains:
 strict_tls: true
 server:
 - hostname: posteo.de
-  port: 143
-  socket: STARTTLS
+  port: 993
+  socket: SSL
   type: imap
 - hostname: posteo.de
-  port: 587
-  socket: STARTTLS
+  port: 465
+  socket: SSL
   type: smtp
-last_checked: 2021-10
+last_checked: 2023-02
 website: https://posteo.de/
 ---
