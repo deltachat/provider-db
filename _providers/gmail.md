@@ -6,7 +6,6 @@ domains:
   - googlemail.com
   - google.com
 oauth2: gmail
-strict_tls: true
 server:
   - type: imap
     socket: SSL
@@ -16,6 +15,8 @@ server:
     socket: SSL
     hostname: smtp.gmail.com
     port: 465
+opt:
+  delete_to_trash: true
 before_login_hint: |
   For Gmail accounts, you need to create an app-password if you have "2-Step Verification" enabled. If this setting is not available, you need to enable "less secure apps".
 last_checked: 2021-08

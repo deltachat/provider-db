@@ -14,7 +14,6 @@ server:
     hostname: disroot.org
     port: 587
     username: EMAILLOCALPART
-strict_tls: true
 last_checked: 2017-06
 website: https://disroot.org
 ---

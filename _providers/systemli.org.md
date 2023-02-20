@@ -14,7 +14,6 @@ server:
     hostname: mail.systemli.org
     port: 465
     username: EMAILADDRESS
-strict_tls: true
 last_checked: 2020-05
 website: https://www.systemli.org/
 ---

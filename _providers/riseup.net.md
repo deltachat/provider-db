@@ -14,7 +14,6 @@ server:
     hostname: mail.riseup.net
     port: 465
     username: EMAILLOCALPART
-strict_tls: true
 last_checked: 2017-12
 website: https://riseup.net/
 ---

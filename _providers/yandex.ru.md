@@ -10,7 +10,6 @@ domains:
 - ya.ru
 - narod.ru
 oauth2: yandex
-strict_tls: true
 server:
   - type: imap
     socket: SSL

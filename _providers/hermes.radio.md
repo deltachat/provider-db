@@ -51,7 +51,8 @@ domains:
   - ec14.hermes.radio
   - ec15.hermes.radio
   - hermes.radio
-strict_tls: false
+opt:
+  strict_tls: false
 config_defaults:
   mdns_enabled: 0
   e2ee_enabled: 0

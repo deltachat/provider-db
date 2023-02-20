@@ -14,7 +14,6 @@ server:
     hostname: mail.nubo.coop
     port: 465
     username: EMAILADDRESS
-strict_tls: true
 last_checked: 2022-12
 website: https://nubo.coop
 ---

@@ -3,7 +3,6 @@ name: mail2tor
 status: PREPARATION
 domains:
 - mail2tor.com
-strict_tls: true
 server:
 - type: imap
   hostname: g77kjrad6bafzzyldqvffq6kxlsgphcygptxhnn4xlnktfgaqshilmyd.onion

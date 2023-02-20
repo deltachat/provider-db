@@ -3,7 +3,6 @@ name: Undernet.uy
 status: OK
 domains:
   - undernet.uy
-strict_tls: true
 server:
 - type: imap
   hostname: undernet.uy
