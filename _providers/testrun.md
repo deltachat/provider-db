@@ -3,7 +3,6 @@ name: testrun.org
 status: OK
 domains:
 - testrun.org
-strict_tls: true
 server:
 - type: imap
   hostname: testrun.org

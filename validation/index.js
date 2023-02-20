@@ -81,6 +81,7 @@ function test(fileContent) {
             'max_smtp_rcpt_to',
             'name',
             'oauth2',
+            'opt',
             'server',
             'status',
             'strict_tls',

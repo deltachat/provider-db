@@ -15,7 +15,6 @@ server:
     hostname: smtp.mailbox.org
     port: 465
     username: EMAILADDRESS
-strict_tls: true
 last_checked: 2019-03
 website: https://mailbox.org
 ---
