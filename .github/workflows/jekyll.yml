@@ -37,7 +37,7 @@ jobs:
       run: |
         # URLs for API connection and uploads
         export GITHUB_API_URL="https://api.github.com/repos/deltachat/provider-db/statuses/${{ github.event.after }}"
-        export PREVIEW_LINK="https://testrun.org/provider/${{ github.sha }}/_site/"
+        export PREVIEW_LINK="https://mailadm.testrun.org/provider/${{ github.sha }}/_site/"
         # Post AppImage download link to check details
         export STATUS_DATA="{\"state\": \"success\", \
                              \"description\": \"Preview the page here:\", \
@@ -49,7 +49,7 @@ jobs:
       if: steps.details.outputs.comment
       uses: rytswd/respost@v0.1.0
       with:
-        body: "Check out the page preview at https://testrun.org/provider/${{ github.sha }}/_site/"
+        body: "Check out the page preview at https://mailadm.testrun.org/provider/${{ github.sha }}/_site/"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
