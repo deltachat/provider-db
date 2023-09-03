@@ -4,52 +4,75 @@ on: [pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Can we upload the preview?  # Get Pullrequest ID
-      id: prepare
-      run: |
-        if [ $(expr length "${{ secrets.USERNAME }}") -gt "1" ]; then echo ::set-output name=uploadtoserver::true ;fi
-    - uses: actions/checkout@v1
-    - name: Fix lockfile permissions
-      run: |
-        chmod 666 Gemfile.lock
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
-    - name: Upload
-      if: steps.prepare.outputs.uploadtoserver
-      uses: appleboy/scp-action@master
-      with:
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        host: mailadm.testrun.org
-        port: 22
-        source: _site
-        target: providerOverview/${{ github.sha }}/
-    - name: "Post links to details"
-      if: steps.prepare.outputs.uploadtoserver
-      id: details
-      run: |
-        # URLs for API connection and uploads
-        export GITHUB_API_URL="https://api.github.com/repos/deltachat/provider-db/statuses/${{ github.event.after }}"
-        export PREVIEW_LINK="https://mailadm.testrun.org/provider/${{ github.sha }}/_site/"
-        # Post AppImage download link to check details
-        export STATUS_DATA="{\"state\": \"success\", \
-                             \"description\": \"Preview the page here:\", \
-                             \"context\": \"Page Preview\", \
-                             \"target_url\": \"${PREVIEW_LINK}\"}"
-        export RESPONSE=$(curl -X POST --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --url "$GITHUB_API_URL" --header "content-type: application/json" --data "$STATUS_DATA" | jq -r .message)
-        if [ "$RESPONSE" == "Not Found" ]; then echo ::set-output name=comment::true ;fi
-    - name: "Post link to comments"
-      if: steps.details.outputs.comment
-      uses: rytswd/respost@v0.1.0
-      with:
-        body: "Check out the page preview at https://mailadm.testrun.org/provider/${{ github.sha }}/_site/"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    env:
+      GEM_HOME: ~/.gems
 
+    steps:
+      - name: Get Pullrequest ID
+        id: prepare
+        run: |
+          PULLREQUEST_ID=$(echo "${{ github.ref }}" | cut -d "/" -f3)
+          echo "prid=$PULLREQUEST_ID" >> $GITHUB_OUTPUT
+          if test $(expr length "${{ secrets.USERNAME }}") -gt "1"; then
+            echo "uploadtoserver=true" >> $GITHUB_OUTPUT
+          fi
+      - uses: actions/checkout@v3
+      - name: Install Bundler
+        run: sudo gem install bundler
+
+      - name: Cache bundle
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Install Jekyll
+        run: bundle install
+
+      - name: Build the site with Jekyll
+        run: |
+          bundle exec jekyll build --future --baseurl "/${{ steps.prepare.outputs.prid }}"
+          mkdir ${{ steps.prepare.outputs.prid }}
+
+      - name: Upload preview
+        if: steps.prepare.outputs.uploadtoserver
+        run: |
+          mkdir -p "$HOME/.ssh"
+          echo "${{ secrets.KEY }}" > "$HOME/.ssh/key"
+          chmod 600 "$HOME/.ssh/key"
+          rsync -avzh -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" $GITHUB_WORKSPACE/_site/ "${{ secrets.USERNAME }}@mailadm.testrun.org:providerOverview/${{ steps.prepare.outputs.prid }}/"
+
+      - name: Post links to details
+        if: steps.prepare.outputs.uploadtoserver
+        id: details
+        run: |
+          # Post preview link to details.
+          GITHUB_API_URL="https://api.github.com/repos/deltachat/provider-db/statuses/${{ github.event.after }}"
+          PREVIEW_LINK="https://mailadm.testrun.org/provider/${{ steps.prepare.outputs.prid }}/"
+          STATUS_DATA="{\"state\": \"success\", \
+                        \"description\": \"Preview the page here:\", \
+                        \"context\": \"Page Preview\", \
+                        \"target_url\": \"${PREVIEW_LINK}\"}"
+          curl -X POST --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --url "$GITHUB_API_URL" --header "content-type: application/json" --data "$STATUS_DATA"
+
+          # Check if the comment already exists.
+          GITHUB_API_URL="https://api.github.com/repos/deltachat/provider-db/issues/${{ steps.prepare.outputs.prid }}/comments"
+          RESPONSE=$(curl -L --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --url "$GITHUB_API_URL" --header "content-type: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28")
+          echo $RESPONSE > result
+          grep -v '"Check out the page preview at https://mailadm.testrun.org/' result && echo "comment=true" >> $GITHUB_OUTPUT || true
+
+      - name: Post link to comments
+        if: steps.details.outputs.comment
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Check out the page preview at https://mailadm.testrun.org/provider/${{ steps.prepare.outputs.prid }}/"
+            })
