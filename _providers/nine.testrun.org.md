@@ -6,12 +6,12 @@ domains:
 server:
   - type: imap
     socket: SSL
-    hostname: mail.nine.testrun.org
+    hostname: nine.testrun.org
     port: 993
     username: EMAILADDRESS
   - type: smtp
     socket: SSL
-    hostname: mail.nine.testrun.org
+    hostname: nine.testrun.org
     port: 465
     username: EMAILADDRESS
 last_checked: 2023-11
