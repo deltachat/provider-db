@@ -31,6 +31,7 @@ website: https://www.gmx.net/
 ---
 
 To use your GMX email address with Delta Chat you have to enable access for 3rd party applications through IMAP. Please see [GMX's own article on how to do that](https://support.gmx.com/pop-imap/toggle.html).
+(Note: in the GMX settings, if the checkbox isn't visible in your mobile browser, try "Show website as desktop version".)
 
 Afterwards you can use Delta Chat with your GMX email address and the newly created password.
 
