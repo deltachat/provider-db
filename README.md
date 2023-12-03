@@ -56,6 +56,10 @@ website: [optional: website of the provider]
 
 If the status is `OK`, a standard text is used as page content. You don't need to put in anything.
 
+`before_login_hint` as well as additional content is not available from within the apps for status `OK`.
+Use status `PREPARATION` to show `before_login_hint`
+or consider using `after_login_hint`, which is shown also for status `OK`.
+
 ### PREPARATION
 
 This status means that the user must do some preparing steps before they can use Delta Chat with their provider. For example enabling IMAP/SMTP at their provider's settings, or creating an app-specific password.
