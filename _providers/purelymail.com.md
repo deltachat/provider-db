@@ -1,5 +1,5 @@
 ---
-name: purelyemail.com
+name: purelymail.com
 status: OK
 domains:
   - purelymail.com
@@ -19,5 +19,5 @@ server:
     port: 465
     username: EMAILADDRESS
 last_checked: 2023-12
-website: https://purelyemail.com
+website: https://purelymail.com
 ---
