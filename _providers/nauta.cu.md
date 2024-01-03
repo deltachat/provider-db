@@ -17,12 +17,10 @@ server:
     port: 25
 config_defaults:
   delete_server_after: 1
-  bcc_self: 0
   sentbox_watch: 0
   mvbox_move: 0
   media_quality: 1
-  fetch_existing_msgs: 0
-last_checked: 2022-05
+last_checked: 2024-01
 skip_auto_test: true
 website: https://webmail.nauta.cu
 ---
