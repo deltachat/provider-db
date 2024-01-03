@@ -12,6 +12,6 @@ server:
   hostname: mail.buzon.uy
   port: 587
   socket: STARTTLS
-last_checked: 2020-10
+last_checked: 2024-01
 website: https://buzon.uy
 ---
