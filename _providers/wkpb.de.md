@@ -1,6 +1,6 @@
 ---
 name: Westfalen-Kolleg Paderborn
-status: OK
+status: PREPARATION
 domains: 
   - wkpb.de
 server:
