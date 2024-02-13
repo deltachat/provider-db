@@ -1,6 +1,6 @@
 ---
-name: Csl. Thomas Lüchow
-status: Teacher and Coach for Adults
+name: daleth.cafe
+status: OK
 domains: 
   - daleth.cafe
 server:
