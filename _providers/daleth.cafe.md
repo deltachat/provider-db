@@ -14,8 +14,6 @@ server:
     hostname: daleth.cafe
     port: 587
     username_pattern: EMAIL
-before_login_hint: Wellcome to mehl.cloud
-after_login_hint: Now you are loged in
 strict_tls: true
 last_checked: 
 skip_auto_test: false
