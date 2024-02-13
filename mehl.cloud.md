@@ -15,7 +15,7 @@ server:
     port: 587
     username_pattern: EMAIL
 strict_tls: true
-last_checked: 
+last_checked: 2024-02
 skip_auto_test: false
 website: https://nein.jetzt
 ---
