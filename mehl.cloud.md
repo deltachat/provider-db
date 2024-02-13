@@ -1,6 +1,6 @@
 ---
-name: Csl. Thomas Lüchow
-status: Teacher and Coach for Adults
+name: mehl.cloud
+status: OK
 domains: 
   - mehl.cloud
 server:
