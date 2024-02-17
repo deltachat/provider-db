@@ -4,12 +4,12 @@ status: OK
 domains: 
   - mehl.cloud
 server:
-  - type: IMAP
+  - type: imap
     socket: TLS
     hostname: mehl.cloud
     port: 993
     username_pattern: EMAIL
-  - type: SMTP
+  - type: smtp
     socket: STARTTLS
     hostname: mehl.cloud
     port: 587

@@ -4,12 +4,12 @@ status: OK
 domains: 
   - daleth.cafe
 server:
-  - type: IMAP
+  - type: imap
     socket: TLS
     hostname: daleth.cafe
     port: 993
     username_pattern: EMAIL
-  - type: SMTP
+  - type: smtp
     socket: STARTTLS
     hostname: daleth.cafe
     port: 587
