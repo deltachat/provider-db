@@ -34,5 +34,5 @@ website: https://mehl.store
 This account provides 3GB storage for eMails and the possibility to access 
 a NEXTCLOUD-instance by using the email-credits! You can't register yourself yet!
 
-For special cases, the domain `mehl.store`offers invite-qr-codes for Deltac.Chat 
+For special cases, the domain `mehl.store`offers invite-qr-codes for Delta.Chat 
 [Please see here for details](https://mailadm.readthedocs.io/en/latest/#)!
