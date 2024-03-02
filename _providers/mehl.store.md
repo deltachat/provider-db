@@ -12,14 +12,14 @@ domains:
   - nein.jetzt
 server:
   - type: imap
-    socket: SSL
+    socket: TLS
     hostname: mail.ende.in.net
     port: 993
     username: EMAILADDRESS
   - type: smtp
-    socket: STARTTLS
+    socket: TLS
     hostname: mail.ende.in.net
-    port: 587
+    port: 465
     username: EMAILADDRESS
 before_login_hint: 
 after_login_hint: |
