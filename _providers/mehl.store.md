@@ -12,20 +12,20 @@ domains:
   - nein.jetzt
 server:
   - type: imap
-    socket: TLS
+    socket: SSL
     hostname: mail.ende.in.net
     port: 993
     username: EMAILADDRESS
   - type: smtp
-    socket: TLS
+    socket: STARTTLS
     hostname: mail.ende.in.net
-    port: 465
+    port: 587
     username: EMAILADDRESS
 before_login_hint: 
 after_login_hint: |
     This account provides 3GB storage for eMails and the possibility to access a NEXTCLOUD-instance by using the email-credits!
 last_checked: 2024-02
-skip_auto_test: false
+skip_auto_test: true
 website: https://mehl.store
 ---
 
