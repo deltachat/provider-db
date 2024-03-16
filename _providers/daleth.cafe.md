@@ -21,4 +21,4 @@ website: https://nein.jetzt
 ---
 This ist a chatmail-instance with docker running in parallel. 
 
-If anything went wrong, please write me at https://form.ctldpc.de or onto ctl@dpc.re via email!
+If anything went wrong, please write me at <https://form.ctldpc.de> or onto [ctl@dpc.re](mailto:ctl@dpc.re) via email!

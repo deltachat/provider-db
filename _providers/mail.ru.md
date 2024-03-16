@@ -21,7 +21,7 @@ last_checked: 2021-07
 website: https://mail.ru/
 ---
 
-См. https://help.mail.ru/mail/security/protection/external для получения
+См. <https://help.mail.ru/mail/security/protection/external> для получения
 дополнительной информации о том, как сгенерировать такой внешний пароль для
 Delta Chat.
 
