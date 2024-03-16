@@ -7,6 +7,7 @@ domains:
 - internet.ru
 - bk.ru
 - list.ru
+# For vk.com see designated file, ./vk.com.md
 server:
   - type: imap
     socket: SSL
