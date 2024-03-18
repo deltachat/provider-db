@@ -102,13 +102,11 @@ function test(fileContent) {
             'config_defaults',
             'domains',
             'last_checked',
-            'max_smtp_rcpt_to',
             'name',
             'oauth2',
             'opt',
             'server',
             'status',
-            'strict_tls',
             'skip_auto_test',
             'website',
         ].includes(key)) {

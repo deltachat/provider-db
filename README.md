@@ -20,6 +20,9 @@ domains:
   - an_array
   - of_domains
   - used_by_this_provider
+opt:
+  max_smtp_rcpt_to: [optional: default is 50]
+  strict_tls: [optional: default is true]
 server:
   # Repeat the following block for each server (usually one for imap, one for smtp).
   # If no servers are defined, autoconfig, autodiscover or guessing is used;
@@ -42,7 +45,6 @@ config_defaults:
   # optional, see below for details
   key: value
   other_key: other_value
-strict_tls: [optional: default is true]
 last_checked: [optional: date when the information was last checked: YYYY-MM]
 skip_auto_test: [optional: skip the provider in the automated tests. default is false]
 website: [optional: website of the provider]
@@ -124,7 +126,7 @@ All other options are applied as usual.
 
 ## limit RCPT TO header
 
-With the optional top-level option `max_smtp_rcpt_to=MAX`
+With the `opt` option `max_smtp_rcpt_to: MAX`
 you can set the maximum number of recipients
 that should be used in an `RCPT TO:` smtp header.
 If a message needs to be sent to more recipients,
@@ -140,7 +142,7 @@ If this limit is not specified, the library picks an reasonable default.
 By default, all providers in to the provider-database
 are assumed to support "Strict TLS".
 If that is not true for a specific provider,
-you have to add the optional top-level option `strict_tls: false`.
+you have to add the `opt` option `strict_tls: false`.
 
 Connections with `socket: PLAIN` are not affected by the `strict_tls` option,
 it's not ignored, there is just no TLS at all.
