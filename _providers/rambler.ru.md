@@ -86,35 +86,10 @@ server:
     hostname: smtp.rambler.ru
     port: 2525
 
-  # PLAIN. The last in the list so Delta Chat tries them last, after failing
-  # to use all the encrypted ones.
-  # https://github.com/deltachat/deltachat-core-rust/blob/d97bdd9fd085fceddd6d3852c96e1be871b0bf9a/src/configure.rs#L353-L433
-  # https://github.com/deltachat/provider-db/pull/284#issuecomment-2002943461
-  - type: imap
-    socket: PLAIN
-    hostname: imap.rambler.ru
-    port: 993
-  - type: imap
-    socket: PLAIN
-    hostname: imap.rambler.ru
-    port: 143
-
-  - type: smtp
-    socket: PLAIN
-    hostname: smtp.rambler.ru
-    port: 465
-  - type: smtp
-    socket: PLAIN
-    hostname: smtp.rambler.ru
-    port: 587
-  - type: smtp
-    socket: PLAIN
-    hostname: smtp.rambler.ru
-    port: 25
-  - type: smtp
-    socket: PLAIN
-    hostname: smtp.rambler.ru
-    port: 2525
+  # https://help.rambler.ru/mail/mail-pochtovye-klienty/1275 also offers
+  # unencrypted connections to all the same hosts. Let's leave it for users
+  # to configure manually and not just automatically fall back to unencrypted
+  # if all encrypted fail.
 before_login_hint: |
   Чтобы войти в Рамблер/почта через Delta Chat, необходимо предварительно включить доступ с помощью почтовых клиентов на сайте mail.rambler.ru
 last_checked: 2024-03
