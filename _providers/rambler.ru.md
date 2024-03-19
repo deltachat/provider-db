@@ -18,14 +18,17 @@ server:
     socket: SSL
     hostname: imap.rambler.ru
     port: 993
-  - type: imap
-    socket: STARTTLS
-    hostname: imap.rambler.ru
-    port: 143
   - type: smtp
     socket: SSL
     hostname: smtp.rambler.ru
     port: 465
+  # Let's put `STARTTLS` below all the `SSL` ones.
+  # - type: imap
+  #   socket: STARTTLS
+  #   hostname: imap.rambler.ru
+  #   port: 143
+
+  # The below ones are specified as "if the above ones don't work, try these".
   # Source: https://help.rambler.ru/mail/mail-pochtovye-klienty/1275
   # They also have TLS, but README in this repo here doesn't allow it.
 
@@ -63,11 +66,10 @@ server:
     socket: STARTTLS
     hostname: imap.rambler.ru
     port: 993
-  # This one's already specified above.
-  # - type: imap
-  #   socket: STARTTLS
-  #   hostname: imap.rambler.ru
-  #   port: 143
+  - type: imap
+    socket: STARTTLS
+    hostname: imap.rambler.ru
+    port: 143
 
   - type: smtp
     socket: STARTTLS
