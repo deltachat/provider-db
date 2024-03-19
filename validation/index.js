@@ -9,10 +9,34 @@ function testServer(server){
 
     if(!server.hostname || server.hostname.trim() == "") throw new Error("Hostname missing")
     if(!server.port) throw new Error("Port missing")
-    if(!server.socket || server.socket.trim() == "") throw new Error("Socket missing")
-    if(!server.type || server.type.trim() == "") throw new Error("Type missing")
+    if(
+        !server.socket ||
+        server.socket.trim() == "" ||
+        !["SSL", "STARTTLS", "PLAIN"].includes(server.socket.trim())
+    ) throw new Error(`Invalid Socket "${server.socket}"`)
+    if(
+        !server.type ||
+        server.type.trim() == "" ||
+        !["IMAP", "SMTP"].includes(server.type.trim().toUpperCase())
+    ) throw new Error(`Invalid type "${server.type}"`)
+    if(
+        server.username_pattern &&
+        !["EMAIL", "EMAILLOCALPART"].includes(
+            server.username_pattern.trim().toUpperCase()
+        )
+    ) throw new Error(`Invalid username_pattern "${server.username_pattern}"`)
 
-    // todo username_pattern optional but one of right the values
+    for (const key of Object.keys(server)) {
+        if (![
+            "type",
+            "socket",
+            "hostname",
+            "port",
+            "username_pattern",
+        ].includes(key)) {
+            throw new Error(`Unexpected key "${key}"`)
+        }
+    }
 }
 
 function test(fileContent) {
