@@ -31,8 +31,6 @@ server:
   # https://help.rambler.ru/mail/mail-pochtovye-klienty/1275
   # But many of those don't appear to actually work right now,
   # our CI fails.
-  #
-  # They also have TLS, but README in this repo here doesn't allow it.
 before_login_hint: |
   Чтобы войти в Рамблер/почта через Delta Chat, необходимо предварительно включить доступ с помощью почтовых клиентов на сайте mail.rambler.ru
 last_checked: 2024-03
