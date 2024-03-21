@@ -23,75 +23,16 @@ server:
     hostname: smtp.rambler.ru
     port: 465
   # Let's put `STARTTLS` below all the `SSL` ones.
-  # - type: imap
-  #   socket: STARTTLS
-  #   hostname: imap.rambler.ru
-  #   port: 143
-
-  # The below ones are specified as "if the above ones don't work, try these".
-  # Source: https://help.rambler.ru/mail/mail-pochtovye-klienty/1275
+  - type: imap
+    socket: STARTTLS
+    hostname: imap.rambler.ru
+    port: 143
+  # They also say "if the above ones don't work, try these":
+  # https://help.rambler.ru/mail/mail-pochtovye-klienty/1275
+  # But many of those don't appear to actually work right now,
+  # our CI fails.
+  #
   # They also have TLS, but README in this repo here doesn't allow it.
-
-  # SSL
-  # This one's already specified above.
-  # - type: imap
-  #   socket: SSL
-  #   hostname: imap.rambler.ru
-  #   port: 993
-  - type: imap
-    socket: SSL
-    hostname: imap.rambler.ru
-    port: 143
-
-  # This one's already specified above.
-  # - type: smtp
-  #   socket: SSL
-  #   hostname: smtp.rambler.ru
-  #   port: 465
-  - type: smtp
-    socket: SSL
-    hostname: smtp.rambler.ru
-    port: 587
-  - type: smtp
-    socket: SSL
-    hostname: smtp.rambler.ru
-    port: 25
-  - type: smtp
-    socket: SSL
-    hostname: smtp.rambler.ru
-    port: 2525
-
-  # STARTTLS
-  - type: imap
-    socket: STARTTLS
-    hostname: imap.rambler.ru
-    port: 993
-  - type: imap
-    socket: STARTTLS
-    hostname: imap.rambler.ru
-    port: 143
-
-  - type: smtp
-    socket: STARTTLS
-    hostname: smtp.rambler.ru
-    port: 465
-  - type: smtp
-    socket: STARTTLS
-    hostname: smtp.rambler.ru
-    port: 587
-  - type: smtp
-    socket: STARTTLS
-    hostname: smtp.rambler.ru
-    port: 25
-  - type: smtp
-    socket: STARTTLS
-    hostname: smtp.rambler.ru
-    port: 2525
-
-  # https://help.rambler.ru/mail/mail-pochtovye-klienty/1275 also offers
-  # unencrypted connections to all the same hosts. Let's leave it for users
-  # to configure manually and not just automatically fall back to unencrypted
-  # if all encrypted fail.
 before_login_hint: |
   Чтобы войти в Рамблер/почта через Delta Chat, необходимо предварительно включить доступ с помощью почтовых клиентов на сайте mail.rambler.ru
 last_checked: 2024-03
