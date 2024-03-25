@@ -8,12 +8,12 @@ server:
     socket: SSL
     hostname: disroot.org
     port: 993
-    username: EMAILLOCALPART
+    username_pattern: EMAILLOCALPART
   - type: smtp
     socket: STARTTLS
     hostname: disroot.org
     port: 587
-    username: EMAILLOCALPART
+    username_pattern: EMAILLOCALPART
 last_checked: 2017-06
 website: https://disroot.org
 ---

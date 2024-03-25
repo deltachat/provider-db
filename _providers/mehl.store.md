@@ -15,12 +15,12 @@ server:
     socket: SSL
     hostname: mail.ende.in.net
     port: 993
-    username: EMAILADDRESS
+    username_pattern: EMAIL
   - type: smtp
     socket: STARTTLS
     hostname: mail.ende.in.net
     port: 587
-    username: EMAILADDRESS
+    username_pattern: EMAIL
 before_login_hint: 
 after_login_hint: |
     This account provides 3GB storage for eMails and the possibility to access a NEXTCLOUD-instance by using the email-credits!

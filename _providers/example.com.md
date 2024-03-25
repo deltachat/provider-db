@@ -10,12 +10,12 @@ server:
     socket: SSL
     hostname: imap.example.com
     port: 1337
-    username: EMAILLOCALPART
+    username_pattern: EMAILLOCALPART
   - type: smtp
     socket: STARTTLS
     hostname: smtp.example.com
     port: 1337
-    username: EMAILADDRESS
+    username_pattern: EMAIL
 before_login_hint: Hush this provider doesn't exist!
 after_login_hint: |
     This provider doesn't really exist, so you can't use it :/

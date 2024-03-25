@@ -5,7 +5,7 @@ domains:
   - mehl.cloud
 server:
   - type: imap
-    socket: TLS
+    socket: SSL
     hostname: mehl.cloud
     port: 993
     username_pattern: EMAIL

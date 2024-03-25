@@ -8,12 +8,12 @@
      socket: SSL
      hostname: imap.ouvaton.coop
      port: 993
-     username: EMAILADDRESS
+     username_pattern: EMAIL
    - type: smtp
      socket: SSL
      hostname: smtp.ouvaton.coop
      port: 465
-     username: EMAILADDRESS
+     username_pattern: EMAIL
  last_checked: 2022-12
  website: https://ouvaton.coop
 ---

@@ -5,7 +5,7 @@ domains:
   - daleth.cafe
 server:
   - type: imap
-    socket: TLS
+    socket: SSL
     hostname: daleth.cafe
     port: 993
     username_pattern: EMAIL
