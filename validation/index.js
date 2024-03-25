@@ -75,13 +75,23 @@ function test(fileContent) {
 
     // is server data populated?
     if(json.server){
+        var has_smtp = false;
+        var has_imap = false;
         json.server.forEach(server => {
             try {
                 testServer(server)
+                if (server.type == "imap") {
+                    has_imap = true
+                } else if (server.type == "smtp") {
+                    has_smtp = true
+                }
             } catch (error) {
                 throw new Error("Error in server definition:" + error.message)
             }
         });
+        if(!(has_imap && has_smtp)){
+            throw new Error("Server definition needs atlease one server of both types")
+        }
     }
 
     // Check that config contains only valid keys

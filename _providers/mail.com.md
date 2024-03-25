@@ -191,12 +191,6 @@ domains:
 - tvstar.com
 - uymail.com
 - 2trom.com
-# Keeping this empty so that configuration is handled automatically
-# by Delta Chat.
-# Who knows, maybe they'll stop maintaining one of their domains.
-# The ports/protocols are standard:
-# https://support.mail.com/premium/imap/server.html
-server: []
 before_login_hint: |
   To log in with Delta Chat, you first need to activate POP3/IMAP in your mail.com settings. Note that this is a mail.com Premium feature only.
 last_checked: 2024-03
