@@ -12,12 +12,12 @@ server:
     socket: SSL
     hostname: imap.purelymail.com
     port: 993
-    username: EMAILADDRESS
+    username_pattern: EMAIL
   - type: smtp
     socket: SSL
     hostname: smtp.purelymail.com
     port: 465
-    username: EMAILADDRESS
+    username_pattern: EMAIL
 last_checked: 2023-12
 website: https://purelymail.com
 ---

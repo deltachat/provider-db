@@ -8,12 +8,12 @@ server:
     socket: SSL
     hostname: mail.nubo.coop
     port: 993
-    username: EMAILADDRESS
+    username_pattern: EMAIL
   - type: smtp
     socket: SSL
     hostname: mail.nubo.coop
     port: 465
-    username: EMAILADDRESS
+    username_pattern: EMAIL
 last_checked: 2022-12
 website: https://nubo.coop
 ---

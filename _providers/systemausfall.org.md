@@ -9,12 +9,12 @@ server:
     socket: SSL
     hostname: mail.systemausfall.org
     port: 993
-    username: EMAILADDRESS
+    username_pattern: EMAIL
   - type: smtp
     socket: SSL
     hostname: mail.systemausfall.org
     port: 465
-    username: EMAILADDRESS
+    username_pattern: EMAIL
 last_checked: 2021-05
 website: https://systemausfall.org
 ---
