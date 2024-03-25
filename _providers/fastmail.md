@@ -157,4 +157,4 @@ Fastmail supports [any of its domains](https://www.fastmail.com/about/ourdomains
 
 The email address you're using with Delta.chat should be entered as the "email" address, while your Fastmail webmail login email address (the one you registered with originally) should be used as the "IMAP Login Name" and "SMTP Login Name".  Your "password" and "SMTP Password" should be the 16-digit password generated for you by Fastmail.  
 
-For security, the SSL/SSL settings should be explicitly selected and used for both IMAP and SMTP, and "Strict" for the Certificate Checks.  Allowing Delta.chat to use "Automatic" for any of these risks an automatic security downgrade in the unlikely event an error is encountered.
+For security, the SSL/TLS settings should be explicitly selected and used for both IMAP and SMTP, and "Strict" for the Certificate Checks.  Allowing Delta.chat to use "Automatic" for any of these risks an automatic security downgrade in the unlikely event an error is encountered.
