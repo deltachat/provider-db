@@ -1,5 +1,5 @@
 ---
-name: acesttoi.fr
+name: 🇫🇷 acesttoi.fr
 status: OK
 domains: 
   - acesttoi.fr
