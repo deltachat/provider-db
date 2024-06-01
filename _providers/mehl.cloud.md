@@ -1,5 +1,5 @@
 ---
-name: mehl.cloud
+name: 🇩🇪 mehl.cloud
 status: OK
 domains: 
   - mehl.cloud
