@@ -1,5 +1,5 @@
 ---
-name: daleth.cafe
+name: 🌈 daleth.cafe
 status: OK
 domains: 
   - daleth.cafe
