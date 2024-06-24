@@ -10,11 +10,21 @@ server:
     port: 993
     username_pattern: EMAIL
   - type: smtp
+    socket: SSL
+    hostname: daleth.cafe
+    port: 465
+    username_pattern: EMAIL
+  - type: imap
+    socket: STARTTLS
+    hostname: daleth.cafe
+    port: 143
+    username_pattern: EMAIL
+  - type: smtp
     socket: STARTTLS
     hostname: daleth.cafe
     port: 587
     username_pattern: EMAIL
-last_checked: 2024-02
+last_checked: 2024-06
 skip_auto_test: false
 website: https://nein.jetzt
 ---

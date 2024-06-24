@@ -14,7 +14,17 @@ server:
     hostname: nine.testrun.org
     port: 465
     username_pattern: EMAIL
-last_checked: 2023-11
+  - type: imap
+    socket: STARTTLS
+    hostname: nine.testrun.org
+    port: 143
+    username_pattern: EMAIL
+  - type: smtp
+    socket: STARTTLS
+    hostname: nine.testrun.org
+    port: 587
+    username_pattern: EMAIL
+last_checked: 2024-06
 config_defaults:
   mvbox_move: 0
 website: https://nine.testrun.org/
