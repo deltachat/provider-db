@@ -8,6 +8,10 @@ server:
   hostname: testrun.org
   port: 993
   socket: SSL
+- type: smtp
+  hostname: testrun.org
+  port: 465
+  socket: SSL
 - type: imap
   hostname: testrun.org
   port: 143
