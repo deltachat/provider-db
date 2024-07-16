@@ -8,12 +8,12 @@ domains:
 opt:
   strict_tls: true
 server:
-  - type: IMAP
+  - type: imap
     socket: STARTTLS
     hostname: stinpriza.net
     port: 143
     username_pattern: EMAIL
-  - type: SMTP
+  - type: smtp
     socket: STARTTLS
     hostname: stinpriza.net
     port: 587
