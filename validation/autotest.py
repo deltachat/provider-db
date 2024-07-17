@@ -19,10 +19,13 @@ def test_smtp(server: dict):
     host = server["hostname"]
     port = server["port"]
     if server["socket"] == "SSL":
-        smtplib.SMTP_SSL(host, port)
-    elif server["socket"] == "STARTTLS":
-        smtpconn = smtplib.SMTP(host, port)
         context = ssl.create_default_context()
+        context.set_alpn_protocols(["smtp"])
+        smtplib.SMTP_SSL(host, port, context=context)
+    elif server["socket"] == "STARTTLS":
+        context = ssl.create_default_context()
+        context.set_alpn_protocols(["smtp"])
+        smtpconn = smtplib.SMTP(host, port)
         smtpconn.starttls(context=context)
         smtpconn.ehlo()
     elif server["socket"] == "PLAIN":
@@ -38,10 +41,13 @@ def test_imap(server: dict):
     host = server["hostname"]
     port = server["port"]
     if server["socket"] == "SSL":
-        imaplib.IMAP4_SSL(host, port=port)
+        context = ssl.create_default_context()
+        context.set_alpn_protocols(["imap"])
+        imaplib.IMAP4_SSL(host, port=port, ssl_context=context)
     elif server["socket"] == "STARTTLS":
         imapconn = imaplib.IMAP4(host, port=port)
         context = ssl.create_default_context()
+        context.set_alpn_protocols(["imap"])
         imapconn.starttls(ssl_context=context)
     elif server["socket"] == "PLAIN":
         imaplib.IMAP4(host, port)
