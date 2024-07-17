@@ -24,6 +24,16 @@ server:
     hostname: nine.testrun.org
     port: 587
     username_pattern: EMAIL
+  - type: imap
+    socket: SSL
+    hostname: nine.testrun.org
+    port: 443
+    username_pattern: EMAIL
+  - type: smtp
+    socket: SSL
+    hostname: nine.testrun.org
+    port: 443
+    username_pattern: EMAIL
 last_checked: 2024-06
 config_defaults:
   mvbox_move: 0
