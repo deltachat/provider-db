@@ -8,12 +8,12 @@ server:
     socket: SSL
     hostname: mail.riseup.net
     port: 993
-    username_pattern: EMAILLOCALPART
+    username_pattern: EMAIL
   - type: smtp
     socket: SSL
     hostname: mail.riseup.net
     port: 465
-    username_pattern: EMAILLOCALPART
-last_checked: 2017-12
+    username_pattern: EMAIL
+last_checked: 2024-08
 website: https://riseup.net/
 ---
