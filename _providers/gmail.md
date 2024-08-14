@@ -18,7 +18,7 @@ server:
 opt:
   delete_to_trash: true
 before_login_hint: |
-  For Gmail accounts, you need to create an app-password and have "2-Step Verification" enabled.
+  For Gmail accounts, you need to have "2-Step Verification" enabled and create an app-password.
 last_checked: 2024-08
 website: https://gmail.com
 ---
