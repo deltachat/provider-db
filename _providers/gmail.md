@@ -29,6 +29,7 @@ and then **Create an app-specific password**.
 
 This means to create an additional password which you use only for one device or app.
 Please [follow Google's instructions](https://support.google.com/accounts/answer/185833),
+create an app-password at <https://myaccount.google.com/apppasswords>
 and then use the newly generated password to log in with Delta Chat.
 
 If you still have login problems,
