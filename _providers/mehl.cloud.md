@@ -7,6 +7,16 @@ server:
   - type: imap
     socket: SSL
     hostname: mehl.cloud
+    port: 443
+    username_pattern: EMAIL
+  - type: smtp
+    socket: SSL
+    hostname: mehl.cloud
+    port: 443
+    username_pattern: EMAIL
+  - type: imap
+    socket: SSL
+    hostname: mehl.cloud
     port: 993
     username_pattern: EMAIL
   - type: smtp
