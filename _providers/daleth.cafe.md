@@ -7,16 +7,6 @@ server:
   - type: imap
     socket: SSL
     hostname: daleth.cafe
-    port: 443
-    username_pattern: EMAIL
-  - type: smtp
-    socket: SSL
-    hostname: daleth.cafe
-    port: 443
-    username_pattern: EMAIL
-  - type: imap
-    socket: SSL
-    hostname: daleth.cafe
     port: 993
     username_pattern: EMAIL
   - type: smtp
