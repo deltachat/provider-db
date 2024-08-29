@@ -11,6 +11,7 @@ domains:
   - posteo.cl
   - posteo.co
   - posteo.co.uk
+  - posteo.com
   - posteo.com.br
   - posteo.cr
   - posteo.cz
@@ -70,6 +71,6 @@ server:
   port: 587
   socket: STARTTLS
   type: smtp
-last_checked: 2023-02
+last_checked: 2024-08
 website: https://posteo.de/
 ---
