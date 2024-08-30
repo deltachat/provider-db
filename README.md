@@ -105,11 +105,11 @@ reason for that is to respect user-choice of changing these values.
 
 With the top-level option `oauth2=AUTHORIZER` you can specify,
 that emails on the given domains support OAuth2 with the given authorizers.
-Supported authorizers are `yandex` and `gmail`.
+Supported authorizer is `yandex`.
 
-In contrast to other authorization methods, you cannot use oauth2
+In contrast to other authorization methods, you cannot use OAuth2
 only because the server may support it.
-New Oauth2 authorizers require adaptions in deltachat-core
+New OAuth2 authorizers require adaptions in deltachat-core
 and typically also bureaucratic effort.
 
 ### Use OAuth2 together with other options
@@ -124,7 +124,7 @@ so it is not needed to say sth. about OAuth2 before login.
 All other options are applied as usual.
 
 
-## limit RCPT TO header
+## Limit RCPT TO header
 
 With the `opt` option `max_smtp_rcpt_to: MAX`
 you can set the maximum number of recipients
