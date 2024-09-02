@@ -15,6 +15,7 @@ server:
     port: 465
     username_pattern: EMAIL
 before_login_hint: "Dies sind die gleichen Anmeldedaten wie bei Moodle und Abitur-Online."
+skip_auto_test: true
 last_checked: 2023-12
 website: https://wkpb.de/
 ---
