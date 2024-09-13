@@ -5,7 +5,6 @@ domains:
   - gmail.com
   - googlemail.com
   - google.com
-oauth2: gmail
 server:
   - type: imap
     socket: SSL
