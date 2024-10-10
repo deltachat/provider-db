@@ -16,7 +16,7 @@ server:
     hostname: smtp.mail.me.com
     port: 587
 before_login_hint: "You must create an app-specific password for Delta Chat before login."
-last_checked: 2020-01
+last_checked: 2024-10
 website: https://www.icloud.com/mail
 ---
 
