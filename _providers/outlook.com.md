@@ -1,6 +1,6 @@
 ---
 name: Outlook.com
-status: OK
+status: BROKEN
 domains:
   - hotmail.com
   - outlook.com
@@ -17,6 +17,9 @@ server:
     socket: STARTTLS
     hostname: smtp.office365.com
     port: 587
-last_checked: 2022-01
+last_checked: 2024-11
 website: https://outlook.live.com/mail
 ---
+
+Unfortunately, Outlook does not allow using passwords anymore,
+per-app-passwords are currently not working.
