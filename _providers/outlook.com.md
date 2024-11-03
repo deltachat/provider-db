@@ -1,6 +1,9 @@
 ---
 name: Outlook.com
 status: BROKEN
+before_login_hint: |
+    Unfortunately, Outlook does not allow using passwords anymore,
+    per-app-passwords are currently not working.
 domains:
   - hotmail.com
   - outlook.com
