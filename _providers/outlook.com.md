@@ -25,4 +25,5 @@ website: https://outlook.live.com/mail
 ---
 
 Unfortunately, Outlook does not allow using passwords anymore,
-per-app-passwords are currently not working.
+per-app-passwords are reported to not being working in November 2024.
+Please let us know if you succeed using Outlook, so we can adapt these hints.
